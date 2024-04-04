@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd008jmwn1jdj"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_yf4b0"]
+
+[node name="Main menu" type="Node2D"]
+script = ExtResource("1_yf4b0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(0.321569, 0.270588, 0.380392, 1)
+
+[node name="PlayBtn" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 163.0
+offset_right = 817.0
+offset_bottom = 291.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitBtn" type="Button" parent="."]
+offset_left = 367.0
+offset_top = 380.0
+offset_right = 817.0
+offset_bottom = 508.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Quit"
+
+[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]

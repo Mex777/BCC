@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Bcc"
-run/main_scene="res://main_menu.tscn"
+run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [rendering]
 
