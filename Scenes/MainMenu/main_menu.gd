@@ -8,4 +8,4 @@ func _on_quit_btn_pressed():
 
 
 func _on_play_btn_pressed():
-	get_tree().change_scene_to_file("res://Scenes/World/world.tscn")
+	get_tree().change_scene_to_file("res://Scenes/World/World.tscn")
