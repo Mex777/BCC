@@ -8,4 +8,5 @@ func _on_quit_btn_pressed():
 
 
 func _on_play_btn_pressed():
+	Player.reset()
 	get_tree().change_scene_to_file("res://Scenes/World/World.tscn")

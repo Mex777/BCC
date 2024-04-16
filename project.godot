@@ -15,10 +15,19 @@ run/main_scene="res://Scenes/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Player="*res://Global/Player.gd"
+Game="*res://Global/Game.gd"
+
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/copilot/plugin.cfg", "res://addons/godot_vim/plugin.cfg")
 
 [rendering]
 
