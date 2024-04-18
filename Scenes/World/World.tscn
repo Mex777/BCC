@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://f4le25l277hx"]
+[gd_scene load_steps=8 format=3 uid="uid://f4le25l277hx"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="2_x4pw2"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="3_4redj"]
+[ext_resource type="PackedScene" uid="uid://c4cb70e8fa1r1" path="res://Scenes/Reusables/Dummy/dummy.tscn" id="4_n48yf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
 texture = ExtResource("1_bkxon")
@@ -118,3 +119,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "HP: "
 script = SubResource("GDScript_wx05m")
+
+[node name="Dummy" parent="." instance=ExtResource("4_n48yf")]
+position = Vector2(686, 443)
