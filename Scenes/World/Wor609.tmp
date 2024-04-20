@@ -195,7 +195,7 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_3kon7"]
 script/source = "extends AnimatedSprite2D
 
-@onready var showHealth = get_node(\"../AnimatedSprite2DHealthBar\")
+@onready var showHealth = get_node(\"../AnimatedSprite2D\")
 
 func _process(delta):
 	var health = Player.get_hp()
@@ -224,11 +224,11 @@ visible = false
 
 [node name="Control" type="CanvasLayer" parent="."]
 
-[node name="AnimatedSprite2DHealthBar" type="AnimatedSprite2D" parent="Control"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
 position = Vector2(69, 64)
 scale = Vector2(1.90625, 1.96875)
 sprite_frames = SubResource("SpriteFrames_n0yep")
-animation = &"90hp"
+animation = &"0hp"
 script = SubResource("GDScript_3kon7")
 
 [node name="Dummy" parent="." instance=ExtResource("4_n48yf")]
