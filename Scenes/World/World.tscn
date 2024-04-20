@@ -198,13 +198,10 @@ script/source = "extends AnimatedSprite2D
 @onready var show_health = get_node(\"../AnimatedSprite2DHealthBar\")
 
 func _process(delta):
-	if Player.get_hp() % 10 != 0:
-		if Player.get_hp() % 10 <= 5:
-			show_health.play(str(Player.get_hp() - Player.get_hp() % 10) + \"hp\")
-		else:
-			show_health.play(str(Player.get_hp() + 10 - Player.get_hp() % 10) + \"hp\")
+	if Player.get_hp() % 10 <= 5:
+		show_health.play(str(Player.get_hp() - Player.get_hp() % 10) + \"hp\")
 	else:
-		show_health.play(str(Player.get_hp()) + \"hp\")
+		show_health.play(str(Player.get_hp() + 10 - Player.get_hp() % 10) + \"hp\")
 "
 
 [node name="World" type="Node2D"]
