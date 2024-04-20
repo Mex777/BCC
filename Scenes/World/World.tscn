@@ -195,20 +195,16 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_3kon7"]
 script/source = "extends AnimatedSprite2D
 
-@onready var showHealth = get_node(\"../AnimatedSprite2DHealthBar\")
+@onready var show_health = get_node(\"../AnimatedSprite2DHealthBar\")
 
 func _process(delta):
-	var health = Player.get_hp()
-	
-	var aux_health = health
-	
-	if aux_health % 10 != 0:
-		if aux_health % 10 <= 5:
-			aux_health = aux_health - aux_health % 10
+	if Player.get_hp() % 10 != 0:
+		if Player.get_hp() % 10 <= 5:
+			show_health.play(str(Player.get_hp() - Player.get_hp() % 10) + \"hp\")
 		else:
-			aux_health = aux_health + 10 - aux_health % 10
-			
-	showHealth.play(str(aux_health) + \"hp\")
+			show_health.play(str(Player.get_hp() + 10 - Player.get_hp() % 10) + \"hp\")
+	else:
+		show_health.play(str(Player.get_hp()) + \"hp\")
 "
 
 [node name="World" type="Node2D"]
