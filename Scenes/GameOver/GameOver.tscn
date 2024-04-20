@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://b81brgql6wu3h"]
+
+[sub_resource type="GDScript" id="GDScript_o8mj8"]
+resource_name = "GameOver"
+script/source = "extends CanvasLayer
+
+func _process(delta):
+	if Player.is_dead() == true:
+		self.show()
+	else:
+		self.hide()
+
+func _on_respawn_pressed():
+	Player.reset()
+	get_tree().change_scene_to_file(\"res://Scenes/World/World.tscn\")
+
+
+func _on_main_screen_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/MainMenu/MainMenu.tscn\")
+"
+
+[node name="GameOver" type="CanvasLayer"]
+script = SubResource("GDScript_o8mj8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 9.0
+offset_right = 758.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 57
+text = "You died... :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Respawn" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 163.0
+offset_right = 817.0
+offset_bottom = 291.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Respawn"
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Screen" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 363.0
+offset_right = 817.0
+offset_bottom = 491.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Back to main screen"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="Main Screen" to="." method="_on_main_screen_pressed"]

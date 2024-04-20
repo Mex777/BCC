@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=3 uid="uid://c4cb70e8fa1r1"]
+
+[ext_resource type="Script" path="res://Scenes/Reusables/Dummy/dummy.gd" id="1_17t23"]
+[ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="1_g42am"]
+[ext_resource type="Texture2D" uid="uid://clpg033fyw74j" path="res://Assets/Aurora/PrincessOutfit/Idle/1.png" id="2_sat50"]
+[ext_resource type="Texture2D" uid="uid://dylck4fip4qcc" path="res://Assets/Aurora/PrincessOutfit/Idle/2.png" id="3_ok7ml"]
+[ext_resource type="Texture2D" uid="uid://i4k5bw6y8ht6" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/0.png" id="4_43qua"]
+[ext_resource type="Texture2D" uid="uid://dx13n0vfofyt3" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/1.png" id="5_htwwt"]
+[ext_resource type="Texture2D" uid="uid://bdjtx2kiu11nd" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/2.png" id="6_gpxue"]
+[ext_resource type="Texture2D" uid="uid://ctmvcntrdqs8j" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/3.png" id="7_q1iql"]
+[ext_resource type="Texture2D" uid="uid://cj2x2cb2k3oik" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/4.png" id="8_xhjw0"]
+[ext_resource type="Texture2D" uid="uid://bh7n5xb76qa7b" path="res://Assets/Aurora/PrincessOutfit/Running (right)/0.png" id="9_co4bp"]
+[ext_resource type="Texture2D" uid="uid://cy2857c8g5kll" path="res://Assets/Aurora/PrincessOutfit/Running (right)/1.png" id="10_e6y57"]
+[ext_resource type="Texture2D" uid="uid://brn6xurgfh383" path="res://Assets/Aurora/PrincessOutfit/Running (right)/2.png" id="11_npsj0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgge7"]
+radius = 14.0
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lo3xu"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"BaseAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("1_g42am")
+}, {
+"duration": 6.0,
+"texture": ExtResource("2_sat50")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_ok7ml")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_43qua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_htwwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gpxue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q1iql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xhjw0")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("9_co4bp")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_e6y57")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_npsj0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("10_e6y57")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_akbbt"]
+script/source = "extends Label
+
+func _process(_delta):
+	var dummy = get_node(\"..\")
+	text = \"HP: \" + str(dummy.health)
+	if dummy.stunned:
+		text += \"STUNNED\"
+	
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miu8q"]
+size = Vector2(20, 42)
+
+[sub_resource type="GDScript" id="GDScript_uhe25"]
+resource_name = "BaseAttack"
+script/source = "extends CollisionShape2D
+
+const weapon_damage = 3
+
+
+func _on_attack_body_entered(body):
+	if body.has_method(\"take_damage\"):
+		body.take_damage(weapon_damage)
+"
+
+[node name="Dummy" type="CharacterBody2D"]
+script = ExtResource("1_17t23")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qgge7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(1.625, 1.625)
+sprite_frames = SubResource("SpriteFrames_lo3xu")
+animation = &"BaseAttack"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -56.0
+offset_right = 15.0
+offset_bottom = -33.0
+text = "HP:"
+script = SubResource("GDScript_akbbt")
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="BaseAttack" type="CollisionShape2D" parent="Attack"]
+position = Vector2(28, -1)
+shape = SubResource("RectangleShape2D_miu8q")
+disabled = true
+script = SubResource("GDScript_uhe25")
+
+[connection signal="body_entered" from="Attack" to="Attack/BaseAttack" method="_on_attack_body_entered"]
