@@ -20,7 +20,7 @@ height = 32.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_lo3xu"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"BaseAttack",
 "speed": 5.0
 }, {
@@ -82,6 +82,9 @@ script/source = "extends Label
 func _process(_delta):
 	var dummy = get_node(\"..\")
 	text = \"HP: \" + str(dummy.health)
+	if dummy.stunned:
+		text += \"STUNNED\"
+	
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miu8q"]
@@ -109,7 +112,7 @@ shape = SubResource("CapsuleShape2D_qgge7")
 position = Vector2(0, -6)
 scale = Vector2(1.625, 1.625)
 sprite_frames = SubResource("SpriteFrames_lo3xu")
-animation = &"Idle"
+animation = &"BaseAttack"
 
 [node name="Label" type="Label" parent="."]
 offset_left = -25.0

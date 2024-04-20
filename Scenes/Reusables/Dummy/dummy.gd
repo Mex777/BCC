@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var health = 10
 var SPEED = 10
+@export var stunned = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func take_damage(damage: int):
@@ -13,8 +14,11 @@ func take_damage(damage: int):
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate = Color.WHITE
 	
-func stun(duration: int):
+func stun(duration: float):
+	stunned = true
 	await get_tree().create_timer(duration).timeout
+	stunned = false
+	
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("base_attack"):
@@ -25,8 +29,10 @@ func _physics_process(delta):
 		collision.disabled = true
 	
 	velocity.x = SPEED
-	if velocity.y == 0:
+	if not stunned:
 		get_node("AnimatedSprite2D").play("Run")
+	else:
+		get_node("AnimatedSprite2D").play("Idle")
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta

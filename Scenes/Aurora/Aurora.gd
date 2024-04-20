@@ -1,11 +1,12 @@
 extends CharacterBody2D 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED: float = 300.0
+const JUMP_VELOCITY: float = -400.0
+@export var attacking: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var anim = get_node("AnimatedSprite2D")
+@onready var animation = get_node("AnimationPlayer")
 @onready var game_over = preload("res://Scenes/GameOver/GameOver.tscn").instantiate()
 
 func _physics_process(delta):
@@ -21,21 +22,26 @@ func _physics_process(delta):
 	var viewport_rect = get_viewport_rect()
 	if position.y > viewport_rect.position.y + viewport_rect.size.y:
 		take_damage(10)  
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		get_node("AnimatedSprite2D").play("Jump")
 		
 	# Handle base attack.
 	if Input.is_action_just_pressed("base_attack"):
+		attacking = true
+		animation.play("Attack")
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = false
 	else:
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = true
 		
+
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+	# Handle ability.
 	if Input.is_action_just_pressed("stun"):
+		attacking = true
+		animation.play("Stun")
 		var collision = get_node("Stun/Stun")
 		collision.disabled = false
 	else:
@@ -46,36 +52,45 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == -1: 
-		get_node("AnimatedSprite2D").flip_h = true;
+		get_node("Sprite").flip_h = true;
 		if $Attack/BaseAttack.position.x > 0:
 			$Attack/BaseAttack.position.x *= -1
 	elif direction:
-		get_node("AnimatedSprite2D").flip_h = false;
+		get_node("Sprite").flip_h = false;
 		if $Attack/BaseAttack.position.x < 0:
 			$Attack/BaseAttack.position.x *= -1
 	
 	if direction:
 		velocity.x = direction * SPEED
-		if velocity.y == 0:
-			get_node("AnimatedSprite2D").play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if velocity.y == 0:
-			get_node("AnimatedSprite2D").play("Idle")
 	
-	if velocity.y > 0:
-		pass
-
+	update_animation()
 	move_and_slide()
+	
+	
+func update_animation():
+	if attacking:
+		return
+	if velocity.x != 0:
+		animation.play("Run")	
+	else:
+		animation.play("Idle")
+		
+	if velocity.y < 0:
+		animation.play("Up")
+	if velocity.y > 0:
+		animation.play("Down")
 	
 	
 func take_damage(damage):
 	Player.take_damage(damage)
 	
-	$AnimatedSprite2D.modulate = Color.RED
+	$Sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
-	$AnimatedSprite2D.modulate = Color.WHITE
+	$Sprite.modulate = Color.WHITE
 	
 	
-func stun(duration: int):
-	pass
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Attack" or anim_name == "Stun":
+		attacking = false
