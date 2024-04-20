@@ -200,13 +200,15 @@ script/source = "extends AnimatedSprite2D
 func _process(delta):
 	var health = Player.get_hp()
 	
-	if health % 10 != 0:
-		if health % 10 <= 5:
-			health = health - health % 10
+	var auxHealth = health
+	
+	if auxHealth % 10 != 0:
+		if auxHealth % 10 <= 5:
+			auxHealth = auxHealth - auxHealth % 10
 		else:
-			health = health + 10 - health % 10
+			auxHealth = auxHealth + 10 - auxHealth % 10
 			
-	showHealth.play(str(health) + \"hp\")
+	showHealth.play(str(auxHealth) + \"hp\")
 "
 
 [node name="World" type="Node2D"]
