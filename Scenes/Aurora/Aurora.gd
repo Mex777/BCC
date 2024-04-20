@@ -35,6 +35,13 @@ func _physics_process(delta):
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = true
 		
+	if Input.is_action_just_pressed("stun"):
+		var collision = get_node("Stun/Stun")
+		collision.disabled = false
+	else:
+		var collision = get_node("Stun/Stun")
+		collision.disabled = true
+		
 		
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -46,7 +53,7 @@ func _physics_process(delta):
 		get_node("AnimatedSprite2D").flip_h = false;
 		if $Attack/BaseAttack.position.x < 0:
 			$Attack/BaseAttack.position.x *= -1
-		
+	
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
@@ -68,3 +75,7 @@ func take_damage(damage):
 	$AnimatedSprite2D.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate = Color.WHITE
+	
+	
+func stun(duration: int):
+	pass
