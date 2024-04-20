@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
 @export var attacking: bool = false
+var cooldown_stun_attack: bool = false
+var cooldown_base_attack: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -24,11 +26,13 @@ func _physics_process(delta):
 		take_damage(10)  
 		
 	# Handle base attack.
-	if Input.is_action_just_pressed("base_attack"):
+	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
+		cooldown_base_attack = true
 		attacking = true
 		animation.play("Attack")
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = false
+		base_attack()
 	else:
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = true
@@ -39,11 +43,12 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		
 	# Handle ability.
-	if Input.is_action_just_pressed("stun"):
+	if Input.is_action_just_pressed("stun") and not cooldown_stun_attack:
 		attacking = true
 		animation.play("Stun")
 		var collision = get_node("Stun/Stun")
 		collision.disabled = false
+		stun_ability()
 	else:
 		var collision = get_node("Stun/Stun")
 		collision.disabled = true
@@ -90,6 +95,16 @@ func take_damage(damage):
 	await get_tree().create_timer(0.1).timeout
 	$Sprite.modulate = Color.WHITE
 	
+	
+func stun_ability():
+	cooldown_stun_attack = true 
+	await get_tree().create_timer(5.0).timeout
+	cooldown_stun_attack = false
+	
+func base_attack():
+	cooldown_base_attack = true
+	await get_tree().create_timer(0.6).timeout
+	cooldown_base_attack = false
 	
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Attack" or anim_name == "Stun":
