@@ -1,20 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://f4le25l277hx"]
+[gd_scene load_steps=17 format=3 uid="uid://f4le25l277hx"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="2_x4pw2"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="3_4redj"]
-[ext_resource type="Texture2D" uid="uid://b8bj8r2pkpru1" path="res://Assets/Aurora/HealthBar/0.png" id="4_juqes"]
 [ext_resource type="PackedScene" uid="uid://c4cb70e8fa1r1" path="res://Scenes/Reusables/Dummy/dummy.tscn" id="4_n48yf"]
-[ext_resource type="Texture2D" uid="uid://c0s04fenhwpxg" path="res://Assets/Aurora/HealthBar/100.png" id="4_nodpx"]
-[ext_resource type="Texture2D" uid="uid://du1p2r6o11w5w" path="res://Assets/Aurora/HealthBar/10.png" id="6_8r7e7"]
-[ext_resource type="Texture2D" uid="uid://debmmmcsjh0kw" path="res://Assets/Aurora/HealthBar/20.png" id="7_js4ix"]
-[ext_resource type="Texture2D" uid="uid://bqseu24b7fn3w" path="res://Assets/Aurora/HealthBar/30.png" id="8_l6b60"]
-[ext_resource type="Texture2D" uid="uid://bcqa2h7uctci6" path="res://Assets/Aurora/HealthBar/40.png" id="9_774o2"]
-[ext_resource type="Texture2D" uid="uid://fbv2p2xmdagl" path="res://Assets/Aurora/HealthBar/50.png" id="10_5r4od"]
-[ext_resource type="Texture2D" uid="uid://dsbow5wfq5bj4" path="res://Assets/Aurora/HealthBar/60.png" id="11_bsdvn"]
-[ext_resource type="Texture2D" uid="uid://d1llfmmm1fbaf" path="res://Assets/Aurora/HealthBar/70.png" id="12_ljgqb"]
-[ext_resource type="Texture2D" uid="uid://uxijeeh4dx2q" path="res://Assets/Aurora/HealthBar/80.png" id="13_a3jp0"]
-[ext_resource type="Texture2D" uid="uid://bi4dnurifar6r" path="res://Assets/Aurora/HealthBar/90.png" id="14_eoecx"]
+[ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="15_6l25r"]
+[ext_resource type="Texture2D" uid="uid://bfaosth1ip357" path="res://Assets/UI/SwordIcon/0.png" id="16_01hb8"]
+[ext_resource type="Texture2D" uid="uid://bvsmb0y575hpm" path="res://Assets/UI/SwordIcon/5.png" id="16_inuir"]
+[ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="16_wte24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
 texture = ExtResource("1_bkxon")
@@ -101,107 +94,38 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vjr16")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n0yep"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_juqes")
-}],
-"loop": true,
-"name": &"0hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_nodpx")
-}],
-"loop": true,
-"name": &"100hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_8r7e7")
-}],
-"loop": true,
-"name": &"10hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_js4ix")
-}],
-"loop": true,
-"name": &"20hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_l6b60")
-}],
-"loop": true,
-"name": &"30hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_774o2")
-}],
-"loop": true,
-"name": &"40hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_5r4od")
-}],
-"loop": true,
-"name": &"50hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_bsdvn")
-}],
-"loop": true,
-"name": &"60hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_ljgqb")
-}],
-"loop": true,
-"name": &"70hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_a3jp0")
-}],
-"loop": true,
-"name": &"80hp",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_eoecx")
-}],
-"loop": true,
-"name": &"90hp",
-"speed": 0.0
-}]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbutl"]
+atlas = ExtResource("15_6l25r")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="GDScript" id="GDScript_3kon7"]
-script/source = "extends AnimatedSprite2D
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4063"]
+atlas = ExtResource("16_wte24")
+region = Rect2(0, 0, 64, 64)
 
-@onready var show_health = get_node(\"../AnimatedSprite2DHealthBar\")
+[sub_resource type="GDScript" id="GDScript_rt37q"]
+script/source = "extends TextureProgressBar
 
-func _process(delta):
-	if Player.get_hp() % 10 <= 5:
-		show_health.play(str(Player.get_hp() - Player.get_hp() % 10) + \"hp\")
-	else:
-		show_health.play(str(Player.get_hp() + 10 - Player.get_hp() % 10) + \"hp\")
+func _process(_delta):
+	value = Player.get_hp() / Player.get_max_hp() + 0.2;
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2x8h"]
+atlas = ExtResource("16_01hb8")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1rs0"]
+atlas = ExtResource("16_inuir")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="GDScript" id="GDScript_n1h0o"]
+script/source = "extends TextureProgressBar
+
+func _process(_delta):
+	if (Player.get_hp() == 0):
+		self.visible = false
+		return
+		
+	value = 1 - $\"../../Aurora\".get_child(6).time_left / 0.6
 "
 
 [node name="World" type="Node2D"]
@@ -217,14 +141,36 @@ position = Vector2(328, 348)
 [node name="GameOver" parent="." instance=ExtResource("3_4redj")]
 visible = false
 
-[node name="Control" type="CanvasLayer" parent="."]
+[node name="HPBar" type="CanvasLayer" parent="."]
 
-[node name="AnimatedSprite2DHealthBar" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(69, 64)
-scale = Vector2(1.90625, 1.96875)
-sprite_frames = SubResource("SpriteFrames_n0yep")
-animation = &"90hp"
-script = SubResource("GDScript_3kon7")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HPBar"]
+offset_right = 204.0
+offset_bottom = 204.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_xbutl")
+texture_progress = SubResource("AtlasTexture_s4063")
+script = SubResource("GDScript_rt37q")
 
 [node name="Dummy" parent="." instance=ExtResource("4_n48yf")]
 position = Vector2(686, 443)
+
+[node name="BasicAttack" type="CanvasLayer" parent="."]
+
+[node name="AbilitiesUI" type="CanvasLayer" parent="."]
+
+[node name="BasicAttack" type="TextureProgressBar" parent="AbilitiesUI"]
+offset_left = 20.0
+offset_top = 521.0
+offset_right = 115.0
+offset_bottom = 616.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_g2x8h")
+texture_progress = SubResource("AtlasTexture_s1rs0")
+script = SubResource("GDScript_n1h0o")

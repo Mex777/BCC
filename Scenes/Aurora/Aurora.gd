@@ -103,9 +103,11 @@ func stun_ability():
 	
 func base_attack():
 	cooldown_base_attack = true
-	await get_tree().create_timer(0.6).timeout
-	cooldown_base_attack = false
+	$BasicAttackTimer.start()
 	
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Attack" or anim_name == "Stun":
 		attacking = false
+
+func _on_timer_timeout():
+	cooldown_base_attack = false;
