@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/World/UI/BasicAttack.gd" id="9_w6vsp"]
 [ext_resource type="Script" path="res://Scenes/World/UI/Stun.gd" id="9_ym0vw"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="13_jhv1a"]
-[ext_resource type="PackedScene" uid="uid://dg5a8h54l20n6" path="res://Scenes/Reusables/PatrolEnemy/PatrolEnemy.tscn" id="14_djuew"]
+[ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Mobs/Skeleton/Skeleton.tscn" id="14_hym4o"]
 [ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="15_6l25r"]
 [ext_resource type="Texture2D" uid="uid://bfaosth1ip357" path="res://Assets/UI/SwordIcon/0.png" id="16_01hb8"]
 [ext_resource type="Texture2D" uid="uid://bvsmb0y575hpm" path="res://Assets/UI/SwordIcon/5.png" id="16_inuir"]
@@ -313,5 +313,7 @@ texture_under = SubResource("AtlasTexture_g2x8h")
 texture_progress = SubResource("AtlasTexture_s1rs0")
 script = ExtResource("9_ym0vw")
 
-[node name="PatrolEnemy" parent="." instance=ExtResource("14_djuew")]
-position = Vector2(1540, 434)
+[node name="Skeleton" parent="." instance=ExtResource("14_hym4o")]
+position = Vector2(1484, 428)
+speed = 50.0
+attack_cooldown = 0.2

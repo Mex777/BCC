@@ -1,45 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://4ldyapbufguq"]
+[gd_scene load_steps=5 format=3 uid="uid://4ldyapbufguq"]
 
-[ext_resource type="Texture2D" uid="uid://cxbef6exnkat0" path="res://Assets/Aurora/PrisonerOutfit/Idle/0.png" id="1_1togn"]
 [ext_resource type="Script" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd" id="1_g4s8k"]
-[ext_resource type="Texture2D" uid="uid://cn5hfxtmgvc45" path="res://Assets/Aurora/PrisonerOutfit/Idle/1.png" id="2_l4ls4"]
-[ext_resource type="Texture2D" uid="uid://dce20b6qiee4f" path="res://Assets/Aurora/PrisonerOutfit/Idle/2.png" id="3_1vdvu"]
-[ext_resource type="Texture2D" uid="uid://dvajeyygv23ko" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/0.png" id="4_hb8ce"]
-[ext_resource type="Texture2D" uid="uid://7tc2dtl8jkev" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/1.png" id="5_p45al"]
-[ext_resource type="Texture2D" uid="uid://dirwb1jdoxlxi" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/2.png" id="6_rq8qh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jqopd"]
 animations = [{
-"frames": [{
-"duration": 5.0,
-"texture": ExtResource("1_1togn")
-}, {
-"duration": 5.0,
-"texture": ExtResource("2_l4ls4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_1vdvu")
-}],
+"frames": [],
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_hb8ce")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_p45al")
-}, {
-"duration": 3.0,
-"texture": ExtResource("6_rq8qh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_p45al")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_hb8ce")
-}],
+"frames": [],
 "loop": true,
 "name": &"Running",
 "speed": 5.0
@@ -56,20 +26,6 @@ func _process(_delta):
 	if dummy.stunned:
 		text += \"STUNNED\"
 	
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y1b1"]
-size = Vector2(20, 42)
-
-[sub_resource type="GDScript" id="GDScript_wcv2y"]
-resource_name = "BaseAttack"
-script/source = "extends CollisionShape2D
-
-const weapon_damage = 3
-
-func _on_attack_body_entered(body):
-	if body.has_method(\"take_damage\"):
-		body.take_damage(weapon_damage)
 "
 
 [node name="AbstractEnemy" type="CharacterBody2D"]
@@ -90,12 +46,8 @@ offset_bottom = -20.0
 text = "HP:"
 script = SubResource("GDScript_pomaq")
 
-[node name="Attack" type="Area2D" parent="."]
+[node name="BaseAttackTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
 
-[node name="BaseAttack" type="CollisionShape2D" parent="Attack"]
-position = Vector2(28, -1)
-shape = SubResource("RectangleShape2D_4y1b1")
-disabled = true
-script = SubResource("GDScript_wcv2y")
-
-[connection signal="body_entered" from="Attack" to="Attack/BaseAttack" method="_on_attack_body_entered"]
+[connection signal="timeout" from="BaseAttackTimer" to="." method="_on_base_attack_timer_timeout"]

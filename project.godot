@@ -29,6 +29,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray()
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [importer_defaults]
 
 animation_library={
