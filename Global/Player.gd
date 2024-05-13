@@ -1,6 +1,7 @@
 extends Node
 
-var hp = 100;
+const max_hp: float = 100
+var hp: float = max_hp;
 
 func is_dead():
 	return hp <= 0
@@ -12,4 +13,7 @@ func get_hp():
 	return hp
 
 func reset():
-	hp = 100
+	hp = max_hp
+	
+func get_max_hp():
+	return max_hp
