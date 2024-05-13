@@ -419,6 +419,11 @@ process_callback = 0
 wait_time = 0.6
 one_shot = true
 
+[node name="StunTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Sprite" to="." method="_on_sprite_sprite_frames_changed"]
 [connection signal="body_entered" from="Attack" to="Attack/BaseAttack" method="_on_attack_body_entered"]
@@ -426,3 +431,4 @@ one_shot = true
 [connection signal="body_entered" from="Stun" to="Stun/Stun" method="_on_stun_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="BasicAttackTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

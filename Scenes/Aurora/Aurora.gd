@@ -98,8 +98,7 @@ func take_damage(damage):
 	
 func stun_ability():
 	cooldown_stun_attack = true 
-	await get_tree().create_timer(5.0).timeout
-	cooldown_stun_attack = false
+	$StunTimer.start()
 	
 func base_attack():
 	cooldown_base_attack = true
@@ -111,3 +110,6 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_timer_timeout():
 	cooldown_base_attack = false;
+
+func _on_stun_timer_timeout():
+	cooldown_stun_attack = false;
