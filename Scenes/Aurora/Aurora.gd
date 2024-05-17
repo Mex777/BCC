@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
-@export var attacking: bool = false
+var attacking: bool = false
 var cooldown_stun_attack: bool = false
 var cooldown_base_attack: bool = false
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

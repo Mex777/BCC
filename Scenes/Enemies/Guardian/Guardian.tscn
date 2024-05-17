@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyn41tc01h1qv"]
+
+[ext_resource type="PackedScene" uid="uid://d1788jsnfeg3m" path="res://Scenes/Reusables/ChaseEnemy/ChaseEnemy.tscn" id="1_lxxvd"]
+[ext_resource type="Texture2D" uid="uid://c8lw0ut7o4oou" path="res://Assets/Enemies/Guardian/Attack (right)/0.png" id="2_q2327"]
+[ext_resource type="Texture2D" uid="uid://dmv362bu3ua43" path="res://Assets/Enemies/Guardian/Attack (right)/1.png" id="3_rons6"]
+[ext_resource type="Texture2D" uid="uid://dpjaul586p0tg" path="res://Assets/Enemies/Guardian/Attack (right)/2.png" id="4_l1mpq"]
+[ext_resource type="Texture2D" uid="uid://mlopn245v07l" path="res://Assets/Enemies/Guardian/Attack (right)/3.png" id="5_gpn1p"]
+[ext_resource type="Texture2D" uid="uid://bc0fiqd3y23sv" path="res://Assets/Enemies/Guardian/Attack (right)/4.png" id="6_vvy8u"]
+[ext_resource type="Texture2D" uid="uid://dnqosgfm5f58y" path="res://Assets/Enemies/Guardian/Idle/0.png" id="7_21dba"]
+[ext_resource type="Texture2D" uid="uid://boe1c4ij8oro2" path="res://Assets/Enemies/Guardian/Running (right)/0.png" id="8_be8o3"]
+[ext_resource type="Texture2D" uid="uid://dei5y3rjuqcfp" path="res://Assets/Enemies/Guardian/Running (right)/1.png" id="9_4udwu"]
+[ext_resource type="Texture2D" uid="uid://c4nvstg3jyphe" path="res://Assets/Enemies/Guardian/Running (right)/2.png" id="10_sjwfx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hhec7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q2327")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rons6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l1mpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gpn1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vvy8u")
+}],
+"loop": false,
+"name": &"Attacking",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_21dba")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_be8o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4udwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sjwfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4udwu")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[node name="Guardian" instance=ExtResource("1_lxxvd")]
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_hhec7")
+animation = &"Attacking"
+frame = 4
+frame_progress = 1.0

@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://4ldyapbufguq"]
+
+[ext_resource type="Script" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd" id="1_g4s8k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqopd"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Attacking",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hteyl"]
+
+[sub_resource type="GDScript" id="GDScript_pomaq"]
+script/source = "extends Label
+
+func _process(_delta):
+	var dummy = get_node(\"..\")
+	text = \"HP: \" + str(dummy.health)
+	if dummy.stunned:
+		text += \"STUNNED\"
+	
+"
+
+[node name="AbstractEnemy" type="CharacterBody2D" groups=["Enemies"]]
+script = ExtResource("1_g4s8k")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jqopd")
+animation = &"Attacking"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hteyl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -43.0
+offset_right = 15.0
+offset_bottom = -20.0
+text = "HP:"
+script = SubResource("GDScript_pomaq")
+
+[node name="BaseAttackTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[connection signal="timeout" from="BaseAttackTimer" to="." method="_on_base_attack_timer_timeout"]

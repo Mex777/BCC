@@ -388,7 +388,7 @@ animation = &"Stun"
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(1.8, 1.6)
 limit_left = 0
 limit_top = 0
 

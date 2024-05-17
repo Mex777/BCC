@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8tp6nknrfvf"]
+
+[ext_resource type="PackedScene" uid="uid://4ldyapbufguq" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.tscn" id="1_ea6lc"]
+[ext_resource type="Script" path="res://Scenes/Reusables/RangedEnemy/RangedEnemy.gd" id="2_mv5kf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mk6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf1rx"]
+size = Vector2(491.5, 45)
+
+[node name="RangedEnemy" instance=ExtResource("1_ea6lc")]
+script = ExtResource("2_mv5kf")
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_8mk6b")
+animation = &"default"
+
+[node name="Area2D" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_kf1rx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

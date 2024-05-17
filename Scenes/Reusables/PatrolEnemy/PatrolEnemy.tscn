@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg5a8h54l20n6"]
+
+[ext_resource type="PackedScene" uid="uid://4ldyapbufguq" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.tscn" id="1_coc5k"]
+[ext_resource type="Script" path="res://Scenes/Reusables/PatrolEnemy/PatrolEnemy.gd" id="2_lg5by"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xka7n"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0dhd"]
+radius = 14.0
+height = 44.0
+
+[node name="PatrolEnemy" instance=ExtResource("1_coc5k")]
+script = ExtResource("2_lg5by")
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_xka7n")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="3"]
+position = Vector2(10, 0)
+target_position = Vector2(0, 21)
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(5, 1)
+shape = SubResource("CapsuleShape2D_o0dhd")

@@ -19,7 +19,6 @@ func stun(duration: float):
 	await get_tree().create_timer(duration).timeout
 	stunned = false
 	
-	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("base_attack"):
 		var collision = get_node("Attack/BaseAttack")

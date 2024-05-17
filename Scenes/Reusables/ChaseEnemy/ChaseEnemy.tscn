@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1788jsnfeg3m"]
+
+[ext_resource type="PackedScene" uid="uid://4ldyapbufguq" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.tscn" id="1_vlfh3"]
+[ext_resource type="Script" path="res://Scenes/Reusables/ChaseEnemy/ChaseEnemy.gd" id="2_sdv2q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4eyar"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"Attacking",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqxdv"]
+radius = 113.018
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u1bf"]
+size = Vector2(16, 29)
+
+[node name="ChaseEnemy" instance=ExtResource("1_vlfh3")]
+script = ExtResource("2_sdv2q")
+
+[node name="AnimatedSprite" parent="." index="0"]
+position = Vector2(5.96046e-08, 5.96046e-08)
+scale = Vector2(0.96875, 0.96875)
+sprite_frames = SubResource("SpriteFrames_4eyar")
+animation = &"Running"
+metadata/_edit_lock_ = true
+
+[node name="ChaseRange" type="Area2D" parent="." index="4"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseRange" index="0"]
+shape = SubResource("CircleShape2D_uqxdv")
+
+[node name="AttackRange" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" index="0"]
+position = Vector2(17, -0.5)
+shape = SubResource("RectangleShape2D_2u1bf")
+
+[connection signal="body_entered" from="ChaseRange" to="." method="_on_chase_range_body_entered"]
+[connection signal="body_exited" from="ChaseRange" to="." method="_on_chase_range_body_exited"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]

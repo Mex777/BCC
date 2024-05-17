@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func _process(delta):
+func _process(_delta):
 	if Player.is_dead() == true:
 		self.show()
 	else:
