@@ -6,7 +6,8 @@ func _ready():
 func _on_quit_btn_pressed():
 	get_tree().quit()
 
-
 func _on_play_btn_pressed():
 	Player.reset()
-	get_tree().change_scene_to_file("res://Scenes/World/World.tscn")
+	TransitionScene.transition("Chapter one")
+	await TransitionScene.on_transition_finished
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")

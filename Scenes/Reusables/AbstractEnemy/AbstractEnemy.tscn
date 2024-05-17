@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://4ldyapbufguq"]
+[gd_scene load_steps=6 format=3 uid="uid://4ldyapbufguq"]
 
 [ext_resource type="Script" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd" id="1_g4s8k"]
 
@@ -22,6 +22,10 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hteyl"]
 
+[sub_resource type="SystemFont" id="SystemFont_5d3l4"]
+font_names = PackedStringArray("Ubuntu")
+font_weight = 450
+
 [sub_resource type="GDScript" id="GDScript_pomaq"]
 script/source = "extends Label
 
@@ -44,10 +48,13 @@ animation = &"Attacking"
 shape = SubResource("CapsuleShape2D_hteyl")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -25.0
-offset_top = -43.0
-offset_right = 15.0
-offset_bottom = -20.0
+offset_left = -17.0
+offset_top = -31.0
+offset_right = 4983.0
+offset_bottom = 2769.0
+scale = Vector2(0.005, 0.005)
+theme_override_fonts/font = SubResource("SystemFont_5d3l4")
+theme_override_font_sizes/font_size = 2048
 text = "HP:"
 script = SubResource("GDScript_pomaq")
 
