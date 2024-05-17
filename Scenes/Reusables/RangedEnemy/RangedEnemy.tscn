@@ -1,19 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://k8tp6nknrfvf"]
+[gd_scene load_steps=5 format=3 uid="uid://k8tp6nknrfvf"]
 
 [ext_resource type="PackedScene" uid="uid://4ldyapbufguq" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.tscn" id="1_ea6lc"]
 [ext_resource type="Script" path="res://Scenes/Reusables/RangedEnemy/RangedEnemy.gd" id="2_mv5kf"]
-[ext_resource type="Texture2D" uid="uid://d0a5knkgpb2qq" path="res://Assets/Enemies/Devil/Idle/0.png" id="3_452g5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mk6b"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_452g5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf1rx"]
 size = Vector2(491.5, 45)

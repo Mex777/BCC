@@ -9,12 +9,12 @@
 [ext_resource type="Script" path="res://Scenes/World/UI/BasicAttack.gd" id="9_w6vsp"]
 [ext_resource type="Script" path="res://Scenes/World/UI/Stun.gd" id="9_ym0vw"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="13_jhv1a"]
-[ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Mobs/Skeleton/Skeleton.tscn" id="14_hym4o"]
+[ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Enemies/Skeleton/Skeleton.tscn" id="14_hym4o"]
 [ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="15_6l25r"]
-[ext_resource type="PackedScene" uid="uid://k8tp6nknrfvf" path="res://Scenes/Reusables/RangedEnemy/RangedEnemy.tscn" id="15_fyeqm"]
 [ext_resource type="Texture2D" uid="uid://bfaosth1ip357" path="res://Assets/UI/SwordIcon/0.png" id="16_01hb8"]
-[ext_resource type="PackedScene" uid="uid://d1788jsnfeg3m" path="res://Scenes/Reusables/ChaseEnemy/ChaseEnemy.tscn" id="16_d54m6"]
+[ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="16_ckh6a"]
 [ext_resource type="Texture2D" uid="uid://bvsmb0y575hpm" path="res://Assets/UI/SwordIcon/5.png" id="16_inuir"]
+[ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="16_qd3k0"]
 [ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="16_wte24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
@@ -315,12 +315,12 @@ texture_under = SubResource("AtlasTexture_g2x8h")
 texture_progress = SubResource("AtlasTexture_s1rs0")
 script = ExtResource("9_ym0vw")
 
-[node name="RangedEnemy" parent="." instance=ExtResource("15_fyeqm")]
-position = Vector2(1880, 432)
-
 [node name="Skeleton" parent="." instance=ExtResource("14_hym4o")]
 position = Vector2(1558, 424)
 attack_cooldown = 0.4
 
-[node name="ChaseEnemy" parent="." instance=ExtResource("16_d54m6")]
-position = Vector2(1019, 447)
+[node name="Guardian" parent="." instance=ExtResource("16_ckh6a")]
+position = Vector2(1268, 385)
+
+[node name="Devil" parent="." instance=ExtResource("16_qd3k0")]
+position = Vector2(1888, 432)

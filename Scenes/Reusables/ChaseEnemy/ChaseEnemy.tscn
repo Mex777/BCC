@@ -1,60 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1788jsnfeg3m"]
+[gd_scene load_steps=6 format=3 uid="uid://d1788jsnfeg3m"]
 
 [ext_resource type="PackedScene" uid="uid://4ldyapbufguq" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.tscn" id="1_vlfh3"]
 [ext_resource type="Script" path="res://Scenes/Reusables/ChaseEnemy/ChaseEnemy.gd" id="2_sdv2q"]
-[ext_resource type="Texture2D" uid="uid://c8lw0ut7o4oou" path="res://Assets/Enemies/Guardian/Attack (right)/0.png" id="3_4by6l"]
-[ext_resource type="Texture2D" uid="uid://dnqosgfm5f58y" path="res://Assets/Enemies/Guardian/Idle/0.png" id="3_hkttt"]
-[ext_resource type="Texture2D" uid="uid://dmv362bu3ua43" path="res://Assets/Enemies/Guardian/Attack (right)/1.png" id="4_7ci0m"]
-[ext_resource type="Texture2D" uid="uid://boe1c4ij8oro2" path="res://Assets/Enemies/Guardian/Running (right)/0.png" id="4_jm6bq"]
-[ext_resource type="Texture2D" uid="uid://dei5y3rjuqcfp" path="res://Assets/Enemies/Guardian/Running (right)/1.png" id="5_832sn"]
-[ext_resource type="Texture2D" uid="uid://dpjaul586p0tg" path="res://Assets/Enemies/Guardian/Attack (right)/2.png" id="5_857gn"]
-[ext_resource type="Texture2D" uid="uid://c4nvstg3jyphe" path="res://Assets/Enemies/Guardian/Running (right)/2.png" id="6_11bk2"]
-[ext_resource type="Texture2D" uid="uid://mlopn245v07l" path="res://Assets/Enemies/Guardian/Attack (right)/3.png" id="6_vfcmy"]
-[ext_resource type="Texture2D" uid="uid://bc0fiqd3y23sv" path="res://Assets/Enemies/Guardian/Attack (right)/4.png" id="7_dj07e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4eyar"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_4by6l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7ci0m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_857gn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_vfcmy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dj07e")
-}],
+"frames": [],
 "loop": false,
 "name": &"Attacking",
 "speed": 10.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_hkttt")
-}],
+"frames": [],
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_jm6bq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_832sn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_11bk2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_832sn")
-}],
+"frames": [],
 "loop": true,
 "name": &"Running",
 "speed": 5.0
@@ -64,7 +25,7 @@ animations = [{
 radius = 113.018
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u1bf"]
-size = Vector2(16, 28)
+size = Vector2(16, 29)
 
 [node name="ChaseEnemy" instance=ExtResource("1_vlfh3")]
 script = ExtResource("2_sdv2q")
@@ -73,8 +34,7 @@ script = ExtResource("2_sdv2q")
 position = Vector2(5.96046e-08, 5.96046e-08)
 scale = Vector2(0.96875, 0.96875)
 sprite_frames = SubResource("SpriteFrames_4eyar")
-frame = 4
-frame_progress = 1.0
+animation = &"Running"
 metadata/_edit_lock_ = true
 
 [node name="ChaseRange" type="Area2D" parent="." index="4"]
@@ -86,7 +46,7 @@ shape = SubResource("CircleShape2D_uqxdv")
 [node name="AttackRange" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" index="0"]
-position = Vector2(17, -1)
+position = Vector2(17, -0.5)
 shape = SubResource("RectangleShape2D_2u1bf")
 
 [connection signal="body_entered" from="ChaseRange" to="." method="_on_chase_range_body_entered"]
