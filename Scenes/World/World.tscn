@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://f4le25l277hx"]
+[gd_scene load_steps=25 format=3 uid="uid://f4le25l277hx"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="2_x4pw2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="15_6l25r"]
 [ext_resource type="PackedScene" uid="uid://k8tp6nknrfvf" path="res://Scenes/Reusables/RangedEnemy/RangedEnemy.tscn" id="15_fyeqm"]
 [ext_resource type="Texture2D" uid="uid://bfaosth1ip357" path="res://Assets/UI/SwordIcon/0.png" id="16_01hb8"]
+[ext_resource type="PackedScene" uid="uid://d1788jsnfeg3m" path="res://Scenes/Reusables/ChaseEnemy/ChaseEnemy.tscn" id="16_d54m6"]
 [ext_resource type="Texture2D" uid="uid://bvsmb0y575hpm" path="res://Assets/UI/SwordIcon/5.png" id="16_inuir"]
 [ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="16_wte24"]
 
@@ -319,5 +320,7 @@ position = Vector2(1880, 432)
 
 [node name="Skeleton" parent="." instance=ExtResource("14_hym4o")]
 position = Vector2(1558, 424)
-speed = 50.0
 attack_cooldown = 0.4
+
+[node name="ChaseEnemy" parent="." instance=ExtResource("16_d54m6")]
+position = Vector2(1019, 447)

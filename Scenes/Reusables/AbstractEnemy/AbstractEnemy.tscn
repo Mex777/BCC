@@ -6,6 +6,11 @@
 animations = [{
 "frames": [],
 "loop": true,
+"name": &"Attacking",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
 "name": &"Idle",
 "speed": 5.0
 }, {
@@ -33,7 +38,7 @@ script = ExtResource("1_g4s8k")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jqopd")
-animation = &"Running"
+animation = &"Attacking"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hteyl")
