@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bar1kbrm7idns"]
+
+[ext_resource type="Script" path="res://Scenes/Reusables/Projectile/Projectile.gd" id="1_hcx5d"]
+[ext_resource type="Texture2D" uid="uid://dw3p0ldr4v24o" path="res://Assets/Enemies/Skeleton/Idle/0.png" id="2_pnykv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es8pe"]
+radius = 5.0
+height = 10.0
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_hcx5d")
+damage = 25.0
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, -1)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("2_pnykv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_es8pe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

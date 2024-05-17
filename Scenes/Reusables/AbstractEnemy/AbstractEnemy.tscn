@@ -28,7 +28,7 @@ func _process(_delta):
 	
 "
 
-[node name="AbstractEnemy" type="CharacterBody2D"]
+[node name="AbstractEnemy" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_g4s8k")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
