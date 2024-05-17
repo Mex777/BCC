@@ -1,11 +1,12 @@
 extends CharacterBody2D 
 
+@export var god_mode = false
+
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
 var attacking: bool = false
 var cooldown_stun_attack: bool = false
 var cooldown_base_attack: bool = false
-
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -90,7 +91,8 @@ func update_animation():
 	
 	
 func take_damage(damage):
-	Player.take_damage(damage)
+	if god_mode == false:
+		Player.take_damage(damage)
 	
 	$Sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout

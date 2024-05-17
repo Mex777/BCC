@@ -25,6 +25,7 @@ TransitionScene="*res://Scenes/Reusables/Transition/TransitionScene.tscn"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 

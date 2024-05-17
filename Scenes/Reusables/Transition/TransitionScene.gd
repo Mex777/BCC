@@ -4,7 +4,7 @@ signal on_transition_finished
 
 @onready var color_rect = $ColorRect
 @onready var animation_player = $AnimationPlayer
-@onready var text = $RichTextLabel
+@onready var text = $Label
 
 func _ready():
 	color_rect.visible = false

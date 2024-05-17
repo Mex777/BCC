@@ -572,8 +572,11 @@ sources/0 = SubResource("TileSetAtlasSource_hydqh")
 [sub_resource type="GDScript" id="GDScript_hih0e"]
 script/source = "extends Area2D
 
+@onready var hp_bar = $\"../HPBar\"
+
 func _on_body_entered(body):
 	if body.name == \"Aurora\":
+		$\"../Aurora\".god_mode = true
 		TransitionScene.transition(\"Chapter three\")
 		await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file(\"res://Scenes/Levels/Level3.tscn\")

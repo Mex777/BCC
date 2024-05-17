@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="2_acwsi"]
+[ext_resource type="Texture2D" uid="uid://bi1xvl63wfox1" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/0.png" id="3_3wlkh"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="3_4redj"]
-[ext_resource type="Texture2D" uid="uid://7gq36agavyfl" path="res://Assets/Aurora/PrincessOutfit/Attack/0.png" id="3_5vw3v"]
-[ext_resource type="Texture2D" uid="uid://cmjhggx1mif7l" path="res://Assets/Aurora/PrincessOutfit/Attack/1.png" id="4_ff4cy"]
+[ext_resource type="Texture2D" uid="uid://bb52b0v3ljwbn" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/1.png" id="4_he7op"]
 [ext_resource type="Script" path="res://Scenes/GameOver/GameOver.gd" id="4_kd4oh"]
 [ext_resource type="PackedScene" uid="uid://c4cb70e8fa1r1" path="res://Scenes/Reusables/Dummy/dummy.tscn" id="4_n48yf"]
-[ext_resource type="Texture2D" uid="uid://yv52waf38dp8" path="res://Assets/Aurora/PrincessOutfit/Attack/2.png" id="5_f428s"]
-[ext_resource type="Texture2D" uid="uid://cicydcrw4el17" path="res://Assets/Aurora/PrincessOutfit/Attack/3.png" id="6_orixk"]
+[ext_resource type="Texture2D" uid="uid://b3l73us3bhm16" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/2.png" id="5_eyn45"]
+[ext_resource type="Texture2D" uid="uid://boiopb6ruxsay" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/3.png" id="6_6jxi0"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/HPBar.gd" id="6_xtjqw"]
-[ext_resource type="Texture2D" uid="uid://c2bwcbof04xjn" path="res://Assets/Aurora/PrincessOutfit/Attack/4.png" id="7_3p3r3"]
+[ext_resource type="Texture2D" uid="uid://bygbkpgxff4oa" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/4.png" id="7_cksre"]
 [ext_resource type="Texture2D" uid="uid://cxbef6exnkat0" path="res://Assets/Aurora/PrisonerOutfit/Idle/0.png" id="8_0823t"]
 [ext_resource type="Texture2D" uid="uid://cn5hfxtmgvc45" path="res://Assets/Aurora/PrisonerOutfit/Idle/1.png" id="9_fic1d"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/BasicAttack.gd" id="9_w6vsp"]
@@ -32,8 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="16_wte24"]
 [ext_resource type="Texture2D" uid="uid://7tc2dtl8jkev" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/1.png" id="17_kytp4"]
 [ext_resource type="Texture2D" uid="uid://dirwb1jdoxlxi" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/2.png" id="18_mtrup"]
-[ext_resource type="Texture2D" uid="uid://b2l3shjchgq1t" path="res://Assets/Aurora/PrincessOutfit/Stun/0.png" id="19_fs1d2"]
-[ext_resource type="Texture2D" uid="uid://btay6j8vglutv" path="res://Assets/Aurora/PrincessOutfit/Stun/1.png" id="20_5ncn4"]
+[ext_resource type="Texture2D" uid="uid://blafgkncw7ti8" path="res://Assets/Aurora/PrisonerOutfit/Stun/0.png" id="19_glbix"]
+[ext_resource type="Texture2D" uid="uid://csc826fr76ryx" path="res://Assets/Aurora/PrisonerOutfit/Stun/1.png" id="20_kq328"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
 texture = ExtResource("1_bkxon")
@@ -128,19 +128,19 @@ height = 32.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_5vw3v")
+"texture": ExtResource("3_3wlkh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ff4cy")
+"texture": ExtResource("4_he7op")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_f428s")
+"texture": ExtResource("5_eyn45")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_orixk")
+"texture": ExtResource("6_6jxi0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_3p3r3")
+"texture": ExtResource("7_cksre")
 }],
 "loop": false,
 "name": &"Attack",
@@ -199,10 +199,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_fs1d2")
+"texture": ExtResource("19_glbix")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_5ncn4")
+"texture": ExtResource("20_kq328")
 }],
 "loop": true,
 "name": &"Stun",
@@ -623,10 +623,10 @@ region = Rect2(0, 0, 40, 40)
 [sub_resource type="GDScript" id="GDScript_emkyj"]
 script/source = "extends Area2D
 
-
 func _on_body_entered(body):
 	if body.name == \"Aurora\":
-		TransitionScene.transition(\"Chapter two\")
+		$\"../Aurora\".god_mode = true
+		TransitionScene.transition(\"Chapter one\")
 		await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file(\"res://Scenes/Levels/Level2.tscn\")
 "

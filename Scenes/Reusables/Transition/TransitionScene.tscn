@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl56ea8e36u1e"]
+[gd_scene load_steps=7 format=3 uid="uid://dl56ea8e36u1e"]
 
 [ext_resource type="Script" path="res://Scenes/Reusables/Transition/TransitionScene.gd" id="1_1y6hd"]
 
@@ -20,7 +20,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -75,7 +75,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -92,7 +92,12 @@ _data = {
 "RESET": SubResource("Animation_ypkde")
 }
 
+[sub_resource type="SystemFont" id="SystemFont_5nsct"]
+font_names = PackedStringArray("Ubuntu")
+font_weight = 475
+
 [node name="TransitionScene" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_1y6hd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -109,24 +114,20 @@ libraries = {
 "": SubResource("AnimationLibrary_7ird2")
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.526
-anchor_bottom = 0.5
-offset_left = -429.0
-offset_top = -105.0
-offset_right = 447.048
-offset_bottom = 105.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 21828.0
+offset_bottom = 12272.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/normal_font_size = 150
-bbcode_enabled = true
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = SubResource("SystemFont_5nsct")
+theme_override_font_sizes/font_size = 2000
 text = "Chapter one"
-fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

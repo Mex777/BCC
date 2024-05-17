@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://5sjsfm77g1bj" path="res://Assets/Aurora/FighterOutfit/Running (right)/0.png" id="15_hfyql"]
 [ext_resource type="Texture2D" uid="uid://dp0msbcq4jq1f" path="res://Assets/Aurora/FighterOutfit/Running (right)/1.png" id="16_mrisb"]
 [ext_resource type="Texture2D" uid="uid://c0850uyvslvbv" path="res://Assets/Aurora/FighterOutfit/Running (right)/2.png" id="17_ncbv1"]
-[ext_resource type="Texture2D" uid="uid://b2l3shjchgq1t" path="res://Assets/Aurora/PrincessOutfit/Stun/0.png" id="18_vkhuw"]
-[ext_resource type="Texture2D" uid="uid://btay6j8vglutv" path="res://Assets/Aurora/PrincessOutfit/Stun/1.png" id="19_fc0pn"]
+[ext_resource type="Texture2D" uid="uid://cuntdmxfmt8j1" path="res://Assets/Aurora/FighterOutfit/Stun/0.png" id="18_b2808"]
+[ext_resource type="Texture2D" uid="uid://bj7b10v3cowqn" path="res://Assets/Aurora/FighterOutfit/Stun/1.png" id="19_262g5"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="20_b7axl"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="21_84yvk"]
 [ext_resource type="Script" path="res://Scenes/GameOver/GameOver.gd" id="22_lpu8c"]
@@ -111,10 +111,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_vkhuw")
+"texture": ExtResource("18_b2808")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_fc0pn")
+"texture": ExtResource("19_262g5")
 }],
 "loop": true,
 "name": &"Stun",
@@ -571,6 +571,9 @@ script/source = "extends Area2D
 
 func _on_body_entered(body):
 	if body.name == \"Aurora\":
+		$\"../Aurora\".god_mode = true
+		TransitionScene.transition(\"Chapter three\")
+		await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file(\"res://Scenes/Levels/Level3.tscn\")
 "
 
@@ -590,7 +593,7 @@ shape = SubResource("CapsuleShape2D_qgge7")
 position = Vector2(0, -6)
 scale = Vector2(1.625, 1.625)
 sprite_frames = SubResource("SpriteFrames_jxwdf")
-animation = &"Idle"
+animation = &"Stun"
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="Aurora"]
