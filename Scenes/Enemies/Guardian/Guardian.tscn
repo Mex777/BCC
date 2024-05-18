@@ -63,6 +63,4 @@ animations = [{
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_hhec7")
-animation = &"Attacking"
-frame = 4
-frame_progress = 1.0
+animation = &"Idle"

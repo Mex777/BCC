@@ -37,6 +37,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = abs(speed) * -1
 		
+	if speed == 0:
+		$AnimatedSprite.play("Idle")
+		
 	if not stunned and not cooldown_base_attack:
 		$AnimatedSprite.play("Running")
 	elif not cooldown_base_attack:
