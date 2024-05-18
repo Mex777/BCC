@@ -21,11 +21,6 @@ func _physics_process(delta):
 	# Deletes the player when it dies
 	if Player.is_dead():
 		queue_free()
-
-	# Taking damage when you jump of the map.
-	var viewport_rect = get_viewport_rect()
-	if position.y > viewport_rect.position.y + viewport_rect.size.y:
-		take_damage(10)  
 		
 	# Handle base attack.
 	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
