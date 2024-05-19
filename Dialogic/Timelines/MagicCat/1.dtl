@@ -1,0 +1,10 @@
+if {Game.get_coins()}   <   100:
+	join MagicCat 3
+	MagicCat: You need 100 gems in order to progress
+	[signal arg="cutscene_ended"]
+else:
+	join MagicCat 3
+	MagicCat: Great job, I'll show you why you needed the coins!
+	[signal arg="1"]
+	[signal arg="cutscene_ended"]
+	do Game.advance_to_level("Level2")

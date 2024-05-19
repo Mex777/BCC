@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://3j4hlvkgyuvg"]
+[gd_scene load_steps=12 format=3 uid="uid://3j4hlvkgyuvg"]
 
 [ext_resource type="PackedScene" uid="uid://b3nnpxnq0u5e5" path="res://Scenes/Reusables/Mob/Mob.tscn" id="1_51jdl"]
 [ext_resource type="Texture2D" uid="uid://4jsjr53rewhd" path="res://Assets/Mobs/Cat/Black/Idle/0.png" id="2_awr8m"]
+[ext_resource type="Script" path="res://Scenes/Mobs/Cat/MagicCat.gd" id="2_dd3tp"]
 [ext_resource type="Texture2D" uid="uid://biuwj463jdubl" path="res://Assets/Mobs/Cat/Black/Idle/1.png" id="3_1wkeq"]
 [ext_resource type="Texture2D" uid="uid://br1ukh4x5x1c7" path="res://Assets/Mobs/Cat/Black/Idle/2.png" id="4_wad7j"]
 
@@ -22,9 +23,90 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4s27"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0a1ot"]
+radius = 118.038
+
+[sub_resource type="Animation" id="Animation_rf78h"]
+resource_name = "Despawn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"die"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_woui8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10rwj"]
+_data = {
+"Despawn": SubResource("Animation_rf78h"),
+"RESET": SubResource("Animation_woui8")
+}
+
 [node name="Cat" instance=ExtResource("1_51jdl")]
+script = ExtResource("2_dd3tp")
+dialogue_name = "Start"
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_mbh3s")
 animation = &"Idle"
 frame_progress = 0.00913387
+
+[node name="CollisionShape" parent="." index="1"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_b4s27")
+
+[node name="Label" parent="." index="2"]
+script = null
+
+[node name="ChatArea" type="Area2D" parent="." index="4"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatArea" index="0"]
+shape = SubResource("CircleShape2D_0a1ot")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_10rwj")
+}
+
+[connection signal="body_entered" from="ChatArea" to="." method="_on_chat_area_body_entered"]

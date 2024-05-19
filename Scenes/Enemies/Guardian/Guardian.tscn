@@ -65,3 +65,12 @@ JUMP_VELOCITY = -200
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_hhec7")
 animation = &"Idle"
+
+[node name="CollisionShape" parent="." index="1"]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" parent="ChaseRange" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="AttackRange" index="0"]
+metadata/_edit_lock_ = true

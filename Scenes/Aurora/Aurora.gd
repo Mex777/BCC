@@ -7,21 +7,30 @@ const JUMP_VELOCITY: float = -400.0
 var attacking: bool = false
 var cooldown_stun_attack: bool = false
 var cooldown_base_attack: bool = false
+var in_cutscene = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation = get_node("AnimationPlayer")
 @onready var game_over = preload("res://Scenes/GameOver/GameOver.tscn").instantiate()
 
+func _ready():
+	Dialogic.signal_event.connect(dialogic_signal)
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
+	
 	# Deletes the player when it dies
 	if Player.is_dead():
 		queue_free()
-		
+	
+	if in_cutscene:
+		update_animation()
+		move_and_slide()
+		return
+	
 	# Handle base attack.
 	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
 		cooldown_base_attack = true
@@ -111,3 +120,8 @@ func _on_timer_timeout():
 
 func _on_stun_timer_timeout():
 	cooldown_stun_attack = false;
+
+func dialogic_signal(name):
+	if name == "cutscene_ended":
+		in_cutscene = false
+		god_mode = false

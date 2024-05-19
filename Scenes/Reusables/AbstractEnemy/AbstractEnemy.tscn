@@ -21,6 +21,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hteyl"]
+radius = 8.0
+height = 20.0
 
 [sub_resource type="SystemFont" id="SystemFont_5d3l4"]
 font_names = PackedStringArray("Ubuntu")
