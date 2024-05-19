@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var health: float = 10
 @export var max_speed: float = 40.0
+@export var coins = 10
 var speed
 @export var damage: float = 5
 @export var attack_cooldown: float = 1
@@ -17,6 +18,7 @@ func _ready():
 func take_damage(damage: int):
 	health = max(health - damage, 0)
 	if health == 0:
+		Game.add_coins(coins)
 		queue_free()
 		
 	$AnimatedSprite.modulate = Color.RED

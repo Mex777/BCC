@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b5cxs5koix05o"]
+[gd_scene load_steps=61 format=3 uid="uid://b5cxs5koix05o"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="2_acwsi"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://blafgkncw7ti8" path="res://Assets/Aurora/PrisonerOutfit/Stun/0.png" id="19_glbix"]
 [ext_resource type="Texture2D" uid="uid://csc826fr76ryx" path="res://Assets/Aurora/PrisonerOutfit/Stun/1.png" id="20_kq328"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="21_kum5x"]
+[ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="27_we4ur"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8bm3"]
 texture = ExtResource("1_bkxon")
@@ -657,7 +658,6 @@ layer_0/tile_data = PackedInt32Array(-65538, 262144, 1, -2, 262144, 1, -65537, 2
 [node name="Aurora" type="CharacterBody2D" parent="."]
 position = Vector2(-295, 1150)
 script = ExtResource("2_acwsi")
-god_mode = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aurora"]
 shape = SubResource("CapsuleShape2D_wrruc")
@@ -723,9 +723,9 @@ layer_0/tile_data = PackedInt32Array(1638475, 262144, 1, 1638476, 262144, 1, 163
 visible = false
 script = ExtResource("4_kd4oh")
 
-[node name="HPBar" type="CanvasLayer" parent="."]
+[node name="TopUI" type="CanvasLayer" parent="."]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HPBar"]
+[node name="HPBar" type="TextureProgressBar" parent="TopUI"]
 offset_right = 204.0
 offset_bottom = 204.0
 max_value = 1.0
@@ -735,6 +735,16 @@ nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_fhp8m")
 texture_progress = SubResource("AtlasTexture_1lnbq")
 script = ExtResource("6_xtjqw")
+
+[node name="Coins" type="Label" parent="TopUI"]
+offset_left = 35.0
+offset_top = 79.0
+offset_right = 106.0
+offset_bottom = 102.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 400
+text = "Coins: 0"
+script = ExtResource("27_we4ur")
 
 [node name="AbilitiesUI" type="CanvasLayer" parent="."]
 
