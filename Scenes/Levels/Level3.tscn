@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://chcfopw08ovu"]
+[gd_scene load_steps=65 format=3 uid="uid://chcfopw08ovu"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_fjy1f"]
 [ext_resource type="Texture2D" uid="uid://dta3h5qg572dq" path="res://Assets/Aurora/FighterOutfit/Attack (right)/0.png" id="2_ta4xw"]
@@ -36,6 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="32_ja55g"]
 [ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="33_16oai"]
 [ext_resource type="Texture2D" uid="uid://bjt55ekny10lc" path="res://Assets/World/BaseTiles/SwampSetGrid.png" id="34_jgi0o"]
+[ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="37_lpoop"]
+[ext_resource type="Texture2D" uid="uid://s5vc0mitvlsm" path="res://Assets/World/Collectables/Gem/0.png" id="38_dbv3s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgge7"]
 radius = 14.0
@@ -519,14 +521,6 @@ separation = Vector2i(4, 4)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_y12e0")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xbutl"]
-atlas = ExtResource("23_4jhu7")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4063"]
-atlas = ExtResource("24_qjyvo")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2x8h"]
 atlas = ExtResource("27_h5seq")
 region = Rect2(0, 0, 40, 40)
@@ -581,6 +575,14 @@ func _on_body_entered(body):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3u6p"]
 size = Vector2(28.375, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqjc1"]
+atlas = ExtResource("23_4jhu7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtmx7"]
+atlas = ExtResource("24_qjyvo")
+region = Rect2(0, 0, 64, 64)
 
 [node name="Level3" type="Node2D"]
 
@@ -644,19 +646,6 @@ layer_0/tile_data = PackedInt32Array(1638475, 262144, 1, 1638476, 262144, 1, 163
 visible = false
 script = ExtResource("22_lpu8c")
 
-[node name="HPBar" type="CanvasLayer" parent="."]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HPBar"]
-offset_right = 204.0
-offset_bottom = 204.0
-max_value = 1.0
-step = 0.001
-value = 1.0
-nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_xbutl")
-texture_progress = SubResource("AtlasTexture_s4063")
-script = ExtResource("25_fu6n0")
-
 [node name="Dummy" parent="." instance=ExtResource("26_4e0n7")]
 position = Vector2(686, 443)
 
@@ -712,6 +701,34 @@ script = SubResource("GDScript_hih0e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelPortal"]
 position = Vector2(2398, 437)
 shape = SubResource("RectangleShape2D_r3u6p")
+
+[node name="TopUI" type="CanvasLayer" parent="."]
+
+[node name="HPBar" type="TextureProgressBar" parent="TopUI"]
+offset_right = 204.0
+offset_bottom = 204.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_lqjc1")
+texture_progress = SubResource("AtlasTexture_qtmx7")
+script = ExtResource("25_fu6n0")
+
+[node name="Coins" type="Label" parent="TopUI"]
+offset_left = 73.0
+offset_top = 78.0
+offset_right = 930.0
+offset_bottom = 776.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 500
+text = "0"
+script = ExtResource("37_lpoop")
+
+[node name="Gem" type="Sprite2D" parent="TopUI"]
+position = Vector2(43, 95)
+scale = Vector2(3.48077, 3.48077)
+texture = ExtResource("38_dbv3s")
 
 [connection signal="animation_finished" from="Aurora/Sprite" to="Aurora" method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Aurora/Sprite" to="Aurora" method="_on_sprite_sprite_frames_changed"]

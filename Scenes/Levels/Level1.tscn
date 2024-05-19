@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://b5cxs5koix05o"]
+[gd_scene load_steps=64 format=3 uid="uid://b5cxs5koix05o"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="2_acwsi"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://csc826fr76ryx" path="res://Assets/Aurora/PrisonerOutfit/Stun/1.png" id="20_kq328"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="21_kum5x"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="27_we4ur"]
+[ext_resource type="Texture2D" uid="uid://s5vc0mitvlsm" path="res://Assets/World/Collectables/Gem/0.png" id="28_qvih4"]
 [ext_resource type="Texture2D" uid="uid://b20miwxp1gcla" path="res://Assets/UI/StunIcon/0.png" id="31_8x7cq"]
 [ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="32_wiw3o"]
 
@@ -740,14 +741,19 @@ texture_progress = SubResource("AtlasTexture_1lnbq")
 script = ExtResource("6_xtjqw")
 
 [node name="Coins" type="Label" parent="TopUI"]
-offset_left = 35.0
-offset_top = 79.0
-offset_right = 106.0
-offset_bottom = 102.0
+offset_left = 73.0
+offset_top = 78.0
+offset_right = 930.0
+offset_bottom = 776.0
 scale = Vector2(0.05, 0.05)
-theme_override_font_sizes/font_size = 400
-text = "Coins: 0"
+theme_override_font_sizes/font_size = 500
+text = "0"
 script = ExtResource("27_we4ur")
+
+[node name="Gem" type="Sprite2D" parent="TopUI"]
+position = Vector2(43, 95)
+scale = Vector2(3.48077, 3.48077)
+texture = ExtResource("28_qvih4")
 
 [node name="AbilitiesUI" type="CanvasLayer" parent="."]
 

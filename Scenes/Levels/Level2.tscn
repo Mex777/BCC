@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cp52a8k2i4rni"]
+[gd_scene load_steps=63 format=3 uid="uid://cp52a8k2i4rni"]
 
 [ext_resource type="Texture2D" uid="uid://bjus35kgq7g74" path="res://Assets/World/BaseTiles/NormalTiles.png" id="1_eysd5"]
 [ext_resource type="Texture2D" uid="uid://cdulpeg6edfwx" path="res://Assets/World/Background/Background1.png" id="2_786uf"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="28_25cy1"]
 [ext_resource type="Texture2D" uid="uid://b20miwxp1gcla" path="res://Assets/UI/StunIcon/0.png" id="32_06l12"]
 [ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="33_ttkyh"]
+[ext_resource type="Texture2D" uid="uid://s5vc0mitvlsm" path="res://Assets/World/Collectables/Gem/0.png" id="38_uri3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlpec"]
 texture = ExtResource("1_eysd5")
@@ -884,14 +885,6 @@ _data = {
 "Up": SubResource("Animation_uo6y4")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6ylg"]
-atlas = ExtResource("6_lwgjk")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5wao4"]
-atlas = ExtResource("7_l7tqx")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcvvq"]
 atlas = ExtResource("10_w8gg8")
 region = Rect2(0, 0, 40, 40)
@@ -915,6 +908,14 @@ func _on_body_entered(body):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrvm"]
 size = Vector2(28.375, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dle8"]
+atlas = ExtResource("6_lwgjk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hsvo"]
+atlas = ExtResource("7_l7tqx")
+region = Rect2(0, 0, 64, 64)
 
 [node name="Level2" type="Node2D"]
 
@@ -1045,29 +1046,6 @@ one_shot = true
 visible = false
 script = ExtResource("5_fuxld")
 
-[node name="TopUI" type="CanvasLayer" parent="."]
-
-[node name="HPBar" type="TextureProgressBar" parent="TopUI"]
-offset_right = 204.0
-offset_bottom = 204.0
-max_value = 1.0
-step = 0.001
-value = 1.0
-nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_a6ylg")
-texture_progress = SubResource("AtlasTexture_5wao4")
-script = ExtResource("8_fjtyj")
-
-[node name="Coins" type="Label" parent="TopUI"]
-offset_left = 35.0
-offset_top = 79.0
-offset_right = 106.0
-offset_bottom = 102.0
-scale = Vector2(0.05, 0.05)
-theme_override_font_sizes/font_size = 400
-text = "Coins: 0"
-script = ExtResource("28_25cy1")
-
 [node name="AbilitiesUI" type="CanvasLayer" parent="."]
 
 [node name="BasicAttack" type="TextureProgressBar" parent="AbilitiesUI"]
@@ -1158,6 +1136,34 @@ script = SubResource("GDScript_ysfob")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelPortal"]
 position = Vector2(3427, 324)
 shape = SubResource("RectangleShape2D_ryrvm")
+
+[node name="TopUI" type="CanvasLayer" parent="."]
+
+[node name="HPBar" type="TextureProgressBar" parent="TopUI"]
+offset_right = 204.0
+offset_bottom = 204.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_4dle8")
+texture_progress = SubResource("AtlasTexture_8hsvo")
+script = ExtResource("8_fjtyj")
+
+[node name="Coins" type="Label" parent="TopUI"]
+offset_left = 73.0
+offset_top = 78.0
+offset_right = 930.0
+offset_bottom = 776.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 500
+text = "0"
+script = ExtResource("28_25cy1")
+
+[node name="Gem" type="Sprite2D" parent="TopUI"]
+position = Vector2(43, 95)
+scale = Vector2(3.48077, 3.48077)
+texture = ExtResource("38_uri3x")
 
 [connection signal="animation_finished" from="Aurora/Sprite" to="Aurora" method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Aurora/Sprite" to="Aurora" method="_on_sprite_sprite_frames_changed"]
