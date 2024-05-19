@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://b5cxs5koix05o"]
+[gd_scene load_steps=65 format=3 uid="uid://b5cxs5koix05o"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="2_acwsi"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://s5vc0mitvlsm" path="res://Assets/World/Collectables/Gem/0.png" id="28_qvih4"]
 [ext_resource type="Texture2D" uid="uid://b20miwxp1gcla" path="res://Assets/UI/StunIcon/0.png" id="31_8x7cq"]
 [ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="32_wiw3o"]
+[ext_resource type="PackedScene" uid="uid://3j4hlvkgyuvg" path="res://Scenes/Mobs/Cat/Cat.tscn" id="38_4s2k6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8bm3"]
 texture = ExtResource("1_bkxon")
@@ -833,6 +834,9 @@ script = SubResource("GDScript_bo5tm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelPortal"]
 position = Vector2(617, -540)
 shape = SubResource("RectangleShape2D_dc8ho")
+
+[node name="Cat" parent="." instance=ExtResource("38_4s2k6")]
+position = Vector2(-439, 1120)
 
 [connection signal="animation_finished" from="Aurora/Sprite" to="Aurora" method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Aurora/Sprite" to="Aurora" method="_on_sprite_sprite_frames_changed"]

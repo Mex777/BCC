@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3nnpxnq0u5e5"]
+
+[ext_resource type="PackedScene" uid="uid://4ldyapbufguq" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.tscn" id="1_nh27u"]
+[ext_resource type="Script" path="res://Scenes/Reusables/Mob/Mob.gd" id="2_2lnnn"]
+
+[node name="Mob" instance=ExtResource("1_nh27u")]
+script = ExtResource("2_2lnnn")
+
+[node name="Label" parent="." index="2"]
+text = ""
