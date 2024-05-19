@@ -658,6 +658,7 @@ layer_0/tile_data = PackedInt32Array(-65538, 262144, 1, -2, 262144, 1, -65537, 2
 [node name="Aurora" type="CharacterBody2D" parent="."]
 position = Vector2(-295, 1150)
 script = ExtResource("2_acwsi")
+god_mode = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aurora"]
 shape = SubResource("CapsuleShape2D_wrruc")
