@@ -11,9 +11,9 @@ func _physics_process(delta):
 		speed = max_speed
 		var player_in_right: bool = player.position.x > position.x
 		var player_above: bool = player.position.y + 30 < position.y
-		if player_in_right != facing_right and not flip_cooldown:
+		if player_in_right != facing_right and not flip_cooldown and not stunned:
 			flip()
-		if player_above and is_on_floor() and not jump_cooldown:
+		if player_above and is_on_floor() and not jump_cooldown and not stunned:
 			jump()
 	else:
 		speed = 0
