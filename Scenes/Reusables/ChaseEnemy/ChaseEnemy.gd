@@ -1,5 +1,8 @@
 extends "res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd"
 
+@export var JUMP_VELOCITY = -200
+var jump_cooldown = false
+var flip_cooldown = false
 var player
 var chasing = false
 
@@ -7,8 +10,11 @@ func _physics_process(delta):
 	if chasing:
 		speed = max_speed
 		var player_in_right: bool = player.position.x > position.x
-		if player_in_right != facing_right:
+		var player_above: bool = player.position.y + 30 < position.y
+		if player_in_right != facing_right and not flip_cooldown:
 			flip()
+		if player_above and is_on_floor() and not jump_cooldown:
+			jump()
 	else:
 		speed = 0
 		
@@ -20,8 +26,17 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func flip():
+	flip_cooldown = true
 	super()
 	$AttackRange.scale *= -1
+	await get_tree().create_timer(0.5).timeout
+	flip_cooldown = false
+	
+func jump():
+	jump_cooldown = true
+	velocity.y = JUMP_VELOCITY
+	await get_tree().create_timer(2).timeout
+	jump_cooldown = false
 
 func attack():
 	super()
