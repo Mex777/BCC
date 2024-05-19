@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://chcfopw08ovu"]
+[gd_scene load_steps=63 format=3 uid="uid://chcfopw08ovu"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_fjy1f"]
 [ext_resource type="Texture2D" uid="uid://dta3h5qg572dq" path="res://Assets/Aurora/FighterOutfit/Attack (right)/0.png" id="2_ta4xw"]
@@ -30,7 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://bvsmb0y575hpm" path="res://Assets/UI/SwordIcon/5.png" id="28_obryr"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/BasicAttack.gd" id="29_hefm7"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Stun.gd" id="30_coure"]
+[ext_resource type="Texture2D" uid="uid://b20miwxp1gcla" path="res://Assets/UI/StunIcon/0.png" id="30_n6ivp"]
 [ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Enemies/Skeleton/Skeleton.tscn" id="31_cgat2"]
+[ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="31_mm84y"]
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="32_ja55g"]
 [ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="33_16oai"]
 [ext_resource type="Texture2D" uid="uid://bjt55ekny10lc" path="res://Assets/World/BaseTiles/SwampSetGrid.png" id="34_jgi0o"]
@@ -686,8 +688,8 @@ step = 0.01
 value = 1.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_g2x8h")
-texture_progress = SubResource("AtlasTexture_s1rs0")
+texture_under = ExtResource("30_n6ivp")
+texture_progress = ExtResource("31_mm84y")
 script = ExtResource("30_coure")
 
 [node name="Skeleton" parent="." instance=ExtResource("31_cgat2")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cp52a8k2i4rni"]
+[gd_scene load_steps=62 format=3 uid="uid://cp52a8k2i4rni"]
 
 [ext_resource type="Texture2D" uid="uid://bjus35kgq7g74" path="res://Assets/World/BaseTiles/NormalTiles.png" id="1_eysd5"]
 [ext_resource type="Texture2D" uid="uid://cdulpeg6edfwx" path="res://Assets/World/Background/Background1.png" id="2_786uf"]
@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://b2l3shjchgq1t" path="res://Assets/Aurora/PrincessOutfit/Stun/0.png" id="19_g81nw"]
 [ext_resource type="Texture2D" uid="uid://btay6j8vglutv" path="res://Assets/Aurora/PrincessOutfit/Stun/1.png" id="20_ue3vo"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="28_25cy1"]
+[ext_resource type="Texture2D" uid="uid://b20miwxp1gcla" path="res://Assets/UI/StunIcon/0.png" id="32_06l12"]
+[ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="33_ttkyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlpec"]
 texture = ExtResource("1_eysd5")
@@ -1092,8 +1094,8 @@ step = 0.01
 value = 1.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_xcvvq")
-texture_progress = SubResource("AtlasTexture_fjdwq")
+texture_under = ExtResource("32_06l12")
+texture_progress = ExtResource("33_ttkyh")
 script = ExtResource("13_odvxk")
 
 [node name="Devil" parent="." instance=ExtResource("16_rqv2l")]

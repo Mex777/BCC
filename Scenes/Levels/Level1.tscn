@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://b5cxs5koix05o"]
+[gd_scene load_steps=63 format=3 uid="uid://b5cxs5koix05o"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="2_acwsi"]
@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://csc826fr76ryx" path="res://Assets/Aurora/PrisonerOutfit/Stun/1.png" id="20_kq328"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="21_kum5x"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="27_we4ur"]
+[ext_resource type="Texture2D" uid="uid://b20miwxp1gcla" path="res://Assets/UI/StunIcon/0.png" id="31_8x7cq"]
+[ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="32_wiw3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8bm3"]
 texture = ExtResource("1_bkxon")
@@ -773,8 +775,8 @@ step = 0.01
 value = 1.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_0232h")
-texture_progress = SubResource("AtlasTexture_k01ug")
+texture_under = ExtResource("31_8x7cq")
+texture_progress = ExtResource("32_wiw3o")
 script = ExtResource("9_ym0vw")
 
 [node name="Guardian" parent="." instance=ExtResource("16_ckh6a")]
