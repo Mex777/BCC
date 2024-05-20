@@ -8,6 +8,9 @@ func is_dead():
 
 func take_damage(damage):
 	hp = max(hp - damage, 0)
+	
+func set_hp(val: float):
+	hp = val
 
 func get_hp():
 	return hp

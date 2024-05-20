@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Player="*res://Global/Player.gd"
 Game="*res://Global/Game.gd"
 TransitionScene="*res://Scenes/Reusables/Transition/TransitionScene.tscn"
+SaveManager="*res://Global/SaveManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
