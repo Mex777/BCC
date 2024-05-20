@@ -45,11 +45,13 @@ func attack():
 func _on_chase_range_body_entered(body):
 	if body.name == "Aurora":
 		player = body
+		Game.enter_combat()
 		chasing = true
 
 func _on_chase_range_body_exited(body):
 	if body.name == "Aurora":
 		chasing = false
+		Game.exit_combat()
 		player = null
 
 func _on_attack_range_body_entered(body):
