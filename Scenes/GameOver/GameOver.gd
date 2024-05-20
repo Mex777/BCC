@@ -13,6 +13,7 @@ func _on_respawn_pressed():
 	TransitionScene.transition("Chapter one")
 	await TransitionScene.on_transition_finished
 	Player.reset()
+	Game.reset()
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 

@@ -1,0 +1,31 @@
+do Game.toggle_cutscene()
+[style name="VisualStyle"]
+[wait time="3.0"]
+join MagicCat (Black) 3
+MagicCat: Psst...
+MagicCat: Psst...
+leave MagicCat
+join Aurora 3
+Aurora: What?
+leave Aurora
+join MagicCat 3
+MagicCat: Meow!
+leave MagicCat
+join Aurora 3
+Aurora: ???!!
+leave Aurora
+join MagicCat 3
+MagicCat: Sorry... Couldn't help myself
+MagicCat: I'm magical cat and I'm here to help you escape and be the princess you are supposed to be!
+leave MagicCat
+join Aurora 3
+Aurora: Princess?
+leave Aurora
+join MagicCat 3
+MagicCat: I'll tell you more later, for now let's get outta here!
+MagicCat: I opened the cage and I'll meet you at the exit
+MagicCat: But you must bring 100 gems with you.
+MagicCat: Be careful... See ya!
+leave MagicCat
+[signal arg="0"]
+do Game.toggle_cutscene()

@@ -19,11 +19,13 @@ func _physics_process(delta):
 func _on_area_2d_body_exited(body):
 	if body.name == "Aurora":
 		attacking = false
+		Game.exit_combat()
 		player = null
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Aurora":
 		attacking = true
+		Game.enter_combat()
 		player = body
 		if not cooldown_base_attack and not stunned:
 			attack()

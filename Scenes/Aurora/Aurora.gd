@@ -17,16 +17,16 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
+	
 	# Deletes the player when it dies
 	if Player.is_dead():
 		queue_free()
-
-	# Taking damage when you jump of the map.
-	var viewport_rect = get_viewport_rect()
-	if position.y > viewport_rect.position.y + viewport_rect.size.y:
-		take_damage(10)  
-		
+	
+	if Game.is_in_cutscene():
+		update_animation()
+		move_and_slide()
+		return
+	
 	# Handle base attack.
 	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
 		cooldown_base_attack = true
@@ -39,7 +39,6 @@ func _physics_process(delta):
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = true
 		
-
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -54,7 +53,6 @@ func _physics_process(delta):
 	else:
 		var collision = get_node("Stun/Stun")
 		collision.disabled = true
-		
 		
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -89,27 +87,30 @@ func update_animation():
 	if velocity.y > 0:
 		animation.play("Down")
 	
-	
+
 func take_damage(damage):
-	if god_mode == false:
+	if not Game.in_god_mode():
 		Player.take_damage(damage)
 	
 	$Sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
-	$Sprite.modulate = Color.WHITE
+	$Sprite.modulate = Color.WHITE	
 	
 	
 func stun_ability():
 	cooldown_stun_attack = true 
 	$StunTimer.start()
 	
+	
 func base_attack():
 	cooldown_base_attack = true
 	$BasicAttackTimer.start()
 	
+	
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Attack" or anim_name == "Stun":
 		attacking = false
+
 
 func _on_timer_timeout():
 	cooldown_base_attack = false;
