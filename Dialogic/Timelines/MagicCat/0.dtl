@@ -1,4 +1,7 @@
-join MagicCat 3
+do Game.toggle_cutscene()
+[style name="VisualStyle"]
+[wait time="3.0"]
+join MagicCat (Black) 3
 MagicCat: Psst...
 MagicCat: Psst...
 leave MagicCat
@@ -25,4 +28,4 @@ MagicCat: But you must bring 100 gems with you.
 MagicCat: Be careful... See ya!
 leave MagicCat
 [signal arg="0"]
-[signal arg="cutscene_ended"]
+do Game.toggle_cutscene()

@@ -1,10 +1,14 @@
+if {Game.in_combat()} == true:
+	return
+do Game.toggle_cutscene()
 if {Game.get_coins()}   <   100:
-	join MagicCat 3
+	[style name="BubbleStyle"]
 	MagicCat: You need 100 gems in order to progress
-	[signal arg="cutscene_ended"]
 else:
+	[style name="VisualStyle"]
 	join MagicCat 3
 	MagicCat: Great job, I'll show you why you needed the coins!
+	MagicCat: Come with me.
 	[signal arg="1"]
-	[signal arg="cutscene_ended"]
 	do Game.advance_to_level("Level2")
+do Game.toggle_cutscene()
