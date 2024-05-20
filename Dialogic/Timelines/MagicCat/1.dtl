@@ -11,4 +11,5 @@ else:
 	MagicCat: Come with me.
 	[signal arg="1"]
 	do Game.advance_to_level("Level2")
+	do SaveManager.save_game()
 do Game.toggle_cutscene()
