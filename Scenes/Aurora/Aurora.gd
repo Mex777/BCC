@@ -10,18 +10,22 @@ var cooldown_base_attack: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+
 @onready var animation = get_node("AnimationPlayer")
 @onready var game_over = preload("res://Scenes/GameOver/GameOver.tscn").instantiate()
+
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	# Deletes the player when it dies
+	# Deletes the player when it dies.
 	if Player.is_dead():
 		queue_free()
 	
+	# Handle cutscenes.
 	if Game.is_in_cutscene():
 		update_animation()
 		move_and_slide()
@@ -73,7 +77,8 @@ func _physics_process(delta):
 	update_animation()
 	move_and_slide()
 	
-	
+
+# Function for updating the animation based on the character's state.
 func update_animation():
 	if attacking:
 		return
@@ -88,32 +93,40 @@ func update_animation():
 		animation.play("Down")
 	
 
+# Function for handling damage taken by the character.
 func take_damage(damage):
 	if not Game.in_god_mode():
 		Player.take_damage(damage)
 	
+	# Flash the sprite red when taking damage.
 	$Sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	$Sprite.modulate = Color.WHITE	
 	
-	
+
+# Function for handling the stun ability.
 func stun_ability():
 	cooldown_stun_attack = true 
 	$StunTimer.start()
 	
-	
+
+# Function for handling the base attack.
 func base_attack():
 	cooldown_base_attack = true
 	$BasicAttackTimer.start()
 	
-	
+
+# Callback for when an animation finishes playing.
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Attack" or anim_name == "Stun":
 		attacking = false
 
 
+# Callback for when the base attack cooldown timer times out.
 func _on_timer_timeout():
 	cooldown_base_attack = false;
 
+
+# Callback for when the stun attack cooldown timer times out.
 func _on_stun_timer_timeout():
 	cooldown_stun_attack = false;
