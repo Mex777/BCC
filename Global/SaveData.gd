@@ -5,5 +5,6 @@ class_name SaveData
 	"LevelName": "Level1",
 	"HP": 100,
 	"Gems": 0,
-	"GodMode": false
+	"GodMode": false,
+	"Skin": "Prisoner"
 }

@@ -17,6 +17,7 @@ func load_game():
 	Game.set_coins(save_data.data["Gems"])
 	Game.set_god_mode(save_data.data["GodMode"])
 	Player.set_hp(save_data.data["HP"])
+	Player.set_skin(save_data.data["Skin"])
 	Game.advance_to_level(save_data.data["LevelName"])
 	
 	
@@ -26,6 +27,7 @@ func save_game():
 	save_data.data["GodMode"] = Game.get_god_mode()
 	save_data.data["HP"] = Player.get_hp()
 	save_data.data["LevelName"] = Game.get_level_name()
+	save_data.data["Skin"] = Player.get_skin_no_format()
 	ResourceSaver.save(save_data, save_path + save_name)
 	
 	

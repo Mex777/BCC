@@ -1,6 +1,9 @@
 extends CharacterBody2D 
 
-@export var god_mode = false
+@export var camera_left_limit: int
+@export var camera_right_limit: int
+@export var camera_top_limit: int
+@export var camera_bottom_limit: int
 
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
@@ -14,6 +17,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation = get_node("AnimationPlayer")
 @onready var game_over = preload("res://Scenes/GameOver/GameOver.tscn").instantiate()
+@onready var camera = $Camera2D
+
+
+func _ready():
+	camera.limit_left = camera_left_limit
+	camera.limit_right = camera_right_limit
+	camera.limit_top = camera_top_limit
+	camera.limit_bottom = camera_bottom_limit
 
 
 func _physics_process(delta):
@@ -35,7 +46,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
 		cooldown_base_attack = true
 		attacking = true
-		animation.play("Attack")
+		animation.play("Attack" + Player.get_skin())
 		var collision = get_node("Attack/BaseAttack")
 		collision.disabled = false
 		base_attack()
@@ -50,7 +61,7 @@ func _physics_process(delta):
 	# Handle ability.
 	if Input.is_action_just_pressed("stun") and not cooldown_stun_attack:
 		attacking = true
-		animation.play("Stun")
+		animation.play("Stun" + Player.get_skin())
 		var collision = get_node("Stun/Stun")
 		collision.disabled = false
 		stun_ability()
@@ -83,14 +94,14 @@ func update_animation():
 	if attacking:
 		return
 	if velocity.x != 0:
-		animation.play("Run")	
+		animation.play("Run" + Player.get_skin())	
 	else:
-		animation.play("Idle")
+		animation.play("Idle" + Player.get_skin())
 		
 	if velocity.y < 0:
-		animation.play("Up")
+		animation.play("Up" + Player.get_skin())
 	if velocity.y > 0:
-		animation.play("Down")
+		animation.play("Down" + Player.get_skin())
 	
 
 # Function for handling damage taken by the character.
@@ -118,7 +129,7 @@ func base_attack():
 
 # Callback for when an animation finishes playing.
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "Attack" or anim_name == "Stun":
+	if anim_name == "Attack" + Player.get_skin() or anim_name == "Stun" + Player.get_skin():
 		attacking = false
 
 
