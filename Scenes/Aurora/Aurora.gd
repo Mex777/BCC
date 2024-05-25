@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		collision.disabled = true
 		
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
 	# Handle ability.
@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		collision.disabled = true
 		
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("move_left", "move_right")
 	if direction == -1: 
 		get_node("Sprite").flip_h = true;
 		if $Attack/BaseAttack.position.x > 0:

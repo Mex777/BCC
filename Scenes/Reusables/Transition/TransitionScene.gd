@@ -10,20 +10,20 @@ signal on_transition_finished
 
 
 # By default the transition is invisible
-func _ready():
+func _ready() -> void:
 	color_rect.visible = false
 	text.visible = false
 	
 
 # Runs transition
-func transition(message):
+func transition(message: String) -> void:
 	color_rect.visible = true
 	text.visible = true
 	text.text = message
 	animation_player.play("FadeIn")
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(anim_name: String) -> void:
 	# After fade in finishes we run fade out
 	if anim_name == "FadeIn":
 		on_transition_finished.emit()
