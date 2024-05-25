@@ -1,13 +1,13 @@
-extends "res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd"
+extends AbstractEnemy
 
 @onready var projectile = load("res://Scenes/Reusables/Projectile/Projectile.tscn")
 
-var player
+var player: Aurora = null
 
-func _ready():
-	speed = 0
 
-func _physics_process(delta):
+# Ranged enemies don't move on the X-axis
+func _physics_process(delta: float) -> void:
+	# Applying gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
@@ -16,13 +16,17 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
-func _on_area_2d_body_exited(body):
+
+# When the player exits shooting range it stops attacking him
+func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.name == "Aurora":
 		attacking = false
 		Game.exit_combat()
 		player = null
 
-func _on_area_2d_body_entered(body):
+
+# When the player enters range it starts attacking him
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "Aurora":
 		attacking = true
 		Game.enter_combat()
@@ -30,14 +34,20 @@ func _on_area_2d_body_entered(body):
 		if not cooldown_base_attack and not stunned:
 			attack()
 
-func attack():
+
+func attack() -> void:
+	# Uses cooldown logic from parent
 	super()
-	var instance = projectile.instantiate()
 	
+	# Checks direction of the player to know in which direction to shoot
 	var player_in_right: bool = player.position.x > position.x
-	instance.right = player_in_right
+	
+	# Flips enemy based on player position
 	if player_in_right != facing_right:
 		flip()
-		
+	
+	# Shoots a projectile towards the player
+	var instance: Projectile = projectile.instantiate()
+	instance.right = player_in_right
 	add_child(instance)
 	

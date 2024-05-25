@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://3j4hlvkgyuvg"]
 
 [ext_resource type="PackedScene" uid="uid://b3nnpxnq0u5e5" path="res://Scenes/Reusables/Mob/Mob.tscn" id="1_51jdl"]
-[ext_resource type="Texture2D" uid="uid://b518yo643bdtp" path="res://Assets/Mobs/Cat/Black/Idle/0.png" id="2_awr8m"]
+[ext_resource type="Texture2D" uid="uid://dtxrtot4ectsc" path="res://Assets/Mobs/Cat/Black/Idle/0.png" id="2_awr8m"]
 [ext_resource type="Script" path="res://Scenes/Mobs/Cat/MagicCat.gd" id="2_dd3tp"]
-[ext_resource type="Texture2D" uid="uid://6uly27prm3n3" path="res://Assets/Mobs/Cat/Black/Idle/1.png" id="3_1wkeq"]
-[ext_resource type="Texture2D" uid="uid://d17c77f4xa3wa" path="res://Assets/Mobs/Cat/Black/Idle/2.png" id="4_wad7j"]
+[ext_resource type="Texture2D" uid="uid://bd6pgeu0ms80s" path="res://Assets/Mobs/Cat/Black/Idle/1.png" id="3_1wkeq"]
+[ext_resource type="Texture2D" uid="uid://cux81dxf6u40u" path="res://Assets/Mobs/Cat/Black/Idle/2.png" id="4_wad7j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbh3s"]
 animations = [{

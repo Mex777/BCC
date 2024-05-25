@@ -1,24 +1,60 @@
-[gd_scene load_steps=36 format=3 uid="uid://cx4yu3e5q0bfa"]
+[gd_scene load_steps=82 format=3 uid="uid://cx4yu3e5q0bfa"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_834d8"]
 [ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="1_fhatf"]
 [ext_resource type="Texture2D" uid="uid://7gq36agavyfl" path="res://Assets/Aurora/PrincessOutfit/Attack/0.png" id="2_fng4y"]
 [ext_resource type="Texture2D" uid="uid://clpg033fyw74j" path="res://Assets/Aurora/PrincessOutfit/Idle/1.png" id="2_h6vqw"]
+[ext_resource type="Texture2D" uid="uid://dta3h5qg572dq" path="res://Assets/Aurora/FighterOutfit/Attack (right)/0.png" id="2_uba32"]
+[ext_resource type="Texture2D" uid="uid://cc8awsdbg0h04" path="res://Assets/Aurora/FighterOutfit/Attack (right)/1.png" id="3_i5u2n"]
 [ext_resource type="Texture2D" uid="uid://dylck4fip4qcc" path="res://Assets/Aurora/PrincessOutfit/Idle/2.png" id="3_ii3x1"]
 [ext_resource type="Texture2D" uid="uid://cmjhggx1mif7l" path="res://Assets/Aurora/PrincessOutfit/Attack/1.png" id="3_v41wp"]
 [ext_resource type="Texture2D" uid="uid://i4k5bw6y8ht6" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/0.png" id="4_4q2ca"]
 [ext_resource type="Texture2D" uid="uid://yv52waf38dp8" path="res://Assets/Aurora/PrincessOutfit/Attack/2.png" id="4_6nj1y"]
+[ext_resource type="Texture2D" uid="uid://8qc0t5asg2bu" path="res://Assets/Aurora/FighterOutfit/Attack (right)/2.png" id="4_sjg77"]
+[ext_resource type="Texture2D" uid="uid://blkstqs8glsnj" path="res://Assets/Aurora/FighterOutfit/Attack (right)/3.png" id="5_7tjox"]
 [ext_resource type="Texture2D" uid="uid://dx13n0vfofyt3" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/1.png" id="5_ait4v"]
 [ext_resource type="Texture2D" uid="uid://cicydcrw4el17" path="res://Assets/Aurora/PrincessOutfit/Attack/3.png" id="5_p0jp4"]
 [ext_resource type="Texture2D" uid="uid://bdjtx2kiu11nd" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/2.png" id="6_38gix"]
+[ext_resource type="Texture2D" uid="uid://djs1gm4gp84ct" path="res://Assets/Aurora/FighterOutfit/Attack (right)/4.png" id="6_he405"]
 [ext_resource type="Texture2D" uid="uid://c2bwcbof04xjn" path="res://Assets/Aurora/PrincessOutfit/Attack/4.png" id="6_m7vky"]
 [ext_resource type="Texture2D" uid="uid://ctmvcntrdqs8j" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/3.png" id="7_wn2g5"]
 [ext_resource type="Texture2D" uid="uid://cj2x2cb2k3oik" path="res://Assets/Aurora/PrincessOutfit/Jumping (Right)/4.png" id="8_4eabx"]
 [ext_resource type="Texture2D" uid="uid://bh7n5xb76qa7b" path="res://Assets/Aurora/PrincessOutfit/Running (right)/0.png" id="9_nmhk8"]
 [ext_resource type="Texture2D" uid="uid://cy2857c8g5kll" path="res://Assets/Aurora/PrincessOutfit/Running (right)/1.png" id="10_w6v35"]
 [ext_resource type="Texture2D" uid="uid://brn6xurgfh383" path="res://Assets/Aurora/PrincessOutfit/Running (right)/2.png" id="11_kkb0g"]
+[ext_resource type="Texture2D" uid="uid://bi1xvl63wfox1" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/0.png" id="12_lixbe"]
+[ext_resource type="Texture2D" uid="uid://bb52b0v3ljwbn" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/1.png" id="13_7xf62"]
+[ext_resource type="Texture2D" uid="uid://b3l73us3bhm16" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/2.png" id="14_yowqy"]
+[ext_resource type="Texture2D" uid="uid://boiopb6ruxsay" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/3.png" id="15_os8jl"]
+[ext_resource type="Texture2D" uid="uid://bygbkpgxff4oa" path="res://Assets/Aurora/PrisonerOutfit/Attack (right)/4.png" id="16_4wvxq"]
+[ext_resource type="Texture2D" uid="uid://pgnd26p7d1u7" path="res://Assets/Aurora/FighterOutfit/Idle/0.png" id="17_2tf66"]
+[ext_resource type="Texture2D" uid="uid://glwg78akqgs2" path="res://Assets/Aurora/FighterOutfit/Idle/1.png" id="18_1d8o5"]
 [ext_resource type="Texture2D" uid="uid://b2l3shjchgq1t" path="res://Assets/Aurora/PrincessOutfit/Stun/0.png" id="18_hkrat"]
 [ext_resource type="Texture2D" uid="uid://btay6j8vglutv" path="res://Assets/Aurora/PrincessOutfit/Stun/1.png" id="19_hhuxk"]
+[ext_resource type="Texture2D" uid="uid://c4wb1qrvmtg7o" path="res://Assets/Aurora/FighterOutfit/Idle/2.png" id="19_hnsgg"]
+[ext_resource type="Texture2D" uid="uid://cxbef6exnkat0" path="res://Assets/Aurora/PrisonerOutfit/Idle/0.png" id="23_tfuc2"]
+[ext_resource type="Texture2D" uid="uid://cn5hfxtmgvc45" path="res://Assets/Aurora/PrisonerOutfit/Idle/1.png" id="24_l38bb"]
+[ext_resource type="Texture2D" uid="uid://dce20b6qiee4f" path="res://Assets/Aurora/PrisonerOutfit/Idle/2.png" id="25_bb781"]
+[ext_resource type="Texture2D" uid="uid://0apxf1hf25vr" path="res://Assets/Aurora/FighterOutfit/Jumping (right)/0.png" id="26_11m11"]
+[ext_resource type="Texture2D" uid="uid://b8lsdeqncl75j" path="res://Assets/Aurora/FighterOutfit/Jumping (right)/1.png" id="27_1n2av"]
+[ext_resource type="Texture2D" uid="uid://d3dukjjuyuuhd" path="res://Assets/Aurora/FighterOutfit/Jumping (right)/2.png" id="28_gsoor"]
+[ext_resource type="Texture2D" uid="uid://bjwhfhnoci7ms" path="res://Assets/Aurora/FighterOutfit/Jumping (right)/3.png" id="29_7bku7"]
+[ext_resource type="Texture2D" uid="uid://ccbuatblwo3o6" path="res://Assets/Aurora/FighterOutfit/Jumping (right)/4.png" id="30_cln47"]
+[ext_resource type="Texture2D" uid="uid://c4j31e6yshguk" path="res://Assets/Aurora/PrisonerOutfit/Jumping (right)/0.png" id="36_l4xhi"]
+[ext_resource type="Texture2D" uid="uid://jarjh4e7nj6o" path="res://Assets/Aurora/PrisonerOutfit/Jumping (right)/1.png" id="37_67hwe"]
+[ext_resource type="Texture2D" uid="uid://dd6v5m113c1tv" path="res://Assets/Aurora/PrisonerOutfit/Jumping (right)/2.png" id="38_0yfh7"]
+[ext_resource type="Texture2D" uid="uid://dc1tis7myfp6n" path="res://Assets/Aurora/PrisonerOutfit/Jumping (right)/3.png" id="39_3xmdp"]
+[ext_resource type="Texture2D" uid="uid://qwc53cdtt2n6" path="res://Assets/Aurora/PrisonerOutfit/Jumping (right)/4.png" id="40_tfl2l"]
+[ext_resource type="Texture2D" uid="uid://5sjsfm77g1bj" path="res://Assets/Aurora/FighterOutfit/Running (right)/0.png" id="41_m5pmt"]
+[ext_resource type="Texture2D" uid="uid://dp0msbcq4jq1f" path="res://Assets/Aurora/FighterOutfit/Running (right)/1.png" id="42_uqn7k"]
+[ext_resource type="Texture2D" uid="uid://c0850uyvslvbv" path="res://Assets/Aurora/FighterOutfit/Running (right)/2.png" id="43_5cimi"]
+[ext_resource type="Texture2D" uid="uid://dvajeyygv23ko" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/0.png" id="47_6u34t"]
+[ext_resource type="Texture2D" uid="uid://7tc2dtl8jkev" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/1.png" id="48_4h5c7"]
+[ext_resource type="Texture2D" uid="uid://dirwb1jdoxlxi" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/2.png" id="49_aguqp"]
+[ext_resource type="Texture2D" uid="uid://cuntdmxfmt8j1" path="res://Assets/Aurora/FighterOutfit/Stun/0.png" id="50_7foee"]
+[ext_resource type="Texture2D" uid="uid://bj7b10v3cowqn" path="res://Assets/Aurora/FighterOutfit/Stun/1.png" id="51_eje3e"]
+[ext_resource type="Texture2D" uid="uid://blafgkncw7ti8" path="res://Assets/Aurora/PrisonerOutfit/Stun/0.png" id="54_5ayav"]
+[ext_resource type="Texture2D" uid="uid://csc826fr76ryx" path="res://Assets/Aurora/PrisonerOutfit/Stun/1.png" id="55_h6ufl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgge7"]
 radius = 14.0
@@ -26,6 +62,26 @@ height = 32.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lo3xu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uba32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i5u2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sjg77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7tjox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_he405")
+}],
+"loop": true,
+"name": &"Attack (Fighter)",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_fng4y")
@@ -43,7 +99,41 @@ animations = [{
 "texture": ExtResource("6_m7vky")
 }],
 "loop": true,
-"name": &"Attack",
+"name": &"Attack (Princess)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_lixbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7xf62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yowqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_os8jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4wvxq")
+}],
+"loop": true,
+"name": &"Attack (Prisoner)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("17_2tf66")
+}, {
+"duration": 6.0,
+"texture": ExtResource("18_1d8o5")
+}, {
+"duration": 3.0,
+"texture": ExtResource("19_hnsgg")
+}],
+"loop": true,
+"name": &"Idle (Fighter)",
 "speed": 5.0
 }, {
 "frames": [{
@@ -57,7 +147,41 @@ animations = [{
 "texture": ExtResource("3_ii3x1")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"Idle (Princess)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("23_tfuc2")
+}, {
+"duration": 6.0,
+"texture": ExtResource("24_l38bb")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_bb781")
+}],
+"loop": true,
+"name": &"Idle (Prisoner)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_11m11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1n2av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gsoor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7bku7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_cln47")
+}],
+"loop": true,
+"name": &"Jump (Fighter)",
 "speed": 5.0
 }, {
 "frames": [{
@@ -77,7 +201,44 @@ animations = [{
 "texture": ExtResource("8_4eabx")
 }],
 "loop": true,
-"name": &"Jump",
+"name": &"Jump (Princess)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_l4xhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_67hwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0yfh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3xmdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_tfl2l")
+}],
+"loop": true,
+"name": &"Jump (Prisoner)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("41_m5pmt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_uqn7k")
+}, {
+"duration": 2.0,
+"texture": ExtResource("43_5cimi")
+}, {
+"duration": 2.0,
+"texture": ExtResource("42_uqn7k")
+}],
+"loop": true,
+"name": &"Run (Fighter)",
 "speed": 5.0
 }, {
 "frames": [{
@@ -94,7 +255,35 @@ animations = [{
 "texture": ExtResource("10_w6v35")
 }],
 "loop": true,
-"name": &"Run",
+"name": &"Run (Princess)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("47_6u34t")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_4h5c7")
+}, {
+"duration": 2.0,
+"texture": ExtResource("49_aguqp")
+}, {
+"duration": 2.0,
+"texture": ExtResource("48_4h5c7")
+}],
+"loop": true,
+"name": &"Run (Prisoner)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_7foee")
+}, {
+"duration": 3.0,
+"texture": ExtResource("51_eje3e")
+}],
+"loop": true,
+"name": &"Stun (Fighter)",
 "speed": 5.0
 }, {
 "frames": [{
@@ -105,7 +294,18 @@ animations = [{
 "texture": ExtResource("19_hhuxk")
 }],
 "loop": false,
-"name": &"Stun",
+"name": &"Stun (Princess)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_5ayav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_h6ufl")
+}],
+"loop": true,
+"name": &"Stun (Prisoner)",
 "speed": 5.0
 }]
 
@@ -136,8 +336,8 @@ func _on_stun_body_entered(body):
 		body.stun(stun_duration)
 "
 
-[sub_resource type="Animation" id="Animation_ey1bv"]
-resource_name = "Attack"
+[sub_resource type="Animation" id="Animation_y1tf4"]
+resource_name = "Attack (Fighter)"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -149,7 +349,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(-0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Attack"]
+"values": [&"Attack (Fighter)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -164,8 +364,64 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_fiqp3"]
-resource_name = "Down"
+[sub_resource type="Animation" id="Animation_ey1bv"]
+resource_name = "Attack (Princess)"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack (Princess)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_se5ru"]
+resource_name = "Attack (Prisoner)"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack (Prisoner)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_tpqn2"]
+resource_name = "Down (Fighter)"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -188,11 +444,65 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Jump"]
+"values": [&"Jump (Fighter)"]
 }
 
-[sub_resource type="Animation" id="Animation_e38fv"]
-resource_name = "Idle"
+[sub_resource type="Animation" id="Animation_fiqp3"]
+resource_name = "Down (Princess)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump (Princess)"]
+}
+
+[sub_resource type="Animation" id="Animation_tuj6o"]
+resource_name = "Down (Prisoner)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump (Prisoner)"]
+}
+
+[sub_resource type="Animation" id="Animation_xtcft"]
+resource_name = "Idle (Fighter)"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -216,12 +526,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Idle"]
+"values": [&"Idle (Fighter)"]
 }
 
-[sub_resource type="Animation" id="Animation_l4u2g"]
-resource_name = "Jump"
-length = 2.0
+[sub_resource type="Animation" id="Animation_e38fv"]
+resource_name = "Idle (Princess)"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -229,10 +539,10 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.5, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.1, 1.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -241,10 +551,38 @@ tracks/1/path = NodePath("Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.1),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Jump"]
+"values": [&"Idle (Princess)"]
+}
+
+[sub_resource type="Animation" id="Animation_jgotu"]
+resource_name = "Idle (Prisoner)"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle (Prisoner)"]
 }
 
 [sub_resource type="Animation" id="Animation_ig5bo"]
@@ -262,8 +600,8 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_ii6kh"]
-resource_name = "Run"
+[sub_resource type="Animation" id="Animation_dtvoy"]
+resource_name = "Run (Fighter)"
 length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -287,12 +625,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Run"]
+"values": [&"Run (Fighter)"]
 }
 
-[sub_resource type="Animation" id="Animation_7nfdq"]
-resource_name = "Standing"
-length = 1.9
+[sub_resource type="Animation" id="Animation_ii6kh"]
+resource_name = "Run (Princess)"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -300,14 +638,54 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run (Princess)"]
 }
 
-[sub_resource type="Animation" id="Animation_vm7qr"]
-resource_name = "Stun"
+[sub_resource type="Animation" id="Animation_h4ujw"]
+resource_name = "Run (Prisoner)"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run (Prisoner)"]
+}
+
+[sub_resource type="Animation" id="Animation_r8evg"]
+resource_name = "Stun (Fighter)"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -319,7 +697,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Stun"]
+"values": [&"Stun (Fighter)"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -334,8 +712,64 @@ tracks/1/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_uo6y4"]
-resource_name = "Up"
+[sub_resource type="Animation" id="Animation_vm7qr"]
+resource_name = "Stun (Princess)"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Stun (Princess)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_6cu70"]
+resource_name = "Stun (Prisoner)"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Stun (Prisoner)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_kcl10"]
+resource_name = "Up (Fighter)"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -358,20 +792,84 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Jump"]
+"values": [&"Jump (Fighter)"]
+}
+
+[sub_resource type="Animation" id="Animation_uo6y4"]
+resource_name = "Up (Princess)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump (Princess)"]
+}
+
+[sub_resource type="Animation" id="Animation_lsgj5"]
+resource_name = "Up (Prisoner)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump (Prisoner)"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p0n1s"]
 _data = {
-"Attack": SubResource("Animation_ey1bv"),
-"Down": SubResource("Animation_fiqp3"),
-"Idle": SubResource("Animation_e38fv"),
-"Jump": SubResource("Animation_l4u2g"),
+"Attack (Fighter)": SubResource("Animation_y1tf4"),
+"Attack (Princess)": SubResource("Animation_ey1bv"),
+"Attack (Prisoner)": SubResource("Animation_se5ru"),
+"Down (Fighter)": SubResource("Animation_tpqn2"),
+"Down (Princess)": SubResource("Animation_fiqp3"),
+"Down (Prisoner)": SubResource("Animation_tuj6o"),
+"Idle (Fighter)": SubResource("Animation_xtcft"),
+"Idle (Princess)": SubResource("Animation_e38fv"),
+"Idle (Prisoner)": SubResource("Animation_jgotu"),
 "RESET": SubResource("Animation_ig5bo"),
-"Run": SubResource("Animation_ii6kh"),
-"Standing": SubResource("Animation_7nfdq"),
-"Stun": SubResource("Animation_vm7qr"),
-"Up": SubResource("Animation_uo6y4")
+"Run (Fighter)": SubResource("Animation_dtvoy"),
+"Run (Princess)": SubResource("Animation_ii6kh"),
+"Run (Prisoner)": SubResource("Animation_h4ujw"),
+"Stun (Fighter)": SubResource("Animation_r8evg"),
+"Stun (Princess)": SubResource("Animation_vm7qr"),
+"Stun (Prisoner)": SubResource("Animation_6cu70"),
+"Up (Fighter)": SubResource("Animation_kcl10"),
+"Up (Princess)": SubResource("Animation_uo6y4"),
+"Up (Prisoner)": SubResource("Animation_lsgj5")
 }
 
 [node name="Aurora" type="CharacterBody2D"]
@@ -384,13 +882,17 @@ shape = SubResource("CapsuleShape2D_qgge7")
 position = Vector2(0, -6)
 scale = Vector2(1.625, 1.625)
 sprite_frames = SubResource("SpriteFrames_lo3xu")
-animation = &"Jump"
+animation = &"Run (Fighter)"
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.6)
-limit_left = 0
-limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_vertical_offset = -1.0
+drag_bottom_margin = 0.36
 
 [node name="Attack" type="Area2D" parent="."]
 
@@ -412,7 +914,7 @@ script = SubResource("GDScript_my6kx")
 libraries = {
 "": SubResource("AnimationLibrary_p0n1s")
 }
-autoplay = "Idle"
+autoplay = "Idle (Princess)"
 
 [node name="BasicAttackTimer" type="Timer" parent="."]
 process_callback = 0

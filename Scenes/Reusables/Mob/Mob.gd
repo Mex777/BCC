@@ -1,9 +1,14 @@
-extends "res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd"
+extends AbstractEnemy
+class_name Mob
 
-func take_damage(damage):
+# Mobs don't take damage
+func take_damage(damage: int) -> void:
 	pass
 
-func _physics_process(delta):
+
+# Mobs do not move by default on the X-axis
+func _physics_process(delta: float) -> void:
+	# Applying gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		

@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-var health = 10
+var health:  = 10
 var SPEED = 10
 @export var stunned = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 
 func take_damage(damage: int):
 	health = max(health - damage, 0)
@@ -14,10 +15,12 @@ func take_damage(damage: int):
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate = Color.WHITE
 	
+	
 func stun(duration: float):
 	stunned = true
 	await get_tree().create_timer(duration).timeout
 	stunned = false
+	
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("base_attack"):

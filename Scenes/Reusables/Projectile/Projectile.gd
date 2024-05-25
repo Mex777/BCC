@@ -1,28 +1,39 @@
 extends Area2D
+class_name Projectile
 
-var speed = 150
-@export var damage: float = 15
-var right = true;
-var lifetime = 5
+@export var speed: float = 150
+@export var damage: int = 15
 
-func _ready():
+# Direcion of the bullet
+var right: bool = true;
+# Seconds until it despawns
+var lifetime: float = 5
+
+
+func _ready() -> void:
 	await get_tree().create_timer(lifetime).timeout
 	queue_free()
 
-func _physics_process(delta):
+
+# It goes at a constant speed in the right direction
+func _physics_process(delta) -> void:
 	position += transform.x * direction(right) * delta
 	
-func direction(right):
+
+func direction(right) -> int:
 	if right:
 		return speed
 	return -speed
 
-func _on_body_entered(body):
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	# Doesn't hit other enemies
 	if body.is_in_group("Enemies"):
 		return
+	
 	if body.name == "Aurora":
 		body.take_damage(damage)
-		queue_free()
-	else:
-		queue_free()
+	
+	# Despawns after collision
+	queue_free()
 
