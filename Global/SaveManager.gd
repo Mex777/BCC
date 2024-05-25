@@ -1,15 +1,15 @@
 extends Node
 
-var save_path = "res://Saves/"
-var save_name = "Save.tres"
-var save_data
+var save_path: String = "res://Saves/"
+var save_name: String = "Save.tres"
+var save_data: SaveData
 
 
-func _ready():
+func _ready() -> void:
 	save_data = SaveData.new()
 
 
-func load_game():
+func load_game() -> void:
 	# Loads the save file
 	save_data = ResourceLoader.load(save_path + save_name).duplicate(true)
 	
@@ -22,7 +22,7 @@ func load_game():
 	
 	
 # Creates a save file based on the current state of the game
-func save_game():
+func save_game() -> void:
 	save_data.data["Gems"] = Game.get_coins()
 	save_data.data["GodMode"] = Game.get_god_mode()
 	save_data.data["HP"] = Player.get_hp()

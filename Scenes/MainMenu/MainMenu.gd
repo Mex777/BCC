@@ -1,7 +1,7 @@
 extends Node2D
+class_name MainMenu
 
-
-func _ready():
+func _ready() -> void:
 	get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
 	
 	# If there is no save file, disable the continue button and exit the function.
@@ -12,12 +12,12 @@ func _ready():
 
 
 # Closes game when the exit button is pressed.
-func _on_quit_btn_pressed():
+func _on_quit_btn_pressed() -> void:
 	get_tree().quit()
 
 
 # Function for handling when the new game button is pressed.
-func _on_play_btn_pressed():
+func _on_play_btn_pressed() -> void:
 	# Reset the player and the game.
 	Player.reset()
 	Game.reset()
@@ -31,6 +31,6 @@ func _on_play_btn_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 
-func _on_continue_btn_pressed():
+func _on_continue_btn_pressed() -> void:
 	# Load the game state from the save file.
 	SaveManager.load_game()

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 10
+var health:  = 10
 var SPEED = 10
 @export var stunned = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

@@ -1,4 +1,5 @@
 extends CharacterBody2D 
+class_name Aurora
 
 @export var camera_left_limit: int
 @export var camera_right_limit: int
@@ -20,14 +21,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var camera = $Camera2D
 
 
-func _ready():
+func _ready() -> void:
 	camera.limit_left = camera_left_limit
 	camera.limit_right = camera_right_limit
 	camera.limit_top = camera_top_limit
 	camera.limit_bottom = camera_bottom_limit
 
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -90,7 +91,7 @@ func _physics_process(delta):
 	
 
 # Function for updating the animation based on the character's state.
-func update_animation():
+func update_animation() -> void:
 	if attacking:
 		return
 	if velocity.x != 0:
@@ -105,7 +106,7 @@ func update_animation():
 	
 
 # Function for handling damage taken by the character.
-func take_damage(damage):
+func take_damage(damage: int) -> void:
 	if not Game.in_god_mode():
 		Player.take_damage(damage)
 	
@@ -116,28 +117,28 @@ func take_damage(damage):
 	
 
 # Function for handling the stun ability.
-func stun_ability():
+func stun_ability() -> void:
 	cooldown_stun_attack = true 
 	$StunTimer.start()
 	
 
 # Function for handling the base attack.
-func base_attack():
+func base_attack() -> void:
 	cooldown_base_attack = true
 	$BasicAttackTimer.start()
 	
 
 # Callback for when an animation finishes playing.
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(anim_name: String) -> void:
 	if anim_name == "Attack" + Player.get_skin() or anim_name == "Stun" + Player.get_skin():
 		attacking = false
 
 
 # Callback for when the base attack cooldown timer times out.
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	cooldown_base_attack = false;
 
 
 # Callback for when the stun attack cooldown timer times out.
-func _on_stun_timer_timeout():
+func _on_stun_timer_timeout() -> void:
 	cooldown_stun_attack = false;

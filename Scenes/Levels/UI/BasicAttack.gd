@@ -1,7 +1,7 @@
 extends TextureProgressBar
+class_name BasicAttackIcon
 
-
-func _process(_delta):
+func _process(_delta: float) -> void:
 	# When the player's HP is 0, hide the sword icon.
 	if (Player.get_hp() == 0):
 		self.visible = false

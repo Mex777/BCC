@@ -1,7 +1,7 @@
 extends TextureProgressBar
+class_name StunIcon
 
-
-func _process(_delta):
+func _process(_delta: float) -> void:
 	# When the player's HP is 0, hide the stun icon.
 	if (Player.get_hp() == 0):
 		self.visible = false

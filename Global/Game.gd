@@ -4,7 +4,7 @@ var curr_coins: int = 0
 var god_mode: bool = false
 var in_cutscene: bool = false
 var combat_counter: int = 0
-var level_name = "Level1"
+var level_name: String = "Level1"
 
 var chapter_names = {
 	"Level1": "Chapter one",
@@ -13,71 +13,71 @@ var chapter_names = {
 }
 
 
-func add_coins(coins):
+func add_coins(coins: int) -> void:
 	curr_coins += coins
 
 
-func set_coins(coins):
+func set_coins(coins: int) -> void:
 	curr_coins = coins
 
 
-func get_coins():
+func get_coins() -> int:
 	return curr_coins
 	
 	
-func reset():
+func reset() -> void:
 	curr_coins = 0
 	god_mode = false
 	in_cutscene = false
 	combat_counter = 0
 
 	
-func advance_to_level(level_name):
+func advance_to_level(level_name: String) -> void:
 	# Creates a transition with the corresponding chapter name
 	self.level_name = level_name
 	TransitionScene.transition(chapter_names[level_name])
 	await TransitionScene.on_transition_finished
 	
 	# Changes the scene to the new level
-	var location = "res://Scenes/Levels/" + level_name + ".tscn"
+	var location: String = "res://Scenes/Levels/" + level_name + ".tscn"
 	get_tree().change_scene_to_file(location)
 	
 	
-func toggle_god_mode():
+func toggle_god_mode() -> void:
 	god_mode = !god_mode
 	
 	
-func set_god_mode(val: bool):
+func set_god_mode(val: bool) -> void:
 	god_mode = val
 
 
-func toggle_cutscene():
+func toggle_cutscene() -> void:
 	in_cutscene = !in_cutscene
 	
 	
-func enter_combat():
+func enter_combat() -> void:
 	combat_counter += 1
 
 
-func exit_combat():
+func exit_combat() -> void:
 	combat_counter -= 1
 	
 	
-func in_combat():
+func in_combat() -> bool:
 	return combat_counter > 0
 	
 	
-func in_god_mode():
+func in_god_mode() -> bool:
 	return god_mode
 	
 	
-func is_in_cutscene():
+func is_in_cutscene() -> bool:
 	return in_cutscene
 	
 	
-func get_god_mode():
+func get_god_mode() -> bool:
 	return god_mode
 	
 	
-func get_level_name():
+func get_level_name() -> String:
 	return level_name

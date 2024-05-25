@@ -1,12 +1,12 @@
-extends "res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd"
+extends AbstractEnemy
 
 @onready var projectile = load("res://Scenes/Reusables/Projectile/Projectile.tscn")
 
-var player = null
+var player: Aurora = null
 
 
 # Ranged enemies don't move on the X-axis
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	# Applying gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -18,7 +18,7 @@ func _physics_process(delta):
 
 
 # When the player exits shooting range it stops attacking him
-func _on_area_2d_body_exited(body):
+func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.name == "Aurora":
 		attacking = false
 		Game.exit_combat()
@@ -26,7 +26,7 @@ func _on_area_2d_body_exited(body):
 
 
 # When the player enters range it starts attacking him
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "Aurora":
 		attacking = true
 		Game.enter_combat()
@@ -35,7 +35,7 @@ func _on_area_2d_body_entered(body):
 			attack()
 
 
-func attack():
+func attack() -> void:
 	# Uses cooldown logic from parent
 	super()
 	
@@ -47,7 +47,7 @@ func attack():
 		flip()
 	
 	# Shoots a projectile towards the player
-	var instance = projectile.instantiate()
+	var instance: Projectile = projectile.instantiate()
 	instance.right = player_in_right
 	add_child(instance)
 	
