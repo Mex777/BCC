@@ -26,7 +26,7 @@ func direction(right) -> int:
 	return -speed
 
 
-func _on_body_entered(body: CharacterBody2D) -> void:
+func _on_body_entered(body: Node) -> void:
 	# Doesn't hit other enemies
 	if body.is_in_group("Enemies"):
 		return
