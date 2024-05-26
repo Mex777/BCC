@@ -30,17 +30,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = abs(speed) * -1
 	
-	# When the enemy stays in place, it plays the idle animation	
-	if speed == 0:
-		$AnimatedSprite.play("Idle")
-	
-	# Updates animations based on the state of the enemy.
-	if not stunned and not cooldown_base_attack:
-		$AnimatedSprite.play("Running")
-	elif not cooldown_base_attack:
+	if stunned:
 		velocity.x = 0
 		$AnimatedSprite.play("Idle")
-		
+	# Checks if not in the attack animation
+	elif not cooldown_base_attack and speed == 0:
+		$AnimatedSprite.play("Idle")
+	elif not cooldown_base_attack:
+		$AnimatedSprite.play("Running")
+
 	$BaseAttackTimer.wait_time = attack_cooldown
 		
 	move_and_slide()

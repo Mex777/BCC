@@ -44,32 +44,17 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Handle base attack.
-	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
-		cooldown_base_attack = true
-		attacking = true
-		animation.play("Attack" + Player.get_skin())
-		var collision = get_node("Attack/BaseAttack")
-		collision.disabled = false
-		base_attack()
-	else:
-		var collision = get_node("Attack/BaseAttack")
-		collision.disabled = true
+	if Input.is_action_just_pressed("base_attack"):
+		attack()
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
 	# Handle ability.
-	if Input.is_action_just_pressed("stun") and not cooldown_stun_attack:
-		attacking = true
-		animation.play("Stun" + Player.get_skin())
-		var collision = get_node("Stun/Stun")
-		collision.disabled = false
-		stun_ability()
-	else:
-		var collision = get_node("Stun/Stun")
-		collision.disabled = true
-		
+	if Input.is_action_just_pressed("stun"):
+		stun()
+	
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction == -1: 
@@ -89,6 +74,23 @@ func _physics_process(delta: float) -> void:
 	update_animation()
 	move_and_slide()
 	
+
+func attack():
+	# Can only attack when ability is not in cooldown
+	if not cooldown_base_attack:
+		cooldown_base_attack = true
+		attacking = true
+		animation.play("Attack" + Player.get_skin())
+		base_attack()
+
+	
+func stun():
+	# Can only stun when ability is not in cooldown
+	if not cooldown_stun_attack:
+		attacking = true
+		animation.play("Stun" + Player.get_skin())
+		stun_ability()
+
 
 # Function for updating the animation based on the character's state.
 func update_animation() -> void:
@@ -118,14 +120,30 @@ func take_damage(damage: int) -> void:
 
 # Function for handling the stun ability.
 func stun_ability() -> void:
+	# Enables collision for 0.1 secs to register if hit
+	var collision = get_node("Stun/Stun")
+	collision.disabled = false
+	
 	cooldown_stun_attack = true 
 	$StunTimer.start()
+	await get_tree().create_timer(0.1).timeout
 	
+	# Disables collision afterwards
+	collision.disabled = true
+
 
 # Function for handling the base attack.
 func base_attack() -> void:
+	# Enables collision for 0.1 secs to register if hit
+	var collision = get_node("Attack/BaseAttack")
+	collision.disabled = false
+	
 	cooldown_base_attack = true
 	$BasicAttackTimer.start()
+	await get_tree().create_timer(0.1).timeout
+	
+	# Disables collision afterwards
+	collision.disabled = true
 	
 
 # Callback for when an animation finishes playing.
@@ -142,3 +160,4 @@ func _on_timer_timeout() -> void:
 # Callback for when the stun attack cooldown timer times out.
 func _on_stun_timer_timeout() -> void:
 	cooldown_stun_attack = false;
+
