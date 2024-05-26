@@ -44,31 +44,16 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Handle base attack.
-	if Input.is_action_just_pressed("base_attack") and not cooldown_base_attack:
-		cooldown_base_attack = true
-		attacking = true
-		animation.play("Attack" + Player.get_skin())
-		var collision = get_node("Attack/BaseAttack")
-		collision.disabled = false
-		base_attack()
-	else:
-		var collision = get_node("Attack/BaseAttack")
-		collision.disabled = true
+	if Input.is_action_just_pressed("base_attack"):
+		attack()
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
 	# Handle ability.
-	if Input.is_action_just_pressed("stun") and not cooldown_stun_attack:
-		attacking = true
-		animation.play("Stun" + Player.get_skin())
-		var collision = get_node("Stun/Stun")
-		collision.disabled = false
-		stun_ability()
-	else:
-		var collision = get_node("Stun/Stun")
-		collision.disabled = true
+	if Input.is_action_just_pressed("stun"):
+		stun()
 		
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
@@ -88,6 +73,35 @@ func _physics_process(delta: float) -> void:
 	
 	update_animation()
 	move_and_slide()
+	
+
+func attack():
+	# Can only attack when ability is not in cooldown
+	if not cooldown_base_attack:
+		cooldown_base_attack = true
+		attacking = true
+		animation.play("Attack" + Player.get_skin())
+		var collision = get_node("Attack/BaseAttack")
+		collision.disabled = false
+		base_attack()
+	else:
+		# Disables the attack area when ability is in cooldown
+		var collision = get_node("Attack/BaseAttack")
+		collision.disabled = true
+
+	
+func stun():
+	# Can only stun when ability is not in cooldown
+	if not cooldown_stun_attack:
+		attacking = true
+		animation.play("Stun" + Player.get_skin())
+		var collision = get_node("Stun/Stun")
+		collision.disabled = false
+		stun_ability()
+	else:
+		# Disables the stun area when ability is in cooldown
+		var collision = get_node("Stun/Stun")
+		collision.disabled = true
 	
 
 # Function for updating the animation based on the character's state.
