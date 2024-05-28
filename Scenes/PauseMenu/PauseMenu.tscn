@@ -9,9 +9,9 @@ script = ExtResource("1_fougu")
 [node name="Button" type="Button" parent="."]
 process_mode = 3
 offset_left = 288.0
-offset_top = 176.0
+offset_top = 184.0
 offset_right = 864.0
-offset_bottom = 320.0
+offset_bottom = 328.0
 theme_override_font_sizes/font_size = 20
 text = "Resume"
 
@@ -27,17 +27,17 @@ vertical_alignment = 1
 
 [node name="Main Menu" type="Button" parent="."]
 offset_left = 288.0
-offset_top = 472.0
+offset_top = 496.0
 offset_right = 864.0
-offset_bottom = 616.0
+offset_bottom = 640.0
 theme_override_font_sizes/font_size = 20
-text = "Return to main screeen"
+text = "Return to main screen"
 
 [node name="Restart Level" type="Button" parent="."]
 offset_left = 288.0
-offset_top = 328.0
+offset_top = 344.0
 offset_right = 864.0
-offset_bottom = 464.0
+offset_bottom = 480.0
 theme_override_font_sizes/font_size = 20
 text = "Restart Level"
 
