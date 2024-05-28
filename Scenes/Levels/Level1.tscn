@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dirqgx6g1xkol"]
+[gd_scene load_steps=14 format=3 uid="uid://dirqgx6g1xkol"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_x3wgt"]
+[ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="9_88h5w"]
 [ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Enemies/Skeleton/Skeleton.tscn" id="14_hym4o"]
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="16_ckh6a"]
 [ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="16_qd3k0"]
@@ -313,3 +314,7 @@ dialogue_name = "0"
 [node name="Cat2" parent="." index="21" instance=ExtResource("38_4s2k6")]
 position = Vector2(574, -526)
 dialogue_name = "1"
+
+[node name="PauseMenu" parent="." index="22" instance=ExtResource("9_88h5w")]
+process_priority = 1
+visible = false

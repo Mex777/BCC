@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://chcfopw08ovu"]
+[gd_scene load_steps=66 format=3 uid="uid://chcfopw08ovu"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_fjy1f"]
 [ext_resource type="Texture2D" uid="uid://dta3h5qg572dq" path="res://Assets/Aurora/FighterOutfit/Attack (right)/0.png" id="2_ta4xw"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bjt55ekny10lc" path="res://Assets/World/BaseTiles/SwampSetGrid.png" id="34_jgi0o"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Coins.gd" id="37_lpoop"]
 [ext_resource type="Texture2D" uid="uid://s5vc0mitvlsm" path="res://Assets/World/Collectables/Gem/0.png" id="38_dbv3s"]
+[ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="39_ohsbs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgge7"]
 radius = 14.0
@@ -687,6 +688,7 @@ attack_cooldown = 0.4
 
 [node name="Guardian" parent="." instance=ExtResource("32_ja55g")]
 position = Vector2(1268, 385)
+JUMP_VELOCITY = -200.0
 
 [node name="Devil" parent="." instance=ExtResource("33_16oai")]
 position = Vector2(1888, 432)
@@ -729,6 +731,9 @@ script = ExtResource("37_lpoop")
 position = Vector2(43, 95)
 scale = Vector2(3.48077, 3.48077)
 texture = ExtResource("38_dbv3s")
+
+[node name="PauseMenu" parent="." instance=ExtResource("39_ohsbs")]
+visible = false
 
 [connection signal="animation_finished" from="Aurora/Sprite" to="Aurora" method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Aurora/Sprite" to="Aurora" method="_on_sprite_sprite_frames_changed"]

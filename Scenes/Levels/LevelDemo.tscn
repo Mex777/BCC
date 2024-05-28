@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://f4le25l277hx"]
+[gd_scene load_steps=62 format=3 uid="uid://f4le25l277hx"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="2_acwsi"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dirwb1jdoxlxi" path="res://Assets/Aurora/PrisonerOutfit/Running (right)/2.png" id="18_mtrup"]
 [ext_resource type="Texture2D" uid="uid://blafgkncw7ti8" path="res://Assets/Aurora/PrisonerOutfit/Stun/0.png" id="19_glbix"]
 [ext_resource type="Texture2D" uid="uid://csc826fr76ryx" path="res://Assets/Aurora/PrisonerOutfit/Stun/1.png" id="20_kq328"]
+[ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="34_u4mcx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
 texture = ExtResource("1_bkxon")
@@ -640,6 +641,7 @@ attack_cooldown = 0.4
 
 [node name="Guardian" parent="." instance=ExtResource("16_ckh6a")]
 position = Vector2(1268, 385)
+JUMP_VELOCITY = -200.0
 
 [node name="Devil" parent="." instance=ExtResource("16_qd3k0")]
 position = Vector2(1888, 432)
@@ -657,6 +659,9 @@ script = SubResource("GDScript_hu1am")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownBorders"]
 position = Vector2(1158, 844)
 shape = SubResource("RectangleShape2D_cwysc")
+
+[node name="PauseMenu" parent="." instance=ExtResource("34_u4mcx")]
+visible = false
 
 [connection signal="animation_finished" from="Aurora/Sprite" to="Aurora" method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Aurora/Sprite" to="Aurora" method="_on_sprite_sprite_frames_changed"]

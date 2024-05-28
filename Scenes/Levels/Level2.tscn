@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp52a8k2i4rni"]
+[gd_scene load_steps=14 format=3 uid="uid://cp52a8k2i4rni"]
 
 [ext_resource type="Texture2D" uid="uid://bjus35kgq7g74" path="res://Assets/World/BaseTiles/NormalTiles.png" id="1_eysd5"]
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_gtvxx"]
 [ext_resource type="Texture2D" uid="uid://cdulpeg6edfwx" path="res://Assets/World/Background/Background1.png" id="2_786uf"]
 [ext_resource type="Texture2D" uid="uid://br4olylhxqau8" path="res://Assets/World/Background/Background2.png" id="3_4gt7m"]
+[ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="9_icddv"]
 [ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Enemies/Skeleton/Skeleton.tscn" id="14_tusdb"]
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="15_i2861"]
 [ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="16_rqv2l"]
@@ -659,5 +660,8 @@ script = SubResource("GDScript_eqte6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelPortal" index="0"]
 position = Vector2(3427, 324)
 shape = SubResource("RectangleShape2D_hchu2")
+
+[node name="PauseMenu" parent="." index="25" instance=ExtResource("9_icddv")]
+visible = false
 
 [connection signal="body_entered" from="NextLevelPortal" to="NextLevelPortal" method="_on_body_entered"]
