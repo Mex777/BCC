@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://chcfopw08ovu"]
+[gd_scene load_steps=65 format=3 uid="uid://chcfopw08ovu"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_fjy1f"]
 [ext_resource type="Texture2D" uid="uid://dta3h5qg572dq" path="res://Assets/Aurora/FighterOutfit/Attack (right)/0.png" id="2_ta4xw"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bj7b10v3cowqn" path="res://Assets/Aurora/FighterOutfit/Stun/1.png" id="19_262g5"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="20_b7axl"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="21_84yvk"]
-[ext_resource type="Script" path="res://Scenes/GameOver/GameOver.gd" id="22_lpu8c"]
 [ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="23_4jhu7"]
 [ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="24_qjyvo"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/HPBar.gd" id="25_fu6n0"]
@@ -645,7 +644,6 @@ layer_0/tile_data = PackedInt32Array(1638475, 262144, 1, 1638476, 262144, 1, 163
 
 [node name="GameOver" parent="." instance=ExtResource("21_84yvk")]
 visible = false
-script = ExtResource("22_lpu8c")
 
 [node name="Dummy" parent="." instance=ExtResource("26_4e0n7")]
 position = Vector2(686, 443)
