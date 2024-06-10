@@ -688,7 +688,6 @@ attack_cooldown = 0.4
 
 [node name="Guardian" parent="." instance=ExtResource("32_ja55g")]
 position = Vector2(1268, 385)
-JUMP_VELOCITY = -200.0
 
 [node name="Devil" parent="." instance=ExtResource("33_16oai")]
 position = Vector2(1888, 432)

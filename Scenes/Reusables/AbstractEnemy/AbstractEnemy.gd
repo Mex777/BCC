@@ -50,8 +50,12 @@ func take_damage(damage: int) -> void:
 	health = max(health - damage, 0)
 	# When the enemy dies it gives gems to the player and deletes the enemy.
 	if health == 0:
+		Game.enemy_dying_sound()
 		Game.add_coins(coins)
 		queue_free()
+		
+	# Sound for getting hit
+	$GettingHitSFX.play()
 		
 	# Flash the sprite red when taking damage.	
 	$AnimatedSprite.modulate = Color.RED
@@ -70,6 +74,7 @@ func stun(duration: float) -> void:
 func attack() -> void:
 	if not cooldown_base_attack:
 		cooldown_base_attack = true
+		$AttackSFX.play()
 		$AnimatedSprite.play("Attacking")
 		$BaseAttackTimer.start()
 

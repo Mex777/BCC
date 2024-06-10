@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://4ldyapbufguq"]
+[gd_scene load_steps=9 format=3 uid="uid://4ldyapbufguq"]
 
 [ext_resource type="Script" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd" id="1_g4s8k"]
+[ext_resource type="AudioStream" uid="uid://c6trnd17f2ccg" path="res://Assets/Audio/SFX/Enemy getting hit.mp3" id="2_211mk"]
+[ext_resource type="AudioStream" uid="uid://uvgpsy7ftyi3" path="res://Assets/Audio/SFX/Enemy death.mp3" id="3_4sm7s"]
+[ext_resource type="AudioStream" uid="uid://qavyahcp442j" path="res://Assets/Audio/SFX/Enemy attack melle.mp3" id="4_0giee"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jqopd"]
 animations = [{
@@ -63,5 +66,17 @@ script = SubResource("GDScript_pomaq")
 [node name="BaseAttackTimer" type="Timer" parent="."]
 process_callback = 0
 one_shot = true
+
+[node name="GettingHitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_211mk")
+bus = &"EnemiesSFX"
+
+[node name="DyingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4sm7s")
+bus = &"EnemiesSFX"
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0giee")
+bus = &"EnemiesSFX"
 
 [connection signal="timeout" from="BaseAttackTimer" to="." method="_on_base_attack_timer_timeout"]

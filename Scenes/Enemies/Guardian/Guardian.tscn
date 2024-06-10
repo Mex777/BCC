@@ -60,7 +60,7 @@ animations = [{
 }]
 
 [node name="Guardian" instance=ExtResource("1_lxxvd")]
-JUMP_VELOCITY = -200
+JUMP_VELOCITY = -200.0
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_hhec7")

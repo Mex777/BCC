@@ -5,6 +5,7 @@ var god_mode: bool = false
 var in_cutscene: bool = false
 var combat_counter: int = 0
 var level_name: String = "Level1"
+var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 
 var chapter_names = {
 	"Level1": "Chapter one",
@@ -81,3 +82,11 @@ func get_god_mode() -> bool:
 	
 func get_level_name() -> String:
 	return level_name
+	
+func enemy_dying_sound() -> void:
+	audio_player.stream = load("res://Assets/Audio/SFX/Enemy death.mp3")
+	if not audio_player.is_inside_tree():
+		add_child(audio_player)
+	audio_player.play()
+
+	

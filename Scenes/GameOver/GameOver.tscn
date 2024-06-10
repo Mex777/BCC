@@ -1,26 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b81brgql6wu3h"]
 
-[sub_resource type="GDScript" id="GDScript_o8mj8"]
-resource_name = "GameOver"
-script/source = "extends CanvasLayer
-
-func _process(delta):
-	if Player.is_dead() == true:
-		self.show()
-	else:
-		self.hide()
-
-func _on_respawn_pressed():
-	Player.reset()
-	get_tree().change_scene_to_file(\"res://Scenes/World/World.tscn\")
-
-
-func _on_main_screen_pressed():
-	get_tree().change_scene_to_file(\"res://Scenes/MainMenu/MainMenu.tscn\")
-"
+[ext_resource type="Script" path="res://Scenes/GameOver/GameOver.gd" id="1_g6fec"]
 
 [node name="GameOver" type="CanvasLayer"]
-script = SubResource("GDScript_o8mj8")
+script = ExtResource("1_g6fec")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 420.0

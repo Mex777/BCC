@@ -260,11 +260,9 @@ layer_0/tile_data = PackedInt32Array(1638475, 262144, 1, 1638476, 262144, 1, 163
 
 [node name="Guardian" parent="." index="6" instance=ExtResource("16_ckh6a")]
 position = Vector2(-658, 1154)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian2" parent="." index="7" instance=ExtResource("16_ckh6a")]
 position = Vector2(-848, 964)
-JUMP_VELOCITY = -200.0
 
 [node name="Skeleton" parent="." index="8" instance=ExtResource("14_hym4o")]
 position = Vector2(-620, 876)
@@ -277,22 +275,18 @@ position = Vector2(-901, 769)
 
 [node name="Guardian3" parent="." index="11" instance=ExtResource("16_ckh6a")]
 position = Vector2(-886, 625)
-JUMP_VELOCITY = -200.0
 
 [node name="Skeleton2" parent="." index="12" instance=ExtResource("14_hym4o")]
 position = Vector2(-237, 554)
 
 [node name="Guardian4" parent="." index="13" instance=ExtResource("16_ckh6a")]
 position = Vector2(-379, 366)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian5" parent="." index="14" instance=ExtResource("16_ckh6a")]
 position = Vector2(-501, 192)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian6" parent="." index="15" instance=ExtResource("16_ckh6a")]
 position = Vector2(-151, 197)
-JUMP_VELOCITY = -200.0
 
 [node name="Devil3" parent="." index="16" instance=ExtResource("16_qd3k0")]
 position = Vector2(566, -176)
@@ -305,7 +299,6 @@ position = Vector2(250, -482)
 
 [node name="Guardian7" parent="." index="19" instance=ExtResource("16_ckh6a")]
 position = Vector2(524, -528)
-JUMP_VELOCITY = -200.0
 
 [node name="Cat" parent="." index="20" instance=ExtResource("38_4s2k6")]
 position = Vector2(-360, 1152)
