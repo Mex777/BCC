@@ -90,6 +90,7 @@ func stun():
 		attacking = true
 		animation.play("Stun" + Player.get_skin())
 		stun_ability()
+		$WinkSFX.play()
 
 
 # Function for updating the animation based on the character's state.
@@ -116,6 +117,7 @@ func take_damage(damage: int) -> void:
 	$Sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	$Sprite.modulate = Color.WHITE	
+	$GettingHitSFX.play()
 	
 
 # Function for handling the stun ability.
@@ -137,6 +139,9 @@ func base_attack() -> void:
 	# Enables collision for 0.1 secs to register if hit
 	var collision = get_node("Attack/BaseAttack")
 	collision.disabled = false
+	
+	# Sound for attack
+	$SwingSFX.play()
 	
 	cooldown_base_attack = true
 	$BasicAttackTimer.start()

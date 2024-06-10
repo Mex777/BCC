@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djahftyhqo2fm"
+path="res://.godot/imported/Barbie getting hit.mp3-9be42c644205eef872eda30432bb02f4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Barbie getting hit.mp3"
+dest_files=["res://.godot/imported/Barbie getting hit.mp3-9be42c644205eef872eda30432bb02f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

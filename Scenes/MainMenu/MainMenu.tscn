@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd008jmwn1jdj"]
+[gd_scene load_steps=3 format=3 uid="uid://bd008jmwn1jdj"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="1_3kfvh"]
+[ext_resource type="AudioStream" uid="uid://dqhu0fp7a2d38" path="res://Assets/Audio/Music/Hero's Dawn.mp3" id="2_rxoku"]
 
 [node name="Main menu" type="Node2D"]
 script = ExtResource("1_3kfvh")
@@ -38,6 +39,11 @@ offset_bottom = 585.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Quit"
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rxoku")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]

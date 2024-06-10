@@ -602,22 +602,18 @@ position = Vector2(1205, 767)
 
 [node name="Guardian" parent="." index="9" instance=ExtResource("15_i2861")]
 position = Vector2(1147, 773)
-JUMP_VELOCITY = -200.0
 
 [node name="Skeleton" parent="." index="10" instance=ExtResource("14_tusdb")]
 position = Vector2(712, 525)
 
 [node name="Guardian2" parent="." index="11" instance=ExtResource("15_i2861")]
 position = Vector2(1535, 767)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian3" parent="." index="12" instance=ExtResource("15_i2861")]
 position = Vector2(447, 785)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian4" parent="." index="13" instance=ExtResource("15_i2861")]
 position = Vector2(508, 779)
-JUMP_VELOCITY = -200.0
 
 [node name="Devil4" parent="." index="14" instance=ExtResource("16_rqv2l")]
 position = Vector2(2006, 641)
@@ -627,15 +623,12 @@ position = Vector2(2237, 659)
 
 [node name="Guardian5" parent="." index="16" instance=ExtResource("15_i2861")]
 position = Vector2(1909, 782)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian6" parent="." index="17" instance=ExtResource("15_i2861")]
 position = Vector2(2114, 779)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian7" parent="." index="18" instance=ExtResource("15_i2861")]
 position = Vector2(2918, 761)
-JUMP_VELOCITY = -200.0
 
 [node name="Skeleton3" parent="." index="19" instance=ExtResource("14_tusdb")]
 position = Vector2(2952, 674)
@@ -645,11 +638,9 @@ position = Vector2(2952, 599)
 
 [node name="Guardian8" parent="." index="21" instance=ExtResource("15_i2861")]
 position = Vector2(2522, 577)
-JUMP_VELOCITY = -200.0
 
 [node name="Guardian9" parent="." index="22" instance=ExtResource("15_i2861")]
 position = Vector2(3169, 576)
-JUMP_VELOCITY = -200.0
 
 [node name="Devil6" parent="." index="23" instance=ExtResource("16_rqv2l")]
 position = Vector2(706, 359)
