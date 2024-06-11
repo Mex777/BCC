@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4axwmy8gv8jv"]
+
+[ext_resource type="PackedScene" uid="uid://bar1kbrm7idns" path="res://Scenes/Reusables/Projectile/Projectile.tscn" id="1_jf4bp"]
+[ext_resource type="Script" path="res://Scenes/Reusables/Projectile/SmartProjectile.gd" id="2_yunuj"]
+[ext_resource type="Texture2D" uid="uid://dkl0vh8afwnou" path="res://Assets/Projectiles/Fireball2/0.png" id="3_cqhg0"]
+[ext_resource type="Texture2D" uid="uid://cvsgk100yilfa" path="res://Assets/Projectiles/Fireball2/1.png" id="4_75fmv"]
+[ext_resource type="Texture2D" uid="uid://b4juut0jg2mad" path="res://Assets/Projectiles/Fireball2/2.png" id="5_56qd0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l14nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cqhg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_75fmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_56qd0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SmartProjectile" instance=ExtResource("1_jf4bp")]
+script = ExtResource("2_yunuj")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, 0)
+sprite_frames = SubResource("SpriteFrames_l14nu")
+frame_progress = 0.565012
