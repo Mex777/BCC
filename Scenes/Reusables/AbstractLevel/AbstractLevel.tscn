@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bm6imajj4mk0o"]
+[gd_scene load_steps=17 format=3 uid="uid://bm6imajj4mk0o"]
 
 [ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="1_rgyxq"]
 [ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="2_drk6s"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://s884eedj27om" path="res://Assets/UI/StunIcon/1.png" id="10_e56r2"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/Stun.gd" id="11_enkm4"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="12_f054l"]
-[ext_resource type="Script" path="res://Scenes/GameOver/GameOver.gd" id="13_yxeal"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqto2"]
 atlas = ExtResource("1_rgyxq")
@@ -92,4 +91,3 @@ script = ExtResource("11_enkm4")
 
 [node name="GameOver" parent="." instance=ExtResource("12_f054l")]
 visible = false
-script = ExtResource("13_yxeal")
