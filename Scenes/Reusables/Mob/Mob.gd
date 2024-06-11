@@ -1,6 +1,13 @@
 extends AbstractEnemy
 class_name Mob
 
+
+# Mobs can't get stunned and they don't have hp 
+func _ready():
+	$TextureProgressBar.hide()
+	$Label.hide()
+
+
 # Mobs don't take damage
 func take_damage(damage: int) -> void:
 	pass

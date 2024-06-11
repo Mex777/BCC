@@ -42,6 +42,13 @@ animation = &"Idle"
 [node name="CollisionShape" parent="." index="1"]
 position = Vector2(0, 3)
 
+[node name="Label" parent="." index="2"]
+offset_left = -17.0
+offset_top = -31.0
+offset_right = 4983.0
+offset_bottom = 2769.0
+text = "HP:"
+
 [node name="RayCast2D" parent="." index="3"]
 metadata/_edit_lock_ = true
 

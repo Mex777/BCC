@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://4ldyapbufguq"]
+[gd_scene load_steps=11 format=3 uid="uid://4ldyapbufguq"]
 
 [ext_resource type="Script" path="res://Scenes/Reusables/AbstractEnemy/AbstractEnemy.gd" id="1_g4s8k"]
 [ext_resource type="AudioStream" uid="uid://c6trnd17f2ccg" path="res://Assets/Audio/SFX/Enemy getting hit.mp3" id="2_211mk"]
 [ext_resource type="AudioStream" uid="uid://uvgpsy7ftyi3" path="res://Assets/Audio/SFX/Enemy death.mp3" id="3_4sm7s"]
 [ext_resource type="AudioStream" uid="uid://qavyahcp442j" path="res://Assets/Audio/SFX/Enemy attack melle.mp3" id="4_0giee"]
+[ext_resource type="Texture2D" uid="uid://boy3f5cjsjujy" path="res://Assets/UI/EnemyHealthBar/0.png" id="5_wn2ju"]
+[ext_resource type="Texture2D" uid="uid://wryaj2u0teru" path="res://Assets/UI/EnemyHealthBar/1.png" id="6_kq7u2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jqopd"]
 animations = [{
@@ -36,9 +38,10 @@ script/source = "extends Label
 
 func _process(_delta):
 	var dummy = get_node(\"..\")
-	text = \"HP: \" + str(dummy.health)
 	if dummy.stunned:
-		text += \"STUNNED\"
+		text = \"STUNNED\"
+	else:
+		text = \"\"
 	
 "
 
@@ -53,15 +56,27 @@ animation = &"Attacking"
 shape = SubResource("CapsuleShape2D_hteyl")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -17.0
-offset_top = -31.0
-offset_right = 4983.0
-offset_bottom = 2769.0
+offset_left = -24.0
+offset_top = -36.0
+offset_right = 9427.0
+offset_bottom = 2764.0
 scale = Vector2(0.005, 0.005)
 theme_override_fonts/font = SubResource("SystemFont_5d3l4")
 theme_override_font_sizes/font_size = 2048
-text = "HP:"
+text = "STUNNED"
 script = SubResource("GDScript_pomaq")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 15.0
+offset_bottom = 4.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_kq7u2")
+texture_progress = ExtResource("5_wn2ju")
 
 [node name="BaseAttackTimer" type="Timer" parent="."]
 process_callback = 0
