@@ -11,6 +11,16 @@ var lifetime: float = 5
 
 
 func _ready() -> void:
+	# Offsets the projectile to the left or to the right depeding on player's position
+	# We do this so that the projectile doesn't spawn inside the enemy
+	if right:
+		self.position.x += 10
+		$AnimatedSprite2D.scale *= 1
+	else:
+		self.position.x += -10
+		$AnimatedSprite2D.scale *= -1
+		
+	$AnimatedSprite2D.play("default")
 	await get_tree().create_timer(lifetime).timeout
 	queue_free()
 
