@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var cooldown_duration: int = 10
+@export var cooldown_duration: int = 60
 @export var amount: int = 10
 
 var in_cooldown: bool = false
