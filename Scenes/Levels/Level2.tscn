@@ -509,10 +509,7 @@ script/source = "extends Area2D
 
 func _on_body_entered(body):
 	if body.name == \"Aurora\":
-		$\"../Aurora\".god_mode = true
-		TransitionScene.transition(\"Chapter three\")
-		await TransitionScene.on_transition_finished
-		get_tree().change_scene_to_file(\"res://Scenes/Levels/Level3.tscn\")
+		Game.advance_to_level(\"Level3\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hchu2"]
@@ -652,7 +649,7 @@ script = SubResource("GDScript_eqte6")
 position = Vector2(3427, 324)
 shape = SubResource("RectangleShape2D_hchu2")
 
-[node name="PauseMenu" parent="." index="25" instance=ExtResource("9_icddv")]
+[node name="PauseMenu2" parent="." index="25" instance=ExtResource("9_icddv")]
 visible = false
 
 [connection signal="body_entered" from="NextLevelPortal" to="NextLevelPortal" method="_on_body_entered"]
