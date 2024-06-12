@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://chcfopw08ovu"]
+[gd_scene load_steps=10 format=3 uid="uid://chcfopw08ovu"]
 
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_xswcs"]
 [ext_resource type="PackedScene" uid="uid://3j4hlvkgyuvg" path="res://Scenes/Mobs/Cat/Cat.tscn" id="6_bww1i"]
+[ext_resource type="PackedScene" uid="uid://dt4msg14rtu1v" path="res://Scenes/Reusables/Collectables/Heart.tscn" id="7_j207n"]
 [ext_resource type="Texture2D" uid="uid://b4np8ylelby2v" path="res://Assets/World/TileSet.png" id="20_b7axl"]
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="20_bwbl0"]
 [ext_resource type="PackedScene" uid="uid://dcub1wk2jdskp" path="res://Scenes/Enemies/FinalBoss/FinalBoss.tscn" id="21_7aoa5"]
@@ -168,3 +169,6 @@ layer_0/tile_data = PackedInt32Array(1900544, 65536, 0, 1900545, 65536, 0, 19005
 [node name="Cat" parent="." index="8" instance=ExtResource("6_bww1i")]
 position = Vector2(205, 450)
 dialogue_name = "3"
+
+[node name="Heart" parent="." index="9" instance=ExtResource("7_j207n")]
+position = Vector2(1101, 451)
