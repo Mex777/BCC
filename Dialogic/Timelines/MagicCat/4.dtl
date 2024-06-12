@@ -30,3 +30,4 @@ leave MagicCat
 join Aurora (Fighter) 3
 Aurora: Together, we'll make sure it is. Let's go.
 leave Aurora
+do Game.advance_to_level("EndScreen")
