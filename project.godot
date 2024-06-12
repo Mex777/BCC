@@ -31,6 +31,7 @@ directories/dch_directory={
 "Dress": "res://Dialogic/Assets/Dress.dch",
 "Gem": "res://Dialogic/Assets/Gem.dch",
 "MagicCat": "res://Dialogic/Characters/MagicCat.dch",
+"Margareta": "res://Dialogic/Characters/Margareta.dch",
 "SellerCat": "res://Dialogic/Characters/SellerCat.dch"
 }
 directories/dtl_directory={

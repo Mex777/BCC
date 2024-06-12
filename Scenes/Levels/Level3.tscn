@@ -171,4 +171,4 @@ position = Vector2(205, 450)
 dialogue_name = "3"
 
 [node name="Heart" parent="." index="9" instance=ExtResource("7_j207n")]
-position = Vector2(1101, 451)
+position = Vector2(1101, 453)

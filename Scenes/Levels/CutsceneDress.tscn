@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnu0n0brs8po6"]
+[gd_scene load_steps=13 format=3 uid="uid://bnu0n0brs8po6"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_t721t"]
 [ext_resource type="Texture2D" uid="uid://bjus35kgq7g74" path="res://Assets/World/BaseTiles/NormalTiles.png" id="2_xoy5m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="5_fmn2k"]
 [ext_resource type="Texture2D" uid="uid://cdulpeg6edfwx" path="res://Assets/World/Background/Background1.png" id="6_a1sax"]
 [ext_resource type="Texture2D" uid="uid://br4olylhxqau8" path="res://Assets/World/Background/Background2.png" id="7_lpwxo"]
+[ext_resource type="Texture2D" uid="uid://bqkpa71ayw8th" path="res://Assets/Mobs/Cat/Calico/Idle/0.png" id="8_5mcwy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8bm3"]
 texture = ExtResource("1_t721t")
@@ -686,3 +687,7 @@ texture = ExtResource("7_lpwxo")
 position = Vector2(-409, 851)
 scale = Vector2(1.82955, 1.82955)
 texture = ExtResource("7_lpwxo")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(1115, 370)
+texture = ExtResource("8_5mcwy")

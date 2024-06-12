@@ -74,6 +74,12 @@ join Aurora 3
 do Player.set_skin("Princess")
 Aurora (Princess): Thank you, Jody.
 leave Aurora
+join Margareta 3
+Margareta: Good luck!
+leave Margareta
+join Aurora (Princess) 3
+Aurora: Thank you!
+leave Aurora
 
 join SellerCat 3
 SellerCat: My pleasure! Stay safe out there.
