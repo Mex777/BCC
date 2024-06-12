@@ -301,12 +301,10 @@ position = Vector2(250, -482)
 position = Vector2(524, -528)
 
 [node name="Cat" parent="." index="20" instance=ExtResource("38_4s2k6")]
-visible = false
 position = Vector2(-360, 1152)
 dialogue_name = "0"
 
 [node name="Cat2" parent="." index="21" instance=ExtResource("38_4s2k6")]
-visible = false
 position = Vector2(574, -526)
 dialogue_name = "1"
 

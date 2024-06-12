@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd008jmwn1jdj"]
+[gd_scene load_steps=7 format=3 uid="uid://bd008jmwn1jdj"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="1_3kfvh"]
 [ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="2_j5hrm"]
 [ext_resource type="AudioStream" uid="uid://dqhu0fp7a2d38" path="res://Assets/Audio/Music/Hero's Dawn.mp3" id="2_rxoku"]
 [ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="4_7rj8a"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="5_b5jfb"]
 [ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="5_txs5x"]
 
 [node name="Main menu" type="Node2D"]
@@ -30,8 +31,9 @@ offset_left = 77.0
 offset_top = 21.0
 offset_right = 491.0
 offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_b5jfb")
 theme_override_font_sizes/font_size = 40
-text = "Continue"
+text = "CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -50,8 +52,9 @@ offset_left = 77.0
 offset_top = 22.0
 offset_right = 490.0
 offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("5_b5jfb")
 theme_override_font_sizes/font_size = 40
-text = "New Game"
+text = "NEW GAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -70,8 +73,9 @@ offset_left = 90.0
 offset_top = 29.0
 offset_right = 480.0
 offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("5_b5jfb")
 theme_override_font_sizes/font_size = 40
-text = "Exit"
+text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
