@@ -51,5 +51,6 @@ func attack() -> void:
 	# Shoots a projectile towards the player
 	var instance: Projectile = projectile.instantiate()
 	instance.right = player_in_right
+	instance.damage = damage
 	add_child(instance)
 	

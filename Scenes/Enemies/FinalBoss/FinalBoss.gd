@@ -53,6 +53,8 @@ func _physics_process(delta: float) -> void:
 func range_attack() -> void:
 	if range_cooldown:
 		return
+	if stunned:
+		return
 	# Uses cooldown logic from parent
 	#super()
 	range_cooldown = true
