@@ -12,7 +12,17 @@ var range_attacking: bool = false
 var range_cooldown: bool = false
 
 
+func _ready() -> void:
+	super()
+	# Connect the signal_event signal from the Dialogic singleton to the dialogic_signal function.
+	Dialogic.signal_event.connect(dialogic_signal)
+	
+	
+
 func _physics_process(delta: float) -> void:
+	if health == 0:
+		return
+		
 	if chasing:
 		# Start chasing the player on the X-axis
 		speed = max_speed
@@ -86,6 +96,25 @@ func attack() -> void:
 	player.take_damage(damage)
 
 
+# Function for handling damage taken by the enemy.
+func take_damage(damage: int) -> void:
+	# Decrease the health by the damage taken, but not below 0.
+	health = max(health - damage, 0)
+
+	if health == 0:
+		Dialogic.start("4")		
+	
+		
+	# Sound for getting hit
+	$GettingHitSFX.play()
+		
+	# Flash the sprite red when taking damage.	
+	$AnimatedSprite.modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	$AnimatedSprite.modulate = Color.WHITE
+	
+	
+
 # Start chasing the player when it enters chaser's range
 func _on_chase_range_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "Aurora":
@@ -122,3 +151,8 @@ func _on_ranged_attack_range_body_exited(body):
 		range_attacking = false
 		Game.exit_combat()
 		player = null
+
+
+func dialogic_signal(name):
+	if name == "die":
+		queue_free()
