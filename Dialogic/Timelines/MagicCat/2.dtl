@@ -1,0 +1,89 @@
+do Game.toggle_cutscene()
+[style name="BubbleStyle"]
+[signal arg="run.92"]
+
+Aurora: So?
+MagicCat: What?
+Aurora: Are you going to tell me who I am?
+MagicCat: Yes...
+MagicCat: You're Aurora, the lost princess of Ardania.
+Aurora: Of what?
+MagicCat: Ardania. It's a beautiful kingdom far to the east, surrounded by lush forests and sparkling rivers.
+Aurora: A princess? Me? How can that be?
+MagicCat: It's a long story, but you deserve to know the truth.
+Aurora: I'm listening.
+MagicCat: Your father, King Alden, wasn't always a king. He was once a simple noble with a burning ambition for power.
+Aurora: My father? What did he do?
+MagicCat: To become king, he made a deal with a dark entity named Dormogh. In exchange for the throne, he promised something dear to him.
+Aurora: What did he promise?
+MagicCat: You, Aurora. He traded you, his own daughter, to Dormogh.
+Aurora: No... that can't be true.
+MagicCat: It is. Dormogh took you away, and you were lost to the kingdom. But not everyone forgot about you.
+Aurora: Why did he do that? Why me?
+MagicCat: Your father was blinded by his desire for power. He believed the throne was worth any price. But not everyone agreed with him.
+Aurora: Who? Who didn't agree?
+MagicCat: I didn't. I was hired by your father to rescue you, to undo the terrible mistake he made.
+Aurora: You were hired by my father? But why would he want me back after trading me away?
+MagicCat: Guilt and regret have weighed heavily on him. He realized too late the terrible cost of his ambition. He wanted to make things right.
+Aurora: And Dormogh? What does he want now?
+MagicCat: Dormogh wants to keep his hold on you. He won't let you go easily. That's why we must hurry to the castle. He's surely on our tail, trying to stop us.
+Aurora: Then we can't waste any more time. Let's go.
+MagicCat: Stay close, Aurora. We have a long journey ahead, and many dangers await. But together, we can overcome them.
+Aurora: Thank you, MagicCat. For everything.
+MagicCat: No need for thanks. We're in this together. Now, let's get you that dress and head to the castle.
+
+[style name="VisualStyle"]
+join SellerCat 3
+SellerCat: Welcome, welcome! What can I do for you today?
+leave SellerCat
+
+join MagicCat 3
+MagicCat: Hey, Jody. We're in need of a dress for Aurora here.
+leave MagicCat
+
+join SellerCat 3
+SellerCat: Ah, a new dress! I have just the thing. How about this one?
+join Dress 2
+leave SellerCat
+
+join Aurora 3
+Aurora: It's beautiful!
+leave Aurora
+
+join MagicCat 3
+MagicCat: How much is it?
+leave MagicCat
+
+join SellerCat 3
+SellerCat: That dress costs 100 gems.
+leave SellerCat
+
+join MagicCat 3
+MagicCat: We’ll take it. Here are 100 gems.
+do Game.add_coins("-100")
+join Gem 2
+leave MagicCat
+
+leave Gem
+join SellerCat 3
+SellerCat: Perfect! Here you go, Aurora. You’ll look stunning in this.
+leave SellerCat
+leave Dress
+
+join Aurora 3
+Aurora (Princess): Thank you, Jody.
+do Player.set_skin("Princess")
+leave Aurora
+
+join SellerCat 3
+SellerCat: My pleasure! Stay safe out there.
+leave SellerCat
+
+join MagicCat 3
+MagicCat: We will. Let's go, Aurora. We need to keep moving.
+leave MagicCat
+do Game.advance_to_level("Level2")
+do SaveManager.save_game()
+
+do Game.toggle_cutscene()
+[end_timeline]
