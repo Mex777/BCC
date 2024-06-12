@@ -1,0 +1,97 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcub1wk2jdskp"]
+
+[ext_resource type="PackedScene" uid="uid://d1788jsnfeg3m" path="res://Scenes/Reusables/ChaseEnemy/ChaseEnemy.tscn" id="1_o7rv2"]
+[ext_resource type="Texture2D" uid="uid://c1m11m8p665ap" path="res://Assets/Enemies/FinalBoss/Idle/0.png" id="2_d2bqs"]
+[ext_resource type="Script" path="res://Scenes/Enemies/FinalBoss/FinalBoss.gd" id="2_eufgw"]
+[ext_resource type="Texture2D" uid="uid://bvmnskh021swo" path="res://Assets/Enemies/FinalBoss/Idle/1.png" id="3_n0g0a"]
+[ext_resource type="Texture2D" uid="uid://d2qmh5j2fvpt8" path="res://Assets/Enemies/FinalBoss/Idle/2.png" id="4_g0i10"]
+[ext_resource type="Texture2D" uid="uid://dx17y50c8fmqd" path="res://Assets/Enemies/FinalBoss/Idle/3.png" id="5_7f16x"]
+[ext_resource type="Texture2D" uid="uid://c4mt1lok8q6dc" path="res://Assets/Enemies/FinalBoss/Idle/4.png" id="6_xxfr1"]
+[ext_resource type="Texture2D" uid="uid://dclx7yn1mf5k2" path="res://Assets/Enemies/FinalBoss/Idle/5.png" id="7_mm2u5"]
+[ext_resource type="AudioStream" uid="uid://dlintdetekud7" path="res://Assets/Audio/SFX/Enemy attack ranged.mp3" id="9_pj1ek"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psuy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d2bqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n0g0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g0i10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7f16x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xxfr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mm2u5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7u3pm"]
+radius = 39.0
+height = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34oin"]
+radius = 403.15
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1s06"]
+radius = 189.447
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1j0p"]
+size = Vector2(30.5, 62.875)
+
+[node name="FinalBoss" instance=ExtResource("1_o7rv2")]
+script = ExtResource("2_eufgw")
+JUMP_VELOCITY = -200.0
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_psuy7")
+animation = &"Idle"
+frame_progress = 0.104648
+
+[node name="CollisionShape" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_7u3pm")
+
+[node name="Label" parent="." index="2"]
+offset_top = -49.0
+offset_bottom = 2751.0
+
+[node name="TextureProgressBar" parent="." index="3"]
+offset_left = -66.0
+offset_top = -92.0
+offset_right = 65.0
+offset_bottom = 39.0
+metadata/_edit_lock_ = true
+
+[node name="RangedAttackRange" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedAttackRange" index="0"]
+shape = SubResource("CircleShape2D_34oin")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="ChaseRange" index="0"]
+shape = SubResource("CircleShape2D_a1s06")
+metadata/_edit_lock_ = true
+
+[node name="AttackRange" parent="." index="6"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="AttackRange" index="0"]
+position = Vector2(40, -8)
+shape = SubResource("RectangleShape2D_o1j0p")
+metadata/_edit_lock_ = true
+
+[node name="RangeAttackSFX" type="AudioStreamPlayer2D" parent="." index="11"]
+stream = ExtResource("9_pj1ek")
+
+[connection signal="body_entered" from="RangedAttackRange" to="." method="_on_ranged_attack_range_body_entered"]
+[connection signal="body_exited" from="RangedAttackRange" to="." method="_on_ranged_attack_range_body_exited"]

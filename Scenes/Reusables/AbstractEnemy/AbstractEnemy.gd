@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name AbstractEnemy
 
-@export var health: int = 10
+@export var max_health: int = 10
 @export var max_speed: float = 40.0
 @export var coins: int = 10
 @export var damage: float = 5
@@ -13,10 +13,17 @@ var stunned: bool = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right: bool = true
 var cooldown_base_attack: bool = false
+var health: int
 
 
 func _ready() -> void:
 	speed = max_speed
+	health = max_health
+
+
+func _process(_delta: float) -> void:
+	# Updates HP bar every frame
+	$TextureProgressBar.value = float(health) / max_health;
 
 
 func _physics_process(delta: float) -> void:

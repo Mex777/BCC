@@ -46,6 +46,8 @@ func attack() -> void:
 	if player_in_right != facing_right:
 		flip()
 	
+	$AnimatedSprite.play("Attacking")
+	
 	# Shoots a projectile towards the player
 	var instance: Projectile = projectile.instantiate()
 	instance.right = player_in_right

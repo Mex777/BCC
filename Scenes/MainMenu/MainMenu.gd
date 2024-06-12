@@ -1,10 +1,11 @@
 extends Node2D
 class_name MainMenu
 
+
 func _ready() -> void:
 	get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
 	
-	# If there is no save file, disable the continue button and exit the function.
+	# If there is no save file, disable the continue button.
 	if load("res://Saves/Save.tres") == null:
 		$ContinueBtn.disabled = true
 	else:
