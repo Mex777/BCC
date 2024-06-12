@@ -6,6 +6,7 @@ class_name Mob
 func _ready():
 	$TextureProgressBar.hide()
 	$Label.hide()
+	speed = 0
 
 
 # Mobs don't take damage
@@ -13,11 +14,7 @@ func take_damage(damage: int) -> void:
 	pass
 
 
-# Mobs do not move by default on the X-axis
-func _physics_process(delta: float) -> void:
-	# Applying gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		
-	move_and_slide()
+## Mobs do not move by default on the X-axis
+#func _physics_process(delta: float) -> void:
+	#super(delta)
 

@@ -14,8 +14,8 @@ var chapter_names = {
 }
 
 
-func add_coins(coins: int) -> void:
-	curr_coins += coins
+func add_coins(coins) -> void:
+	curr_coins += int(coins)
 
 
 func set_coins(coins: int) -> void:
@@ -34,6 +34,8 @@ func reset() -> void:
 
 	
 func advance_to_level(level_name: String) -> void:
+	if level_name not in chapter_names:
+		chapter_names[level_name] = ""
 	# Creates a transition with the corresponding chapter name
 	self.level_name = level_name
 	TransitionScene.transition(chapter_names[level_name])

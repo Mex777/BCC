@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Global/SaveData.gd" id="1_613k5"]
+[ext_resource type="Script" path="res://Global/SaveData.gd" id="1_t0qob"]
 
 [resource]
-script = ExtResource("1_613k5")
+script = ExtResource("1_t0qob")
 data = {
-"Gems": 0,
-"GodMode": false,
+"Gems": 1021,
+"GodMode": true,
 "HP": 100,
-"LevelName": "Level1",
-"Skin": "Prisoner"
+"LevelName": "Level2",
+"Skin": "Princess"
 }

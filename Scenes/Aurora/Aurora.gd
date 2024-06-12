@@ -5,8 +5,9 @@ class_name Aurora
 @export var camera_right_limit: int
 @export var camera_top_limit: int
 @export var camera_bottom_limit: int
+@export var max_speed: float = 300.0
 
-const SPEED: float = 300.0
+var speed = 0
 const JUMP_VELOCITY: float = -400.0
 var attacking: bool = false
 var cooldown_stun_attack: bool = false
@@ -26,6 +27,9 @@ func _ready() -> void:
 	camera.limit_right = camera_right_limit
 	camera.limit_top = camera_top_limit
 	camera.limit_bottom = camera_bottom_limit
+	
+	# Connect the signal_event signal from the Dialogic singleton to the dialogic_signal function.
+	Dialogic.signal_event.connect(dialogic_signal)
 
 
 func _physics_process(delta: float) -> void:
@@ -39,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle cutscenes.
 	if Game.is_in_cutscene():
+		velocity.x = speed
 		update_animation()
 		move_and_slide()
 		return
@@ -67,9 +72,9 @@ func _physics_process(delta: float) -> void:
 			$Attack/BaseAttack.position.x *= -1
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * max_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, max_speed)
 	
 	update_animation()
 	move_and_slide()
@@ -166,3 +171,9 @@ func _on_timer_timeout() -> void:
 func _on_stun_timer_timeout() -> void:
 	cooldown_stun_attack = false;
 
+#
+func dialogic_signal(signal_name: String) -> void:
+	if signal_name.contains("run"):
+		speed = 10
+		await get_tree().create_timer(float(signal_name.split(".")[1])).timeout
+		speed = 0
