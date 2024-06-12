@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://de4laod4ajq7a"]
+
+[ext_resource type="PackedScene" uid="uid://ci2ps4ymbxkba" path="res://Scenes/Reusables/Collectables/AbstractCollectable.tscn" id="1_62j3g"]
+[ext_resource type="Script" path="res://Scenes/Reusables/Collectables/Gem.gd" id="2_b5i57"]
+
+[node name="Gem" instance=ExtResource("1_62j3g")]
+script = ExtResource("2_b5i57")

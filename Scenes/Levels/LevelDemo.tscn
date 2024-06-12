@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://f4le25l277hx"]
+[gd_scene load_steps=29 format=3 uid="uid://f4le25l277hx"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_bkxon"]
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="3_4redj"]
@@ -11,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="15_ostti"]
 [ext_resource type="Texture2D" uid="uid://bfaosth1ip357" path="res://Assets/UI/SwordIcon/0.png" id="16_01hb8"]
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="16_ckh6a"]
+[ext_resource type="PackedScene" uid="uid://de4laod4ajq7a" path="res://Scenes/Reusables/Collectables/Gem.tscn" id="16_dyvls"]
 [ext_resource type="Texture2D" uid="uid://bvsmb0y575hpm" path="res://Assets/UI/SwordIcon/5.png" id="16_inuir"]
 [ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="16_qd3k0"]
 [ext_resource type="Texture2D" uid="uid://x7mk5ax2o54n" path="res://Assets/UI/HealthBar/10.png" id="16_wte24"]
+[ext_resource type="PackedScene" uid="uid://dt4msg14rtu1v" path="res://Scenes/Reusables/Collectables/Heart.tscn" id="17_3f45b"]
 [ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="34_u4mcx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
@@ -241,6 +243,12 @@ camera_left_limit = -1000
 camera_right_limit = 10000
 camera_top_limit = -1000
 camera_bottom_limit = 1000
+
+[node name="Gem" parent="." instance=ExtResource("16_dyvls")]
+position = Vector2(353, 451)
+
+[node name="Heart" parent="." instance=ExtResource("17_3f45b")]
+position = Vector2(413, 452)
 
 [connection signal="body_entered" from="NextLevelPortal" to="NextLevelPortal" method="_on_body_entered"]
 [connection signal="body_entered" from="DownBorders" to="DownBorders" method="_on_body_entered"]

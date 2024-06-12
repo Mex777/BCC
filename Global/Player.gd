@@ -14,7 +14,11 @@ func take_damage(damage: int) -> void:
 
 	
 func set_hp(val: int) -> void:
-	hp = val
+	hp = max(min(val, max_hp), 0)
+	
+	
+func add_hp(val: int) -> void:
+	hp = max(min(hp + val, max_hp), 0)
 
 
 func get_hp() -> int:

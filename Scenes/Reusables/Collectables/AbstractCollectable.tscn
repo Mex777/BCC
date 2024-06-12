@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci2ps4ymbxkba"]
+
+[ext_resource type="Texture2D" uid="uid://bgl1qu1iicr43" path="res://Assets/World/Collectables/GemPlatform/1.png" id="1_3rlff"]
+[ext_resource type="Texture2D" uid="uid://mq5ck8sdaq8w" path="res://Assets/World/Collectables/GemPlatform/2.png" id="2_gd1s8"]
+[ext_resource type="Texture2D" uid="uid://b2lkncjehhobb" path="res://Assets/World/Collectables/GemPlatform/0.png" id="3_1m3m1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axv7u"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("1_3rlff")
+}, {
+"duration": 3.0,
+"texture": ExtResource("2_gd1s8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svmv0"]
+size = Vector2(24, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bfj8"]
+size = Vector2(32, 48)
+
+[node name="AbstractCollectable" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -11)
+scale = Vector2(2.125, 2.125)
+sprite_frames = SubResource("SpriteFrames_axv7u")
+autoplay = "default"
+frame_progress = 0.903815
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+[node name="0" type="Sprite2D" parent="Platform"]
+position = Vector2(0.999999, -9.5)
+scale = Vector2(2.25, 1.96875)
+texture = ExtResource("3_1m3m1")
+
+[node name="Platform" type="CollisionShape2D" parent="Platform"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_svmv0")
+metadata/_edit_lock_ = true
+
+[node name="EnterBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_6bfj8")
+
+[connection signal="body_entered" from="EnterBox" to="." method="_on_enter_box_body_entered"]
