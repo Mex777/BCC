@@ -1,0 +1,33 @@
+[style name="VisualStyle"]
+do Game.toggle_cutscene()
+
+join Dormogh 3
+Dormogh: Noooooooo!
+[signal arg="die"]
+leave Dormogh
+
+# After Dormogh's defeat
+join MagicCat 3
+MagicCat: You did it, Aurora! Dormogh is defeated!
+leave MagicCat
+
+join Aurora (Fighter) 3
+Aurora: I couldn't have done it without you, MagicCat. Thank you.
+leave Aurora
+
+join MagicCat 3
+MagicCat: Your bravery and strength made this possible. Ardania is safe once more.
+leave MagicCat
+
+join Aurora (Fighter) 3
+Aurora: Let's return to the castle. We have a kingdom to rebuild.
+leave Aurora
+
+join MagicCat 3
+MagicCat: Right behind you, Princess. The future of Ardania looks bright with you as its leader.
+leave MagicCat
+
+join Aurora (Fighter) 3
+Aurora: Together, we'll make sure it is. Let's go.
+leave Aurora
+do Game.advance_to_level("EndScreen")

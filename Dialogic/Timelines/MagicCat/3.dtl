@@ -1,0 +1,57 @@
+[style name="VisualStyle"]
+do Game.toggle_cutscene()
+join Dormogh 3
+Dormogh: Well, well, what do we have here? The lost princess and her little pet.
+leave Dormogh
+
+join Aurora (Princess) 3
+Aurora: Who are you?!
+leave Aurora
+
+join Dormogh 3
+Dormogh: I am Dormogh, the one your father promised you to. Did you really think you could escape me?
+leave Dormogh
+
+join MagicCat 3
+MagicCat: Aurora, stay calm. I knew this moment would come.
+leave MagicCat
+
+join Aurora (Princess) 3
+Aurora: MagicCat, what do we do?
+leave Aurora
+
+join MagicCat 3
+MagicCat: Take this. It’s a fighter outfit. With this, you can defeat him.
+leave MagicCat
+
+join Aurora (Princess) 3
+Aurora: A fighter outfit? But I don't know how to fight!
+leave Aurora
+
+join MagicCat 3
+MagicCat: You have the strength within you. Put it on, quickly!
+leave MagicCat
+
+join Dormogh 3
+Dormogh: How amusing. Do you really think a mere outfit will save you?
+leave Dormogh
+
+join Aurora (Princess) 3
+Aurora: I'll do it. For Ardania. For everyone.
+leave Aurora
+
+join MagicCat 3
+MagicCat: Remember, Aurora, focus and believe in yourself. You are stronger than you know.
+leave MagicCat
+
+join Dormogh 3
+Dormogh: Enough of this! Prepare to meet your end!
+leave Dormogh
+
+join Aurora (Fighter) 3
+do Player.set_skin("Fighter")
+Aurora (Fighter): I'm ready. Let's finish this, Dormogh.
+leave Aurora
+[signal arg="3"]
+[wait time="1.0"]
+do Game.toggle_cutscene()

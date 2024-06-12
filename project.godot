@@ -27,6 +27,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Aurora": "res://Dialogic/Characters/Aurora.dch",
+"Dormogh": "res://Dialogic/Characters/Dormogh.dch",
 "Dress": "res://Dialogic/Assets/Dress.dch",
 "Gem": "res://Dialogic/Assets/Gem.dch",
 "MagicCat": "res://Dialogic/Characters/MagicCat.dch",
@@ -35,7 +36,9 @@ directories/dch_directory={
 directories/dtl_directory={
 "0": "res://Dialogic/Timelines/MagicCat/0.dtl",
 "1": "res://Dialogic/Timelines/MagicCat/1.dtl",
-"2": "res://Dialogic/Timelines/MagicCat/2.dtl"
+"2": "res://Dialogic/Timelines/MagicCat/2.dtl",
+"3": "res://Dialogic/Timelines/MagicCat/3.dtl",
+"4": "res://Dialogic/Timelines/MagicCat/4.dtl"
 }
 variables={}
 layout/style_list=["res://Dialogic/BubbleStyle.tres", "res://Dialogic/VisualStyle.tres"]

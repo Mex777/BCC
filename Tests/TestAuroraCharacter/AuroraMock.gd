@@ -30,9 +30,9 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * max_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, max_speed)
 	
 	update_animation()
 	move_and_slide()

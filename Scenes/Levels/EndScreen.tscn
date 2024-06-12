@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxaeqkobmvlur"]
+
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="1_4joxo"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="2_ju8ut"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="3_atvmm"]
+
+[sub_resource type="GDScript" id="GDScript_q2dfn"]
+script/source = "extends CanvasLayer
+
+
+# Closes game when the exit button is pressed.
+func _on_exit_pressed():
+	get_tree().quit()
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/MainMenu/MainMenu.tscn\")
+"
+
+[node name="EndScreen" type="CanvasLayer"]
+script = SubResource("GDScript_q2dfn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1157.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="TextureButton" parent="."]
+offset_left = 297.0
+offset_top = 154.0
+offset_right = 864.0
+offset_bottom = 603.0
+texture_normal = ExtResource("1_4joxo")
+texture_pressed = ExtResource("2_ju8ut")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_atvmm")
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="."]
+offset_left = 297.0
+offset_top = 330.0
+offset_right = 864.0
+offset_bottom = 779.0
+texture_normal = ExtResource("1_4joxo")
+texture_pressed = ExtResource("2_ju8ut")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Exit"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_atvmm")
+theme_override_font_sizes/font_size = 40
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 57.0
+offset_right = 784.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 40
+text = "HOPE YOU ENJOYED!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 338.0
+offset_top = 561.0
+offset_right = 807.0
+offset_bottom = 652.0
+theme_override_font_sizes/font_size = 40
+text = "MORE TO COME SOON ;)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

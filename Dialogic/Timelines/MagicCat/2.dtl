@@ -71,8 +71,8 @@ leave SellerCat
 leave Dress
 
 join Aurora 3
-Aurora (Princess): Thank you, Jody.
 do Player.set_skin("Princess")
+Aurora (Princess): Thank you, Jody.
 leave Aurora
 
 join SellerCat 3
