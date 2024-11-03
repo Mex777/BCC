@@ -23,7 +23,11 @@ Welcome to $BCC$, a thrilling 2D platformer created in Godot. In this story-driv
 ### Product features
 The product features can be seen inside of the user stories, some visual examples can be seen below.
 
-TBD
+#### Multiple Choice Feature Diagram
+![Multiple Choice Feature Diagram](/Resources/MultipleChoiceFeature.png)
+
+#### Options Feature Diagram
+![Options Feature Diagram](/Resources/OptionsFeature.png)
 
 ## Planning
 For planning we used 2 different tools, Github Project and Github Issues.
@@ -43,13 +47,13 @@ User stories are ordered by priority, the lower the number, the higher the prior
 Created multiple diagrams to showcase our project
 
 ### System Context Diagram
-TBD
+![System Context Diagram](/Resources/SystemContextDiagram.png)
 
 ### Container Diagram
-TBD
+![Container Diagram](/Resources/ContainerDiagram.png)
 
 ### Component Diagram
-TBD
+![Component Diagram](/Resources/ComponentDiagram.png)
 
 
 
