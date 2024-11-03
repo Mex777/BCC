@@ -45,6 +45,7 @@ User stories are ordered by priority, the lower the number, the higher the prior
 
 ## Design
 Created multiple diagrams to showcase our project, both UML and C4.
+These are destined for a software architect.
 
 ### System Context Diagram
 ![System Context Diagram](/Resources/SystemContextDiagram.png)
