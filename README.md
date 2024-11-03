@@ -30,7 +30,7 @@ The product features can be seen inside of the user stories, some visual example
 ![Options Feature Diagram](/Resources/OptionsFeature.png)
 
 ## Planning
-For planning we used 2 different tools, Github Project and Github Issues.
+For planning we used 2 different tools, [Github Project](https://github.com/orgs/unibuc-cs/projects/60) and [Github Issues](https://github.com/unibuc-cs/software-engineering-product-bcc/issues).
 
 ### User stories
 The user stories can be seen inside the issues tab, but also on the project board.
@@ -44,7 +44,7 @@ User Stories use the "user story" tag on Github Issues, whereas tasks use the "t
 User stories are ordered by priority, the lower the number, the higher the priority.
 
 ## Design
-Created multiple diagrams to showcase our project
+Created multiple diagrams to showcase our project, both UML and C4.
 
 ### System Context Diagram
 ![System Context Diagram](/Resources/SystemContextDiagram.png)
@@ -55,5 +55,5 @@ Created multiple diagrams to showcase our project
 ### Component Diagram
 ![Component Diagram](/Resources/ComponentDiagram.png)
 
-
-
+### Level Flow UML Diagram
+![Level Flow Diagram](/Resources/LevelFlowDiagram.png)
