@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cx4yu3e5q0bfa"]
+[gd_scene load_steps=87 format=3 uid="uid://cx4yu3e5q0bfa"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_834d8"]
 [ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="1_fhatf"]
@@ -322,8 +322,12 @@ script/source = "extends CollisionShape2D
 const weapon_damage = 3
 
 func _on_attack_body_entered(body):
-	if body.name != \"Aurora\" and body.has_method(\"take_damage\"):
-		body.take_damage(weapon_damage)
+	if body.name != str(multiplayer.get_unique_id()) and body.has_method(\"take_damage\") and body.name != \"Aurora\":
+		if body.is_in_group(\"Enemies\"):
+			body.take_damage(weapon_damage)
+		else:
+			body.take_damage.rpc_id(body.name.to_int(), weapon_damage)
+			#body.take_damage(weapon_damage)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5qcrr"]
@@ -335,8 +339,12 @@ script/source = "extends CollisionShape2D
 const stun_duration: float = 1.5
 
 func _on_stun_body_entered(body):
-	if body.has_method(\"stun\") and body.name != \"Aurora\":
-		body.stun(stun_duration)
+	if body.has_method(\"stun\") and body.name != str(multiplayer.get_unique_id()) and body.name != \"Aurora\":
+		if body.is_in_group(\"Enemies\"):
+			body.stun(stun_duration)
+		else:
+			body.get_stunned.rpc_id(body.name.to_int(), stun_duration)
+	
 "
 
 [sub_resource type="Animation" id="Animation_y1tf4"]
@@ -875,6 +883,53 @@ _data = {
 "Up (Prisoner)": SubResource("Animation_lsgj5")
 }
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xuyde"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Sprite:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Sprite:frame")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Attack/BaseAttack:position")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("Stun/Stun:position")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("CollisionShape2D:position")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+properties/6/path = NodePath(".:skew")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath(".:rotation")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath(".:scale")
+properties/8/spawn = true
+properties/8/replication_mode = 1
+properties/9/path = NodePath("Sprite:flip_h")
+properties/9/spawn = true
+properties/9/replication_mode = 1
+properties/10/path = NodePath("Sprite:flip_v")
+properties/10/spawn = true
+properties/10/replication_mode = 1
+properties/11/path = NodePath("Sprite:rotation")
+properties/11/spawn = true
+properties/11/replication_mode = 1
+properties/12/path = NodePath("Sprite:position")
+properties/12/spawn = true
+properties/12/replication_mode = 1
+properties/13/path = NodePath("Sprite:skew")
+properties/13/spawn = true
+properties/13/replication_mode = 1
+properties/14/path = NodePath("Sprite:modulate")
+properties/14/spawn = true
+properties/14/replication_mode = 1
+
 [node name="Aurora" type="CharacterBody2D"]
 script = ExtResource("1_834d8")
 
@@ -947,6 +1002,9 @@ bus = &"Music"
 [node name="GettingHitSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("59_d6cnn")
 volume_db = -20.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_xuyde")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="sprite_frames_changed" from="Sprite" to="." method="_on_sprite_sprite_frames_changed"]

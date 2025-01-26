@@ -8,4 +8,8 @@ func _process(_delta: float) -> void:
 		return
 	
 	# Update the UI sword icon based on the cooldown of the Aurora's basic attack.
-	value = 1 - $"../../Aurora".get_child(6).time_left / 0.6
+	if len(MultiplayerManager.Players) == 0:
+		value = 1 - $"../../Aurora".get_child(6).time_left / 0.6
+	else:
+		var val = get_node("/root/LevelMultiplayer/" + str(multiplayer.get_unique_id()))
+		value = 1 - val.get_child(6).time_left / 0.6

@@ -12,6 +12,7 @@ const JUMP_VELOCITY: float = -400.0
 var attacking: bool = false
 var cooldown_stun_attack: bool = false
 var cooldown_base_attack: bool = false
+var stunned: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -27,58 +28,70 @@ func _ready() -> void:
 	camera.limit_right = camera_right_limit
 	camera.limit_top = camera_top_limit
 	camera.limit_bottom = camera_bottom_limit
-	
+	#remove_child($Camera2D)
+	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
+	if name == str(multiplayer.get_unique_id()):
+		camera.enabled = true
+		camera.make_current()
 	# Connect the signal_event signal from the Dialogic singleton to the dialogic_signal function.
 	Dialogic.signal_event.connect(dialogic_signal)
 	MusicPlayer.stop_music()  # Oprește muzica când începe jocul
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	
-	# Deletes the player when it dies.
-	if Player.is_dead():
-		queue_free()
-	
-	# Handle cutscenes.
-	if Game.is_in_cutscene():
-		velocity.x = speed
+	if (len(MultiplayerManager.Players) > 0 and $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()) or len(MultiplayerManager.Players) == 0:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		
+		# Deletes the player when it dies.
+		if Player.is_dead():
+			queue_free()
+		
+		# Handle cutscenes.
+		if Game.is_in_cutscene():
+			velocity.x = speed
+			update_animation()
+			move_and_slide()
+			
+			return
+		
+		if stunned:
+			velocity.x = 0
+			animation.play("Idle" + Player.get_skin())
+			move_and_slide()
+			return
+		
+		# Handle base attack.
+		if Input.is_action_just_pressed("base_attack"):
+			attack()
+		
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor() and not stunned:
+			velocity.y = JUMP_VELOCITY
+			
+		# Handle ability.
+		if Input.is_action_just_pressed("stun"):
+			stun()
+		
+		# Get the input direction and handle the movement/deceleration.
+		var direction = Input.get_axis("move_left", "move_right")
+		if direction == -1: 
+			get_node("Sprite").flip_h = true;
+			if $Attack/BaseAttack.position.x > 0:
+				$Attack/BaseAttack.position.x *= -1
+		elif direction:
+			get_node("Sprite").flip_h = false;
+			if $Attack/BaseAttack.position.x < 0:
+				$Attack/BaseAttack.position.x *= -1
+		
+		if direction:
+			velocity.x = direction * max_speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, max_speed)
+		
 		update_animation()
 		move_and_slide()
-		return
-	
-	# Handle base attack.
-	if Input.is_action_just_pressed("base_attack"):
-		attack()
-		
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		
-	# Handle ability.
-	if Input.is_action_just_pressed("stun"):
-		stun()
-	
-	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("move_left", "move_right")
-	if direction == -1: 
-		get_node("Sprite").flip_h = true;
-		if $Attack/BaseAttack.position.x > 0:
-			$Attack/BaseAttack.position.x *= -1
-	elif direction:
-		get_node("Sprite").flip_h = false;
-		if $Attack/BaseAttack.position.x < 0:
-			$Attack/BaseAttack.position.x *= -1
-	
-	if direction:
-		velocity.x = direction * max_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, max_speed)
-	
-	update_animation()
-	move_and_slide()
 	
 
 func attack():
@@ -89,7 +102,7 @@ func attack():
 		animation.play("Attack" + Player.get_skin())
 		base_attack()
 
-	
+
 func stun():
 	# Can only stun when ability is not in cooldown
 	if not cooldown_stun_attack:
@@ -97,6 +110,13 @@ func stun():
 		animation.play("Stun" + Player.get_skin())
 		stun_ability()
 		$WinkSFX.play()
+
+
+@rpc("any_peer", "call_local")
+func get_stunned(duration: float) -> void:
+	stunned = true
+	await get_tree().create_timer(duration).timeout
+	stunned = false
 
 
 # Function for updating the animation based on the character's state.
@@ -115,6 +135,7 @@ func update_animation() -> void:
 	
 
 # Function for handling damage taken by the character.
+@rpc("any_peer", "call_local")
 func take_damage(damage: int) -> void:
 	if not Game.in_god_mode():
 		Player.take_damage(damage)

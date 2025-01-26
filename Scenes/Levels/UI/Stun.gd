@@ -8,4 +8,8 @@ func _process(_delta: float) -> void:
 		return
 	
 	# Update the UI stun icon based on the cooldown of the Aurora's basic attack.
-	value = 1 - $"../../Aurora".get_child(7).time_left / 5
+	if len(MultiplayerManager.Players) == 0:
+		value = 1 - $"../../Aurora".get_child(7).time_left / 5 
+	else:
+		var val = get_node("/root/LevelMultiplayer/" + str(multiplayer.get_unique_id()))
+		value = 1 - val.get_child(7).time_left / 5

@@ -23,6 +23,7 @@ TransitionScene="*res://Scenes/Reusables/Transition/TransitionScene.tscn"
 SaveManager="*res://Global/SaveManager.gd"
 MusicPlayer="*res://Scenes/Audio/MusicPlayer.tscn"
 SettingsManager="*res://Scenes/MainMenu/SettingsManager.gd"
+MultiplayerManager="*res://Global/MultiplayerManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -75,7 +76,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/godot-vim/plugin.cfg", "res://addons/gut/plugin.cfg")
 
 [gui]
 

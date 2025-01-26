@@ -44,6 +44,10 @@ func _on_play_btn_pressed() -> void:
 func _on_continue_btn_pressed() -> void:
 	SaveManager.load_game()
 
+
+func _on_multiplayer_btn_pressed():
+	get_tree().change_scene_to_file("res://Scenes/MultiplayerMenu/MultiplayerScene.tscn")
+
 # 📌 Navigare spre `OptionsMenu`
 func _on_options_btn_pressed() -> void:
 	_hide_all_menus()
