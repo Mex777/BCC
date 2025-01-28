@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 				queue_free()
 		
 		if name == str(multiplayer.get_unique_id()):
+			$Info.text = MultiplayerManager.Players[name.to_int()].name + ": " + str(Player.get_hp())
 			camera.enabled = true
 			camera.make_current()
 		
@@ -123,7 +124,9 @@ func stun():
 @rpc("any_peer", "call_local")
 func get_stunned(duration: float) -> void:
 	stunned = true
+	$StunInfo.text = "STUNNED"
 	await get_tree().create_timer(duration).timeout
+	$StunInfo.text = ""
 	stunned = false
 
 

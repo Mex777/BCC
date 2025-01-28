@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://cx4yu3e5q0bfa"]
+[gd_scene load_steps=88 format=3 uid="uid://cx4yu3e5q0bfa"]
 
 [ext_resource type="Script" path="res://Scenes/Aurora/Aurora.gd" id="1_834d8"]
 [ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="1_fhatf"]
@@ -883,6 +883,9 @@ _data = {
 "Up (Prisoner)": SubResource("Animation_lsgj5")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_b5i67"]
+font_size = 10
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xuyde"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
@@ -935,6 +938,12 @@ properties/15/replication_mode = 1
 properties/16/path = NodePath(".:process_physics_priority")
 properties/16/spawn = true
 properties/16/replication_mode = 1
+properties/17/path = NodePath("Info:text")
+properties/17/spawn = true
+properties/17/replication_mode = 1
+properties/18/path = NodePath("StunInfo:text")
+properties/18/spawn = true
+properties/18/replication_mode = 1
 
 [node name="Aurora" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_834d8")
@@ -1008,6 +1017,26 @@ bus = &"Music"
 [node name="GettingHitSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("59_d6cnn")
 volume_db = -20.0
+
+[node name="Info" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -41.0
+offset_right = 48.0
+offset_bottom = -26.0
+label_settings = SubResource("LabelSettings_b5i67")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="StunInfo" type="Label" parent="."]
+offset_left = -47.0
+offset_top = -56.0
+offset_right = 49.0
+offset_bottom = -41.0
+label_settings = SubResource("LabelSettings_b5i67")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_xuyde")
