@@ -183,5 +183,3 @@ position = Vector2(792, 1078)
 position = Vector2(1633, 1067)
 
 [node name="Players" type="Node2D" parent="Arena2" index="2"]
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="8"]
