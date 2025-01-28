@@ -213,3 +213,6 @@ func queue_free_rpc(id):
 	for i in players:
 		if i.name == str(id):
 			i.queue_free()
+	
+	if multiplayer.is_server():
+		MultiplayerManager.losers.append(id)

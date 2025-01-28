@@ -38,6 +38,15 @@ func move_in_finals(player_id, index):
 	player.global_position = spawn.global_position
 
 
+@rpc("call_local", "any_peer")
+func move_spectator(id, arena = 2):
+	if str(multiplayer.get_unique_id()) == str(id):
+		$TopUI.hide()
+		var camera = get_node("/root/LevelMultiplayer/Arena" + str(arena) + "/Camera" + str(arena))
+		camera.enabled = true
+		camera.make_current()
+
+
 func _process(float):
 	if multiplayer.is_server() == false:
 		return
@@ -52,6 +61,8 @@ func _process(float):
 			MultiplayerManager.winners.append(players_arena0[0].name)
 		if len(players_arena0) == 0:
 			MultiplayerManager.ended[0] = true
+		for i in range(len(MultiplayerManager.losers)):
+			move_spectator.rpc(MultiplayerManager.losers[i], 0)
 	
 	if MultiplayerManager.ended[1] == false:		
 		var players_arena1 = arenas[1].find_child("Players").get_children()
@@ -60,10 +71,15 @@ func _process(float):
 			MultiplayerManager.winners.append(players_arena1[0].name)
 		if len(players_arena1) == 0:
 			MultiplayerManager.ended[1] = true
+		for i in range(len(MultiplayerManager.losers)):
+			move_spectator.rpc(MultiplayerManager.losers[i], 1)
 	
 	if MultiplayerManager.ended[0] and MultiplayerManager.ended[1]:
-		move_in_finals.rpc(MultiplayerManager.winners[0], 4)
-		if len(MultiplayerManager.winners) > 1:
-			move_in_finals.rpc(MultiplayerManager.winners[1], 5)
+		for i in range(len(MultiplayerManager.winners)):
+			move_in_finals.rpc(MultiplayerManager.winners[i], i + 4)
+		
+		for i in range(len(MultiplayerManager.losers)):
+			move_spectator.rpc(MultiplayerManager.losers[i])
+			
 		finals = true
 		
