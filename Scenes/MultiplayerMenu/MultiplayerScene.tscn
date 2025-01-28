@@ -140,6 +140,33 @@ text = "JOIN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CancelBtn" type="TextureButton" parent="JoinLayout"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 334.0
+offset_right = 275.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="JoinLayout/CancelBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.065
+anchor_right = 0.062
+anchor_bottom = 0.065
+offset_left = -0.120001
+offset_top = 0.0999985
+offset_right = 224.88
+offset_bottom = 60.1
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CreateLayout" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
@@ -199,6 +226,33 @@ text = "START"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CancelBtn" type="TextureButton" parent="CreateLayout"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 334.0
+offset_right = 291.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CreateLayout/CancelBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.065
+anchor_right = 0.062
+anchor_bottom = 0.065
+offset_left = -0.120001
+offset_top = 0.0999985
+offset_right = 224.88
+offset_bottom = 60.1
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Lobby" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -255,5 +309,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="CreateBtn" to="." method="_on_create_btn_pressed"]
 [connection signal="pressed" from="JoinBtn" to="." method="_on_join_btn_pressed"]
 [connection signal="pressed" from="JoinLayout/JoinLobbyBtn" to="." method="_on_join_lobby_btn_pressed"]
+[connection signal="pressed" from="JoinLayout/CancelBtn" to="." method="_on_cancel_btn_pressed"]
 [connection signal="pressed" from="CreateLayout/CreateLobbyBtn" to="." method="_on_create_lobby_btn_pressed"]
+[connection signal="pressed" from="CreateLayout/CancelBtn" to="." method="_on_cancel_btn_pressed"]
 [connection signal="pressed" from="Lobby/StartGameBtn" to="." method="_on_start_game_btn_pressed"]

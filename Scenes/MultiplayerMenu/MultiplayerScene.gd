@@ -15,12 +15,20 @@ func _ready():
 	multiplayer.connection_failed.connect(connection_failed)
 	if "--server" in OS.get_cmdline_args():
 		hostGame()
-	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Lobby/PlayerCnt.text = str(len(MultiplayerManager.Players)) + " / " + str(MAX_PLAYERS)
+	if multiplayer.is_server() == false:
+		$Lobby/StartGameBtn.hide()
+		
+	if Input.is_action_pressed("pause"):
+		if $CreateLayout.visible:
+			$CreateLayout.hide()
+		if $JoinLayout.visible:
+			$JoinLayout.hide()
 
 
 # this get called on the server and clients
@@ -118,3 +126,8 @@ func _on_create_lobby_btn_pressed():
 
 func _on_start_game_btn_pressed():
 	StartGame.rpc()
+
+
+func _on_cancel_btn_pressed():
+	$JoinLayout.hide()
+	$CreateLayout.hide()
