@@ -125,6 +125,22 @@ label_settings = SubResource("LabelSettings_0q2wa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="TopUI" index="5"]
+offset_left = 525.0
+offset_top = 546.0
+offset_right = 699.0
+offset_bottom = 647.0
+color = Color(0.368627, 0.184314, 0.156863, 1)
+
+[node name="Spectators" type="Label" parent="TopUI/ColorRect" index="0"]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 101.0
+text = " Spectators:
+  • Mihai
+  • Mex
+  • Gini"
+
 [node name="TileMap" type="TileMap" parent="." index="4"]
 tile_set = SubResource("TileSet_oglys")
 format = 2

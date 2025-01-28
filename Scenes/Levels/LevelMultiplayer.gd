@@ -5,6 +5,7 @@ var finals = false
 
 
 func _ready():
+	$TopUI/ColorRect/Spectators.text = " Spectators:\n"
 	if multiplayer.is_server() == false:
 		return
 		
@@ -70,6 +71,12 @@ func _process(float):
 	
 	if multiplayer.is_server() == false:
 		return
+		
+	var val = " Spectators:\n"
+	for player_id in MultiplayerManager.losers:
+		val += "  • " + MultiplayerManager.Players[player_id.to_int()].name + "\n"
+	update_spectators.rpc(val)	
+	
 	if finals == true:
 		var players_arena = get_tree().get_nodes_in_group("Player")
 		if len(players_arena) == 1:
@@ -163,12 +170,14 @@ func _on_game_time_timeout():
 	move_players_to_finals()
 	
 func move_players_to_finals():
+	if multiplayer.is_server() == false:
+		return
 	for i in range(len(MultiplayerManager.winners)):
 		move_in_finals.rpc(MultiplayerManager.winners[i], i + 4)
 	
 	for i in range(len(MultiplayerManager.losers)):
 		move_spectator.rpc(MultiplayerManager.losers[i])
-			
+		
 	finals = true
 	start_round.rpc()
 
@@ -184,3 +193,9 @@ func start_round():
 	MultiplayerManager.freeze = true
 	$StartTimer.start()
 	$OnScreenTimer.show()
+
+
+@rpc("call_local", "any_peer")
+func update_spectators(val):
+	$TopUI/ColorRect/Spectators.text = val
+
