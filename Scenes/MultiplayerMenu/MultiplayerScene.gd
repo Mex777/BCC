@@ -53,7 +53,7 @@ func SendPlayerInformation(name, id):
 		MultiplayerManager.Players[id] ={
 			"name" : name,
 			"id" : id,
-			"score": 0
+			"index": len(MultiplayerManager.Players)
 		}
 	
 	if multiplayer.is_server():

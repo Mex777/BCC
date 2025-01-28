@@ -46,14 +46,20 @@ func _physics_process(delta: float) -> void:
 		
 		# Deletes the player when it dies.
 		if Player.is_dead():
-			queue_free()
+			if len(MultiplayerManager.Players) > 0:
+				queue_free_rpc.rpc(name)
+			else:
+				queue_free()
+		
+		if name == str(multiplayer.get_unique_id()):
+			camera.enabled = true
+			camera.make_current()
 		
 		# Handle cutscenes.
 		if Game.is_in_cutscene():
 			velocity.x = speed
 			update_animation()
 			move_and_slide()
-			
 			return
 		
 		if stunned:
@@ -199,3 +205,11 @@ func dialogic_signal(signal_name: String) -> void:
 		speed = 10
 		await get_tree().create_timer(float(signal_name.split(".")[1])).timeout
 		speed = 0
+
+
+@rpc("any_peer", "call_local")
+func queue_free_rpc(id):
+	var players = get_tree().get_nodes_in_group("Player")
+	for i in players:
+		if i.name == str(id):
+			i.queue_free()
