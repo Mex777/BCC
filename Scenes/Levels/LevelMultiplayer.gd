@@ -46,11 +46,21 @@ func move_spectator(id, arena = 2):
 		camera.enabled = true
 		camera.make_current()
 
+@rpc("call_local", "any_peer")
+func winner_label(player_name, arena):
+	var label = get_node("/root/LevelMultiplayer/Arena" + str(arena) + "/Camera" + str(arena) + "/Label")
+	label.text = "ARENA " + str(arena + 1) + "\nWINNER " + player_name
+	
 
 func _process(float):
 	if multiplayer.is_server() == false:
 		return
 	if finals == true:
+		var arenas = get_tree().get_nodes_in_group("arena")
+		var players_arena = arenas[2].find_child("Players").get_children()
+		if len(players_arena) == 1:
+			var player_name = MultiplayerManager.Players[players_arena[0].name]
+			winner_label.rpc(player_name, 2)
 		return
 		
 	var arenas = get_tree().get_nodes_in_group("arena")
@@ -59,6 +69,8 @@ func _process(float):
 		if len(players_arena0) == 1:
 			MultiplayerManager.ended[0] = true
 			MultiplayerManager.winners.append(players_arena0[0].name)
+			var player_name = MultiplayerManager.Players[players_arena0[0].name.to_int()].name
+			winner_label.rpc(player_name, 0)
 		if len(players_arena0) == 0:
 			MultiplayerManager.ended[0] = true
 		for i in range(len(MultiplayerManager.losers)):
@@ -69,6 +81,8 @@ func _process(float):
 		if len(players_arena1) == 1:
 			MultiplayerManager.ended[1] = true
 			MultiplayerManager.winners.append(players_arena1[0].name)
+			var player_name = MultiplayerManager.Players[players_arena1[0].name.to_int()].name
+			winner_label.rpc(player_name, 1)
 		if len(players_arena1) == 0:
 			MultiplayerManager.ended[1] = true
 		for i in range(len(MultiplayerManager.losers)):

@@ -107,7 +107,7 @@ func _on_join_lobby_btn_pressed():
 func _on_create_lobby_btn_pressed():
 	player_name = $CreateLayout/Name.text
 	hostGame()
-	SendPlayerInformation(name, multiplayer.get_unique_id())
+	SendPlayerInformation(player_name, multiplayer.get_unique_id())
 
 
 func _on_start_game_btn_pressed():
