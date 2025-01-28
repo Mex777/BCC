@@ -46,21 +46,36 @@ func move_spectator(id, arena = 2):
 		camera.enabled = true
 		camera.make_current()
 
+
 @rpc("call_local", "any_peer")
 func winner_label(player_name, arena):
 	var label = get_node("/root/LevelMultiplayer/Arena" + str(arena) + "/Camera" + str(arena) + "/Label")
-	label.text = "ARENA " + str(arena + 1) + "\nWINNER " + player_name
+	if arena < 2:
+		label.text = "ARENA " + str(arena + 1) + "\nWINNER " + player_name
+	else:
+		label.text = "FINALS\nWINNER " + player_name
 	
 
 func _process(float):
+	var minutes = int($GameTime.time_left) / 60
+	var seconds = int($GameTime.time_left) % 60
+	if seconds < 10:
+		seconds = "0" + str(seconds)
+	else:
+		seconds = str(seconds)
+		
+	$TopUI/TimeLeft.text = "0" + str(minutes) + ":" + seconds
+	
 	if multiplayer.is_server() == false:
 		return
 	if finals == true:
-		var arenas = get_tree().get_nodes_in_group("arena")
-		var players_arena = arenas[2].find_child("Players").get_children()
+		var players_arena = get_tree().get_nodes_in_group("Player")
 		if len(players_arena) == 1:
-			var player_name = MultiplayerManager.Players[players_arena[0].name]
+			var player_name = MultiplayerManager.Players[players_arena[0].name.to_int()].name
 			winner_label.rpc(player_name, 2)
+		
+		for i in range(len(MultiplayerManager.losers)):
+			move_spectator.rpc(MultiplayerManager.losers[i])
 		return
 		
 	var arenas = get_tree().get_nodes_in_group("arena")
@@ -76,7 +91,7 @@ func _process(float):
 		for i in range(len(MultiplayerManager.losers)):
 			move_spectator.rpc(MultiplayerManager.losers[i], 0)
 	
-	if MultiplayerManager.ended[1] == false:		
+	if MultiplayerManager.ended[1] == false:
 		var players_arena1 = arenas[1].find_child("Players").get_children()
 		if len(players_arena1) == 1:
 			MultiplayerManager.ended[1] = true
@@ -89,11 +104,68 @@ func _process(float):
 			move_spectator.rpc(MultiplayerManager.losers[i], 1)
 	
 	if MultiplayerManager.ended[0] and MultiplayerManager.ended[1]:
-		for i in range(len(MultiplayerManager.winners)):
-			move_in_finals.rpc(MultiplayerManager.winners[i], i + 4)
+		move_players_to_finals()
+
+		
+
+@rpc("any_peer", "call_local")
+func send_hp():
+	receive_hp.rpc_id(1, multiplayer.get_unique_id(), Player.get_hp())
+	
+
+@rpc("any_peer", "call_local")
+func receive_hp(id, hp):
+	if multiplayer.is_server() == false:
+		return
+	MultiplayerManager.Players[id].hp = hp
+
+func _on_game_time_timeout():
+	if multiplayer.is_server() == false:
+		return
+		
+	send_hp.rpc()
+	var arenas = get_tree().get_nodes_in_group("arena")
+	
+	if finals:
+		var players_arena2 = get_tree().get_nodes_in_group("Player")
+		if len(players_arena2) == 2:
+			players_arena2.sort_custom(func(a, b): 
+				return MultiplayerManager.Players[a.name.to_int()].hp > MultiplayerManager.Players[b.name.to_int()].hp
+			)
+			players_arena2[1].queue_free_rpc.rpc(players_arena2[1].name)
+			MultiplayerManager.winners.append(players_arena2[0].name)
+		
+		var player_name = MultiplayerManager.Players[players_arena2[0].name.to_int()].name
+		winner_label.rpc(player_name, 2)
 		
 		for i in range(len(MultiplayerManager.losers)):
 			move_spectator.rpc(MultiplayerManager.losers[i])
+		return
+	
+	var players_arena0 = arenas[0].find_child("Players").get_children()
+	if len(players_arena0) == 2:
+		players_arena0.sort_custom(func(a, b): 
+			return MultiplayerManager.Players[a.name.to_int()].hp > MultiplayerManager.Players[b.name.to_int()].hp
+		)
+		players_arena0[1].queue_free_rpc.rpc(players_arena0[1].name)
+		MultiplayerManager.winners.append(players_arena0[0].name)
+	
+	var players_arena1 = arenas[1].find_child("Players").get_children()
+	if len(players_arena1) == 2:
+		players_arena1.sort_custom(func(a, b): 
+			return MultiplayerManager.Players[a.name.to_int()].hp > MultiplayerManager.Players[b.name.to_int()].hp
+		)
+		players_arena1[1].queue_free_rpc.rpc(players_arena1[1].name)
+		MultiplayerManager.winners.append(players_arena1[0].name)
+	
+	move_players_to_finals()
+	
+func move_players_to_finals():
+	for i in range(len(MultiplayerManager.winners)):
+		move_in_finals.rpc(MultiplayerManager.winners[i], i + 4)
+	
+	for i in range(len(MultiplayerManager.losers)):
+		move_spectator.rpc(MultiplayerManager.losers[i])
 			
-		finals = true
-		
+	finals = true
+	$GameTime.start()

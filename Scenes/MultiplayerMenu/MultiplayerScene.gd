@@ -6,6 +6,7 @@ var peer
 const MAX_PLAYERS = 4
 var player_name
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	multiplayer.peer_connected.connect(peer_connected)
@@ -37,15 +38,17 @@ func peer_disconnected(id):
 			i.queue_free()
 
 
- #called only from clients
+# called only from clients
 func connected_to_server():
 	print("connected To Sever!")
 	$Lobby.show()
-	SendPlayerInformation.rpc_id(1, name, multiplayer.get_unique_id())
+	SendPlayerInformation.rpc_id(1, player_name, multiplayer.get_unique_id())
+
 
 # called only from clients
 func connection_failed():
 	print("Couldnt Connect")
+
 
 @rpc("any_peer")
 func SendPlayerInformation(name, id):
@@ -53,18 +56,21 @@ func SendPlayerInformation(name, id):
 		MultiplayerManager.Players[id] ={
 			"name" : name,
 			"id" : id,
-			"index": len(MultiplayerManager.Players)
+			"index": len(MultiplayerManager.Players),
+			"hp": Player.get_max_hp()
 		}
 	
 	if multiplayer.is_server():
 		for i in MultiplayerManager.Players:
 			SendPlayerInformation.rpc(MultiplayerManager.Players[i].name, i)
 
+
 @rpc("any_peer","call_local")
 func StartGame():
 	var scene = load("res://Scenes/Levels/LevelMultiplayer.tscn").instantiate()
 	get_tree().root.add_child(scene)
 	self.hide()
+	
 	
 func hostGame():
 	peer = ENetMultiplayerPeer.new()

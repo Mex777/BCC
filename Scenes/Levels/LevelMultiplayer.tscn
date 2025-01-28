@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://h25esaqnupu4"]
+[gd_scene load_steps=8 format=3 uid="uid://h25esaqnupu4"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_kk5e2"]
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_n4sk4"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelMultiplayer.gd" id="2_o0int"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0q2wa"]
+font_size = 26
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjr16"]
 texture = ExtResource("1_kk5e2")
@@ -101,6 +104,23 @@ visible = false
 [node name="Gem" parent="TopUI" index="2"]
 visible = false
 
+[node name="TimeBackground" type="ColorRect" parent="TopUI" index="3"]
+offset_left = 525.0
+offset_top = 29.0
+offset_right = 670.0
+offset_bottom = 69.0
+color = Color(0.133333, 0.133333, 0.133333, 0.662745)
+
+[node name="TimeLeft" type="Label" parent="TopUI" index="4"]
+offset_left = 527.0
+offset_top = 31.0
+offset_right = 668.0
+offset_bottom = 68.0
+text = "02:00"
+label_settings = SubResource("LabelSettings_0q2wa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TileMap" type="TileMap" parent="." index="4"]
 tile_set = SubResource("TileSet_oglys")
 format = 2
@@ -187,3 +207,10 @@ position = Vector2(792, 1078)
 position = Vector2(1633, 1067)
 
 [node name="Players" type="Node2D" parent="Arena2" index="2"]
+
+[node name="GameTime" type="Timer" parent="." index="8"]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
