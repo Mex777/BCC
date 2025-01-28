@@ -32,6 +32,7 @@ func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	if name == str(multiplayer.get_unique_id()):
 		camera.enabled = true
+		Player.set_skin(MultiplayerManager.Players[multiplayer.get_unique_id()].skin)
 		camera.make_current()
 	# Connect the signal_event signal from the Dialogic singleton to the dialogic_signal function.
 	Dialogic.signal_event.connect(dialogic_signal)

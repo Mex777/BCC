@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgd50muvosrnu"]
+[gd_scene load_steps=10 format=3 uid="uid://cgd50muvosrnu"]
 
 [ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="1_48ioo"]
 [ext_resource type="Script" path="res://Scenes/MultiplayerMenu/MultiplayerScene.gd" id="1_yy02h"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="3_ra5xf"]
 [ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="4_mlisu"]
 [ext_resource type="Texture2D" uid="uid://pgnd26p7d1u7" path="res://Assets/Aurora/FighterOutfit/Idle/0.png" id="5_4cy6y"]
+[ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="7_w2yld"]
+[ext_resource type="Texture2D" uid="uid://cxbef6exnkat0" path="res://Assets/Aurora/PrisonerOutfit/Idle/0.png" id="8_3p0vc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7sl4b"]
 font_size = 62
@@ -100,19 +102,6 @@ placeholder_text = "0.0.0.0"
 wrap_mode = 1
 scroll_fit_content_height = true
 
-[node name="0" type="Sprite2D" parent="JoinLayout"]
-position = Vector2(482, 260)
-scale = Vector2(4.22656, 4.22656)
-texture = ExtResource("5_4cy6y")
-
-[node name="Label" type="Label" parent="JoinLayout"]
-layout_mode = 0
-offset_left = 460.0
-offset_top = 335.0
-offset_right = 500.0
-offset_bottom = 358.0
-text = "SKIN"
-
 [node name="JoinLobbyBtn" type="TextureButton" parent="JoinLayout"]
 layout_mode = 0
 offset_left = 685.0
@@ -186,19 +175,6 @@ placeholder_text = "NICKNAME"
 wrap_mode = 1
 scroll_fit_content_height = true
 
-[node name="0" type="Sprite2D" parent="CreateLayout"]
-position = Vector2(482, 197)
-scale = Vector2(4.22656, 4.22656)
-texture = ExtResource("5_4cy6y")
-
-[node name="Label" type="Label" parent="CreateLayout"]
-layout_mode = 0
-offset_left = 456.0
-offset_top = 276.0
-offset_right = 496.0
-offset_bottom = 299.0
-text = "SKIN"
-
 [node name="CreateLobbyBtn" type="TextureButton" parent="CreateLayout"]
 layout_mode = 0
 offset_left = 685.0
@@ -250,6 +226,52 @@ offset_bottom = 60.1
 theme_override_fonts/font = ExtResource("4_mlisu")
 theme_override_font_sizes/font_size = 40
 text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skins" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CycleBtn" type="Button" parent="Skins"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 256.0
+offset_right = 645.0
+offset_bottom = 440.0
+
+[node name="Sprites" type="Control" parent="Skins"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fighter" type="Sprite2D" parent="Skins/Sprites"]
+position = Vector2(585, 328.625)
+scale = Vector2(4.22656, 4.22656)
+texture = ExtResource("5_4cy6y")
+
+[node name="Princess" type="Sprite2D" parent="Skins/Sprites"]
+visible = false
+position = Vector2(583, 329.625)
+scale = Vector2(4.1875, 4.1875)
+texture = ExtResource("7_w2yld")
+
+[node name="Prisoneer" type="Sprite2D" parent="Skins/Sprites"]
+visible = false
+position = Vector2(581, 327.625)
+scale = Vector2(4.0625, 4.0625)
+texture = ExtResource("8_3p0vc")
+
+[node name="SkinName" type="Label" parent="Skins"]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 408.0
+offset_right = 645.0
+offset_bottom = 431.0
+text = "SKIN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -312,4 +334,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="JoinLayout/CancelBtn" to="." method="_on_cancel_btn_pressed"]
 [connection signal="pressed" from="CreateLayout/CreateLobbyBtn" to="." method="_on_create_lobby_btn_pressed"]
 [connection signal="pressed" from="CreateLayout/CancelBtn" to="." method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="Skins/CycleBtn" to="." method="_on_cycle_btn_pressed"]
 [connection signal="pressed" from="Lobby/StartGameBtn" to="." method="_on_start_game_btn_pressed"]

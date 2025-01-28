@@ -5,7 +5,7 @@ extends Control
 var peer
 const MAX_PLAYERS = 4
 var player_name
-
+var skin_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +17,6 @@ func _ready():
 		hostGame()
 	
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Lobby/PlayerCnt.text = str(len(MultiplayerManager.Players)) + " / " + str(MAX_PLAYERS)
@@ -25,11 +24,9 @@ func _process(delta):
 		$Lobby/StartGameBtn.hide()
 		
 	if Input.is_action_pressed("pause"):
-		if $CreateLayout.visible:
-			$CreateLayout.hide()
-		if $JoinLayout.visible:
-			$JoinLayout.hide()
-
+		$CreateLayout.hide()
+		$JoinLayout.hide()
+		$Skins.hide()
 
 # this get called on the server and clients
 func peer_connected(id):
@@ -50,7 +47,7 @@ func peer_disconnected(id):
 func connected_to_server():
 	print("connected To Sever!")
 	$Lobby.show()
-	SendPlayerInformation.rpc_id(1, player_name, multiplayer.get_unique_id())
+	SendPlayerInformation.rpc_id(1, player_name, multiplayer.get_unique_id(), $Skins/Sprites.get_child(skin_index).name)
 
 
 # called only from clients
@@ -59,18 +56,19 @@ func connection_failed():
 
 
 @rpc("any_peer")
-func SendPlayerInformation(name, id):
+func SendPlayerInformation(name, id, skin):
 	if !MultiplayerManager.Players.has(id):
 		MultiplayerManager.Players[id] ={
 			"name" : name,
 			"id" : id,
+			"skin": skin,
 			"index": len(MultiplayerManager.Players),
 			"hp": Player.get_max_hp()
 		}
 	
 	if multiplayer.is_server():
 		for i in MultiplayerManager.Players:
-			SendPlayerInformation.rpc(MultiplayerManager.Players[i].name, i)
+			SendPlayerInformation.rpc(MultiplayerManager.Players[i].name, i, MultiplayerManager.Players[i].skin)
 
 
 @rpc("any_peer","call_local")
@@ -103,10 +101,12 @@ func _on_start_game_button_down():
 
 func _on_create_btn_pressed():
 	$CreateLayout.show()
+	show_skins()
 
 
 func _on_join_btn_pressed():
 	$JoinLayout.show()
+	show_skins()
 
 
 func _on_join_lobby_btn_pressed():
@@ -121,7 +121,7 @@ func _on_join_lobby_btn_pressed():
 func _on_create_lobby_btn_pressed():
 	player_name = $CreateLayout/Name.text
 	hostGame()
-	SendPlayerInformation(player_name, multiplayer.get_unique_id())
+	SendPlayerInformation(player_name, multiplayer.get_unique_id(), $Skins/Sprites.get_child(skin_index).name)
 
 
 func _on_start_game_btn_pressed():
@@ -131,3 +131,17 @@ func _on_start_game_btn_pressed():
 func _on_cancel_btn_pressed():
 	$JoinLayout.hide()
 	$CreateLayout.hide()
+	$Skins.hide()
+
+
+func show_skins():
+	$Skins.show()
+	$Skins/Sprites.get_child(skin_index).show()
+	$Skins/SkinName.text = $Skins/Sprites.get_child(skin_index).name
+
+
+func _on_cycle_btn_pressed():
+	$Skins/Sprites.get_child(skin_index).hide()
+	skin_index = (skin_index + 1) % len($Skins/Sprites.get_children())
+	$Skins/SkinName.text = $Skins/Sprites.get_child(skin_index).name
+	$Skins/Sprites.get_child(skin_index).show()
