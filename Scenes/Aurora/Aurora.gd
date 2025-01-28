@@ -40,6 +40,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if (len(MultiplayerManager.Players) > 0 and $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()) or len(MultiplayerManager.Players) == 0:
+		if MultiplayerManager.freeze:
+			return
 		# Add the gravity.
 		if not is_on_floor():
 			velocity.y += gravity * delta

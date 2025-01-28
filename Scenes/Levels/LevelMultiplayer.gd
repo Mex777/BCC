@@ -12,6 +12,8 @@ func _ready():
 	for player in MultiplayerManager.Players:
 		add_player_to_arena.rpc(player, index)
 		index += 1
+	
+	start_round.rpc()
 		
 
 @rpc("any_peer", "call_local")
@@ -168,4 +170,17 @@ func move_players_to_finals():
 		move_spectator.rpc(MultiplayerManager.losers[i])
 			
 	finals = true
+	start_round.rpc()
+
+
+func _on_start_timer_timeout():
+	$OnScreenTimer.hide()
 	$GameTime.start()
+	MultiplayerManager.freeze = false
+
+
+@rpc("call_local", "any_peer")	
+func start_round():
+	MultiplayerManager.freeze = true
+	$StartTimer.start()
+	$OnScreenTimer.show()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://h25esaqnupu4"]
+[gd_scene load_steps=10 format=3 uid="uid://h25esaqnupu4"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_kk5e2"]
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_n4sk4"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelMultiplayer.gd" id="2_o0int"]
+[ext_resource type="Script" path="res://Scenes/Levels/UI/OnScreenTimer.gd" id="4_m63tq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0q2wa"]
 font_size = 26
@@ -94,6 +95,9 @@ sources/0 = SubResource("TileSetAtlasSource_vjr16")
 
 [sub_resource type="LabelSettings" id="LabelSettings_6m1b5"]
 font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_26qoc"]
+font_size = 70
 
 [node name="LevelMultiplayer" instance=ExtResource("1_n4sk4")]
 script = ExtResource("2_o0int")
@@ -211,6 +215,28 @@ position = Vector2(1633, 1067)
 [node name="GameTime" type="Timer" parent="." index="8"]
 wait_time = 120.0
 one_shot = true
+
+[node name="StartTimer" type="Timer" parent="." index="9"]
+wait_time = 3.0
+one_shot = true
 autostart = true
 
+[node name="OnScreenTimer" type="CanvasLayer" parent="." index="10"]
+visible = false
+script = ExtResource("4_m63tq")
+
+[node name="ColorRect" type="ColorRect" parent="OnScreenTimer" index="0"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.905882)
+
+[node name="TimeLeft" type="Label" parent="OnScreenTimer" index="1"]
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "3"
+label_settings = SubResource("LabelSettings_26qoc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
