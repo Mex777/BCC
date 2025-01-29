@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://h25esaqnupu4"]
+[gd_scene load_steps=14 format=3 uid="uid://h25esaqnupu4"]
 
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="1_kk5e2"]
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_n4sk4"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelMultiplayer.gd" id="2_o0int"]
 [ext_resource type="Script" path="res://Scenes/Levels/UI/OnScreenTimer.gd" id="4_m63tq"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="5_6v85m"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="6_4jaeq"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="7_jkcj5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0q2wa"]
 font_size = 26
@@ -98,6 +101,9 @@ font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_26qoc"]
 font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_ter66"]
+font_size = 38
 
 [node name="LevelMultiplayer" instance=ExtResource("1_n4sk4")]
 script = ExtResource("2_o0int")
@@ -254,5 +260,45 @@ label_settings = SubResource("LabelSettings_26qoc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameFinished" type="CanvasLayer" parent="." index="11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameFinished" index="0"]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0.870588)
+
+[node name="BackBtn" type="TextureButton" parent="GameFinished" index="1"]
+offset_left = 317.0
+offset_top = 357.0
+offset_right = 884.0
+offset_bottom = 806.0
+texture_normal = ExtResource("5_6v85m")
+texture_pressed = ExtResource("6_4jaeq")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameFinished/BackBtn" index="0"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 22.0
+offset_right = 490.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("7_jkcj5")
+theme_override_font_sizes/font_size = 40
+text = "EXIT GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Winner" type="Label" parent="GameFinished" index="2"]
+offset_top = 146.0
+offset_right = 1152.0
+offset_bottom = 350.0
+text = "GAME FINISHED
+WINNER: MEX"
+label_settings = SubResource("LabelSettings_ter66")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="pressed" from="GameFinished/BackBtn" to="." method="_on_back_btn_pressed"]

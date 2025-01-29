@@ -82,6 +82,7 @@ func _process(float):
 		if len(players_arena) == 1:
 			var player_name = MultiplayerManager.Players[players_arena[0].name.to_int()].name
 			winner_label.rpc(player_name, 2)
+			show_game_end.rpc(player_name)
 		
 		for i in range(len(MultiplayerManager.losers)):
 			move_spectator.rpc(MultiplayerManager.losers[i])
@@ -146,6 +147,7 @@ func _on_game_time_timeout():
 		
 		var player_name = MultiplayerManager.Players[players_arena2[0].name.to_int()].name
 		winner_label.rpc(player_name, 2)
+		show_game_end.rpc(player_name)
 		
 		for i in range(len(MultiplayerManager.losers)):
 			move_spectator.rpc(MultiplayerManager.losers[i])
@@ -199,3 +201,28 @@ func start_round():
 func update_spectators(val):
 	$TopUI/ColorRect/Spectators.text = val
 
+
+@rpc("call_local", 'any_peer')
+func show_game_end(player_name):
+	$GameFinished.show()
+	$GameFinished/Winner.text = "GAME ENDED\n" + player_name + " WON!"
+
+
+func _on_back_btn_pressed():
+	get_tree().quit()
+	return
+	var scene = load("res://Scenes/MainMenu/MainMenu.tscn").instantiate()
+	get_tree().root.add_child(scene)
+	get_node("/root/MultiplayerScene").queue_free()
+	queue_free()
+	if multiplayer.is_server():
+		for peer_id in multiplayer.get_peers():
+			multiplayer.multiplayer_peer.disconnect_peer(peer_id)
+		multiplayer.multiplayer_peer = null
+		MultiplayerManager.Players = {}
+		MultiplayerManager.winners = []
+		MultiplayerManager.losers = []
+		
+		print("Server closed")
+	else:
+		multiplayer.multiplayer_peer.disconnect_peer(multiplayer.get_unique_id())
