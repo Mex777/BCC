@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://doyifitywkfw1"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/SkinMenu/skin_menu.gd" id="1_ut0em"]
+[ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="2_m6tdh"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="3_8n1k4"]
+[ext_resource type="Texture2D" uid="uid://cxbef6exnkat0" path="res://Assets/Aurora/PrisonerOutfit/Idle/0.png" id="3_ruy4w"]
+[ext_resource type="Texture2D" uid="uid://pgnd26p7d1u7" path="res://Assets/Aurora/FighterOutfit/Idle/0.png" id="3_t85w7"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="4_g7b71"]
+[ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="5_0suup"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="5_2bim0"]
+
+[node name="SkinMenu" type="Node2D"]
+script = ExtResource("1_ut0em")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_m6tdh")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 631.0
+offset_top = 53.0
+offset_right = 838.0
+offset_bottom = 253.0
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Skin1Btn" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Prisoner"
+icon = ExtResource("3_ruy4w")
+
+[node name="Skin2Btn" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fighter"
+icon = ExtResource("3_t85w7")
+
+[node name="Skin3Btn" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Princess"
+icon = ExtResource("5_0suup")
+
+[node name="BackBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 369.0
+offset_right = 1120.0
+offset_bottom = 818.0
+texture_normal = ExtResource("3_8n1k4")
+texture_pressed = ExtResource("4_g7b71")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BackBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_2bim0")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
