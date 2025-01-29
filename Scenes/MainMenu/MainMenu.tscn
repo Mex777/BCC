@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd008jmwn1jdj"]
+[gd_scene load_steps=6 format=3 uid="uid://bd008jmwn1jdj"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="1_3kfvh"]
 [ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="2_j5hrm"]
-[ext_resource type="AudioStream" uid="uid://dqhu0fp7a2d38" path="res://Assets/Audio/Music/Hero's Dawn.mp3" id="2_rxoku"]
 [ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="4_7rj8a"]
 [ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="5_b5jfb"]
 [ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="5_txs5x"]
@@ -39,9 +38,9 @@ vertical_alignment = 1
 
 [node name="PlayBtn" type="TextureButton" parent="."]
 offset_left = 553.0
-offset_top = 178.0
+offset_top = 170.0
 offset_right = 1120.0
-offset_bottom = 627.0
+offset_bottom = 619.0
 texture_normal = ExtResource("4_7rj8a")
 texture_pressed = ExtResource("5_txs5x")
 stretch_mode = 5
@@ -58,11 +57,32 @@ text = "NEW GAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="OptionsBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 315.0
+offset_right = 1120.0
+offset_bottom = 764.0
+texture_normal = ExtResource("4_7rj8a")
+texture_pressed = ExtResource("5_txs5x")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="OptionsBtn"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 29.0
+offset_right = 480.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("5_b5jfb")
+theme_override_font_sizes/font_size = 40
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="QuitBtn" type="TextureButton" parent="."]
 offset_left = 553.0
-offset_top = 328.0
+offset_top = 461.0
 offset_right = 1120.0
-offset_bottom = 777.0
+offset_bottom = 910.0
 texture_normal = ExtResource("4_7rj8a")
 texture_pressed = ExtResource("5_txs5x")
 stretch_mode = 5
@@ -79,11 +99,7 @@ text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_rxoku")
-autoplay = true
-bus = &"Music"
-
 [connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="OptionsBtn" to="." method="_on_options_btn_pressed"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]
