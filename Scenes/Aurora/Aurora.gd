@@ -30,6 +30,7 @@ func _ready() -> void:
 	
 	# Connect the signal_event signal from the Dialogic singleton to the dialogic_signal function.
 	Dialogic.signal_event.connect(dialogic_signal)
+	MusicPlayer.stop_music()  # Oprește muzica când începe jocul
 
 
 func _physics_process(delta: float) -> void:

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://34o7kfkeuun8"]
+
+[ext_resource type="AudioStream" uid="uid://dqhu0fp7a2d38" path="res://Assets/Audio/Music/Hero's Dawn.mp3" id="1_dxukv"]
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dxukv")
+autoplay = true
+bus = &"Music"
