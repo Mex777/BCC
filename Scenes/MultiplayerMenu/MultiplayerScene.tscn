@@ -259,7 +259,7 @@ position = Vector2(583, 329.625)
 scale = Vector2(4.1875, 4.1875)
 texture = ExtResource("7_w2yld")
 
-[node name="Prisoneer" type="Sprite2D" parent="Skins/Sprites"]
+[node name="Prisoner" type="Sprite2D" parent="Skins/Sprites"]
 visible = false
 position = Vector2(581, 327.625)
 scale = Vector2(4.0625, 4.0625)

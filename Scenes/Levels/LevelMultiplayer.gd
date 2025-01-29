@@ -3,6 +3,11 @@ extends Node2D
 var playerScene = preload("res://Scenes/Aurora/Aurora.tscn")
 var finals = false
 
+var camera_limits = [
+	[130, 0, 940, 570],
+	[112, 1410, 2350, 557],
+	[790, 740, 1680, 1230]
+]
 
 func _ready():
 	$TopUI/ColorRect/Spectators.text = " Spectators:\n"
@@ -22,12 +27,14 @@ func add_player_to_arena(player, index):
 	var curr_player = playerScene.instantiate()
 	curr_player.name = str(player)
 	#add_child(curr_player)
-	get_node("Arena" + str(int(index / 2)) + "/Players").add_child(curr_player)
+	var curr_arena = int(index / 2)
+	get_node("Arena" + str(curr_arena) + "/Players").add_child(curr_player)
 	curr_player.global_position = get_tree().get_nodes_in_group("spawn")[index].global_position
-	curr_player.camera.limit_left = 0
-	curr_player.camera.limit_right = 99999
-	curr_player.camera.limit_top = 0
-	curr_player.camera.limit_bottom = 99999
+	curr_player.camera.limit_left = camera_limits[curr_arena][1]
+	curr_player.camera.limit_right = camera_limits[curr_arena][2]
+	curr_player.camera.limit_top = camera_limits[curr_arena][0]
+	curr_player.camera.limit_bottom = camera_limits[curr_arena][3]
+	
 
 
 @rpc("call_local", "any_peer")
@@ -39,6 +46,10 @@ func move_in_finals(player_id, index):
 			player = curr
 			break
 	player.global_position = spawn.global_position
+	player.camera.limit_left = camera_limits[2][1]
+	player.camera.limit_right = camera_limits[2][2]
+	player.camera.limit_top = camera_limits[2][0]
+	player.camera.limit_bottom = camera_limits[2][3]
 
 
 @rpc("call_local", "any_peer")
