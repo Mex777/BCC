@@ -14,16 +14,14 @@ on:
 # Environment variables
 env:
   # Configure Godot version
-  GODOT_VERSION: 4.3.0
+  GODOT_VERSION: 4.2.1
 
-  # OpenXR Vendors version
-  OPENXR_VENDORS_VERSION: 3.1.0-stable
   
-  # Butler API Key (comment to disable)
-  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  # # Butler API Key (comment to disable)
+  # BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
   
-  # Butler User/Game (set to itch.io user/game)
-  BUTLER_USER_GAME: malcolmnixon/godotcibuilddemo
+  # # Butler User/Game (set to itch.io user/game)
+  # BUTLER_USER_GAME: malcolmnixon/godotcibuilddemo
 
 
 # CI jobs
@@ -62,6 +60,12 @@ jobs:
       # Check out the repository
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Ensure submodules are checked out if used
+          submodules: 'true'
+          # Specify the repository and branch if necessary
+          repository: 'unibuc-cs/software-engineering-product-bcc'
+          # ref: 'main'  # or the specific branch you're targeting
 
       # Setup Godot
       - name: Setup Godot
