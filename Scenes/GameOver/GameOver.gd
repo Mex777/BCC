@@ -19,6 +19,9 @@ func _process(_delta: float) -> void:
 		if not music_playing:
 			music_playing = true
 			audio_player.play()
+		if len(MultiplayerManager.Players) > 0:
+			self.hide()
+			return
 		self.show()
 	else:
 		self.hide()

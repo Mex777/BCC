@@ -11,7 +11,7 @@ func _ready() -> void:
 	MusicPlayer.play_music()  # Pornește muzica
 
 	# 📌 Dacă nu există fișier de salvare, dezactivăm butonul Continue
-	if load("res://Saves/Save.tres") == null:
+	if FileAccess.file_exists("res://Saves/Save.dat") == false:
 		$ContinueBtn.disabled = true
 	else:
 		$ContinueBtn.disabled = false
@@ -43,6 +43,10 @@ func _on_play_btn_pressed() -> void:
 # 📌 Continue Game
 func _on_continue_btn_pressed() -> void:
 	SaveManager.load_game()
+
+
+func _on_multiplayer_btn_pressed():
+	get_tree().change_scene_to_file("res://Scenes/MultiplayerMenu/MultiplayerScene.tscn")
 
 # 📌 Navigare spre `OptionsMenu`
 func _on_options_btn_pressed() -> void:
