@@ -145,3 +145,7 @@ func _on_cycle_btn_pressed():
 	skin_index = (skin_index + 1) % len($Skins/Sprites.get_children())
 	$Skins/SkinName.text = $Skins/Sprites.get_child(skin_index).name
 	$Skins/Sprites.get_child(skin_index).show()
+
+
+func _on_back_btn_pressed():
+	get_tree().change_scene_to_file("res://Scenes/MainMenu/MainMenu.tscn")
