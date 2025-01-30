@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx471itbdb4uo"
-path="res://.godot/imported/Component Diagram.png-75f467656c2a2f3edc205a707bc4f7c0.ctex"
+uid="uid://uvs6s0we7ed6"
+path="res://.godot/imported/2.png-ab44044b7013a52a7814e4f70ddbab93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Component Diagram.png"
-dest_files=["res://.godot/imported/Component Diagram.png-75f467656c2a2f3edc205a707bc4f7c0.ctex"]
+source_file="res://Assets/Aurora/BasicOutfit/Attack (right)/2.png"
+dest_files=["res://.godot/imported/2.png-ab44044b7013a52a7814e4f70ddbab93.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c64fhqoyie851"
-path="res://.godot/imported/AuroraFlowDiagram.png-8468ae53cc9b08d5d51d4c0f0f26d594.ctex"
+uid="uid://b7q1dtg5wob4w"
+path="res://.godot/imported/0.png-9136030a55dbdb5d9eade72241980046.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/AuroraFlowDiagram.png"
-dest_files=["res://.godot/imported/AuroraFlowDiagram.png-8468ae53cc9b08d5d51d4c0f0f26d594.ctex"]
+source_file="res://Assets/Mobs/King/Idle/0.png"
+dest_files=["res://.godot/imported/0.png-9136030a55dbdb5d9eade72241980046.ctex"]
 
 [params]
 

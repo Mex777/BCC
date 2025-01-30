@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpt2mllqoqk75"
-path="res://.godot/imported/System context diagram.png-d6e62c5722e2df91d689cff71e350bfc.ctex"
+uid="uid://dwggyf85tkgpd"
+path="res://.godot/imported/1.png-3c08287c66af3da908398af1d37d172c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/System context diagram.png"
-dest_files=["res://.godot/imported/System context diagram.png-d6e62c5722e2df91d689cff71e350bfc.ctex"]
+source_file="res://Assets/Enemies/Boy2/Running (right)/1.png"
+dest_files=["res://.godot/imported/1.png-3c08287c66af3da908398af1d37d172c.ctex"]
 
 [params]
 
