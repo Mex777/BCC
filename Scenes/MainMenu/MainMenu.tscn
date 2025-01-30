@@ -15,7 +15,7 @@ offset_bottom = 650.0
 texture = ExtResource("2_j5hrm")
 flip_h = true
 
-[node name="ContinueBtn" type="TextureButton" parent="."]
+[node name="PlayBtn" type="TextureButton" parent="."]
 offset_left = 553.0
 offset_top = 26.0
 offset_right = 1120.0
@@ -24,65 +24,23 @@ texture_normal = ExtResource("4_7rj8a")
 texture_pressed = ExtResource("5_txs5x")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ContinueBtn"]
-layout_mode = 0
-offset_left = 77.0
-offset_top = 21.0
-offset_right = 491.0
-offset_bottom = 144.0
-theme_override_fonts/font = ExtResource("5_b5jfb")
-theme_override_font_sizes/font_size = 40
-text = "CONTINUE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayBtn" type="TextureButton" parent="."]
-offset_left = 553.0
-offset_top = 170.0
-offset_right = 1120.0
-offset_bottom = 619.0
-texture_normal = ExtResource("4_7rj8a")
-texture_pressed = ExtResource("5_txs5x")
-stretch_mode = 5
-
 [node name="Label" type="Label" parent="PlayBtn"]
 layout_mode = 0
 offset_left = 77.0
-offset_top = 22.0
-offset_right = 490.0
-offset_bottom = 147.0
-theme_override_fonts/font = ExtResource("5_b5jfb")
-theme_override_font_sizes/font_size = 40
-text = "NEW GAME"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MultiplayerBtn" type="TextureButton" parent="."]
-offset_left = 18.0
-offset_top = 465.0
-offset_right = 585.0
-offset_bottom = 914.0
-texture_normal = ExtResource("4_7rj8a")
-texture_pressed = ExtResource("5_txs5x")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="MultiplayerBtn"]
-layout_mode = 0
-offset_left = 77.0
 offset_top = 21.0
 offset_right = 491.0
 offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("5_b5jfb")
 theme_override_font_sizes/font_size = 40
-text = "MULTIPLAYER"
+text = "PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsBtn" type="TextureButton" parent="."]
 offset_left = 553.0
-offset_top = 315.0
+offset_top = 170.0
 offset_right = 1120.0
-offset_bottom = 764.0
+offset_bottom = 619.0
 texture_normal = ExtResource("4_7rj8a")
 texture_pressed = ExtResource("5_txs5x")
 stretch_mode = 5
@@ -101,9 +59,9 @@ vertical_alignment = 1
 
 [node name="QuitBtn" type="TextureButton" parent="."]
 offset_left = 553.0
-offset_top = 461.0
+offset_top = 315.0
 offset_right = 1120.0
-offset_bottom = 910.0
+offset_bottom = 764.0
 texture_normal = ExtResource("4_7rj8a")
 texture_pressed = ExtResource("5_txs5x")
 stretch_mode = 5
@@ -120,8 +78,6 @@ text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
-[connection signal="pressed" from="MultiplayerBtn" to="." method="_on_multiplayer_btn_pressed"]
 [connection signal="pressed" from="OptionsBtn" to="." method="_on_options_btn_pressed"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]
