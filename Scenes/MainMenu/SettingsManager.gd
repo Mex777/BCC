@@ -15,19 +15,14 @@ func save_settings() -> void:
 		for key in settings[category].keys():
 			config.set_value(category, key, settings[category][key])
 
-	var error = config.save(SETTINGS_FILE)
-	if error == OK:
-		print("✅ Settings saved successfully!")
-	else:
-		print("⚠️ Error saving settings:", error)
+	var error = config.save_encrypted_pass(SETTINGS_FILE, Game.key)
+
 
 # Încarcă setările la pornirea jocului
 func load_settings() -> void:
 	var config = ConfigFile.new()
 	
-	if config.load(SETTINGS_FILE) == OK:
-		print("🔄 Loading settings...")
-		
+	if config.load_encrypted_pass(SETTINGS_FILE, Game.key) == OK:
 		# Inițializăm dicționarul settings din fișierul salvat
 		for category in ["keybinds", "volume", "aurora"]:
 			if not settings.has(category):
@@ -35,11 +30,9 @@ func load_settings() -> void:
 
 			for key in config.get_section_keys(category):
 				settings[category][key] = config.get_value(category, key)
-
-		print("✅ Settings loaded:", settings)
 	else:
-		print("⚠️ No settings file found, using defaults!")
 		_set_default_settings()
+
 
 # Setează valori implicite dacă nu există fișierul de setări
 func _set_default_settings() -> void:
