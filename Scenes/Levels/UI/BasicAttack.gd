@@ -17,4 +17,4 @@ func _process(_delta: float) -> void:
 			if player.name == str(multiplayer.get_unique_id()):
 				val = player
 				break
-		#value = 1 - val.get_child(6).time_left / 0.6
+		value = 1 - val.get_child(6).time_left / 0.6
