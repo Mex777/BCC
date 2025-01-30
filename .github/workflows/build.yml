@@ -42,7 +42,7 @@ jobs:
           - name: 🏁 Windows
             os: windows-latest
             platform: windows
-            export-preset: Windows
+            export-preset: windows
             export-type: release
             export-folder: build/windows
             archive: Windows
@@ -52,7 +52,7 @@ jobs:
           - name: 🐧 Linux
             os: ubuntu-22.04
             platform: linux
-            export-preset: Linux
+            export-preset: linux
             export-type: release
             export-folder: build/linux
             archive: Linux
