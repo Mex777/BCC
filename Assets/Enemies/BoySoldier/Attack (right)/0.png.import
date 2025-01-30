@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dabhcwwm5mrh"
-path="res://.godot/imported/LevelFlowDiagram.png-e4e6616521e066be22c884081299f35e.ctex"
+uid="uid://lu7ll58thant"
+path="res://.godot/imported/0.png-fdd122d0777a4f27b1d20b40c86de616.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/LevelFlowDiagram.png"
-dest_files=["res://.godot/imported/LevelFlowDiagram.png-e4e6616521e066be22c884081299f35e.ctex"]
+source_file="res://Assets/Enemies/BoySoldier/Attack (right)/0.png"
+dest_files=["res://.godot/imported/0.png-fdd122d0777a4f27b1d20b40c86de616.ctex"]
 
 [params]
 

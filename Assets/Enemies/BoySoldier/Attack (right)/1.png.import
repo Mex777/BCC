@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cujkiodpyjuqt"
-path="res://.godot/imported/ContainerDiagram.png-beeb32c67c9a1be154d0ef2a21258760.ctex"
+uid="uid://78aajvba2ngx"
+path="res://.godot/imported/1.png-3592b2699dbeabbb9d9f76552a753c64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/ContainerDiagram.png"
-dest_files=["res://.godot/imported/ContainerDiagram.png-beeb32c67c9a1be154d0ef2a21258760.ctex"]
+source_file="res://Assets/Enemies/BoySoldier/Attack (right)/1.png"
+dest_files=["res://.godot/imported/1.png-3592b2699dbeabbb9d9f76552a753c64.ctex"]
 
 [params]
 

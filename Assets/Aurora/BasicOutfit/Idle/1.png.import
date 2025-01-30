@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxl0sq80jvebw"
-path="res://.godot/imported/MultipleChoiceFeature.png-91db604cf58fb1a451bf54157a4757f9.ctex"
+uid="uid://bs58tfp6f407t"
+path="res://.godot/imported/1.png-a383ad4d261eecda5c7fd1f1d6c49d7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/MultipleChoiceFeature.png"
-dest_files=["res://.godot/imported/MultipleChoiceFeature.png-91db604cf58fb1a451bf54157a4757f9.ctex"]
+source_file="res://Assets/Aurora/BasicOutfit/Idle/1.png"
+dest_files=["res://.godot/imported/1.png-a383ad4d261eecda5c7fd1f1d6c49d7f.ctex"]
 
 [params]
 

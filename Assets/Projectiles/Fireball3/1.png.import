@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjtbf435ntqy7"
-path="res://.godot/imported/Container Diagram.png-347a4367153d3671a7234120f41f1410.ctex"
+uid="uid://du3cduavls4w5"
+path="res://.godot/imported/1.png-90e843c1436beb722a38d20a2a4e74ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Container Diagram.png"
-dest_files=["res://.godot/imported/Container Diagram.png-347a4367153d3671a7234120f41f1410.ctex"]
+source_file="res://Assets/Projectiles/Fireball3/1.png"
+dest_files=["res://.godot/imported/1.png-90e843c1436beb722a38d20a2a4e74ee.ctex"]
 
 [params]
 
