@@ -7,6 +7,7 @@ var combat_counter: int = 0
 var level_name: String = "Level1"
 var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var boss_killed: bool = false
+var key: String = ""
 
 var chapter_names = {
 	"Level1": "Chapter one",

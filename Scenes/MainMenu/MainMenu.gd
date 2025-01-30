@@ -11,7 +11,7 @@ func _ready() -> void:
 	MusicPlayer.play_music()  # Pornește muzica
 
 	# 📌 Dacă nu există fișier de salvare, dezactivăm butonul Continue
-	if load("res://Saves/Save.tres") == null:
+	if FileAccess.file_exists("res://Saves/Save.dat") == false:
 		$ContinueBtn.disabled = true
 	else:
 		$ContinueBtn.disabled = false
