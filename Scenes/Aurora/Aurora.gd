@@ -223,4 +223,3 @@ func queue_free_rpc(id):
 	if multiplayer.is_server():
 		MultiplayerManager.losers.append(id)
 		
-
