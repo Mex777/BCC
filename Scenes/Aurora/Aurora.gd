@@ -6,6 +6,7 @@ class_name Aurora
 @export var camera_top_limit: int
 @export var camera_bottom_limit: int
 @export var max_speed: float = 300.0
+@export var ai_enabled: bool = false
 
 var speed = 0
 const JUMP_VELOCITY: float = -400.0
@@ -22,6 +23,21 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var game_over = preload("res://Scenes/GameOver/GameOver.tscn").instantiate()
 @onready var camera = $Camera2D
 
+######################################### RL stuff #################################################
+var ai_controller = null
+var raycast = null
+var finish = null
+var previous_distance = 0
+var best_distance = INF
+var current_game = 0
+var best_time = INF
+var total_time: float = 0.0
+var done_cnt = 0
+var dead_cnt = 0
+var out_of_time = 0
+@export var start_x: int = 0
+@export var start_y: int = 0
+####################################################################################################
 
 func _ready() -> void:
 	camera.limit_left = camera_left_limit
@@ -36,6 +52,14 @@ func _ready() -> void:
 		camera.make_current()
 	# Connect the signal_event signal from the Dialogic singleton to the dialogic_signal function.
 	Dialogic.signal_event.connect(dialogic_signal)
+	
+	if ai_enabled:
+		ai_controller = $"../AIController2D"
+		ai_controller.init(self)
+		Player.max_hp = 100
+		Player.reset()
+		finish = $"../NextLevelPortal/CollisionShape2D".global_position
+		raycast = $RaycastSensor2D
 	MusicPlayer.stop_music()  # Oprește muzica când începe jocul
 
 
@@ -51,6 +75,10 @@ func _physics_process(delta: float) -> void:
 		if Player.is_dead():
 			if len(MultiplayerManager.Players) > 0:
 				queue_free_rpc.rpc(name)
+			elif ai_enabled:
+				dead_cnt += 1
+				print("DEAD")
+				reset()
 			else:
 				queue_free()
 		
@@ -86,6 +114,15 @@ func _physics_process(delta: float) -> void:
 		
 		# Get the input direction and handle the movement/deceleration.
 		var direction = Input.get_axis("move_left", "move_right")
+		if ai_enabled:
+			direction = round(ai_controller.move_action)
+			
+			if ai_controller.jump_action and is_on_floor():
+				velocity.y = JUMP_VELOCITY
+			if ai_controller.stun_attack:
+				stun()
+			if ai_controller.basic_attack:
+				attack()
 		if direction == -1: 
 			get_node("Sprite").flip_h = true;
 			if $Attack/BaseAttack.position.x > 0:
@@ -222,4 +259,51 @@ func queue_free_rpc(id):
 	
 	if multiplayer.is_server():
 		MultiplayerManager.losers.append(id)
+
+########################################## AI FUNCTIONS ############################################
+
+func reset():
+	$"..".reset()
+	Player.reset()
+	Game.reset()
+	global_position = Vector2(start_x, start_y)
+	current_game += 1
+	print("Done rate: " + str(done_cnt / float(current_game) * 100))
+	print("Dead rate: " + str(dead_cnt / float(current_game) * 100))
+	print("Out of time rate: " + str(out_of_time / float(current_game) * 100))
+	print("Average completion time: " + str(total_time / float(done_cnt)))
+	print("Current time: " + str(600 - $"../Timer".get_time_left()))
+	print("Best time: " + str(best_time))
+	print()
+	print("Iteration: " + str(current_game))
+	$"../Timer".start()
+	ai_controller.reset()
+	best_distance = INF
 		
+
+func get_reward() -> float:
+	var current_distance = finish.distance_to(global_position)
+	#current_distance = abs(finish.x - global_position.x)
+	#var max_distance = 70 * 16 + 30 * 16
+	#return -(1 - current_distance / max_distance)
+	#
+	if current_distance < best_distance:
+		best_distance = current_distance
+		#print("best")
+		previous_distance = current_distance
+		return 0.3
+
+	if current_distance < previous_distance:
+		#print("closer")
+		previous_distance = current_distance
+		
+		return 0.1
+	
+	#print("further")
+	previous_distance = current_distance
+	return 0
+	
+	var rew = (previous_distance - current_distance) / 100
+	previous_distance = current_distance
+	return rew
+	

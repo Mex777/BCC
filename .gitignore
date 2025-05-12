@@ -3,3 +3,4 @@
 .vscode/
 addons/godot-vim/
 addons/SignalVisualizer/
+venv/

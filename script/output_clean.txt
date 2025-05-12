@@ -1,0 +1,1395 @@
+Iteration: 0
+DEAD
+Done rate: 0
+Dead rate: 100
+Out of time rate: 0
+Average completion time: nan
+Current time: 117.86135
+Best time: inf
+
+Iteration: 1
+DONE
+Done rate: 50
+Dead rate: 50
+Out of time rate: 0
+Average completion time: 566.273983333327
+Current time: 566.273983333327
+Best time: 566.273983333327
+
+Iteration: 2
+DONE
+Done rate: 66.6666666666667
+Dead rate: 33.3333333333333
+Out of time rate: 0
+Average completion time: 361.533616666663
+Current time: 156.793249999999
+Best time: 156.793249999999
+
+Iteration: 3
+run out of time
+Done rate: 50
+Dead rate: 25
+Out of time rate: 25
+Average completion time: 361.533616666663
+Current time: 0.123866666661
+Best time: 156.793249999999
+
+Iteration: 4
+DEAD
+Done rate: 40
+Dead rate: 40
+Out of time rate: 20
+Average completion time: 361.533616666663
+Current time: 188.280633333337
+Best time: 156.793249999999
+
+Iteration: 5
+run out of time
+Done rate: 33.3333333333333
+Dead rate: 33.3333333333333
+Out of time rate: 33.3333333333333
+Average completion time: 361.533616666663
+Current time: 0.00251666667384
+Best time: 156.793249999999
+
+Iteration: 6
+DEAD
+Done rate: 28.5714285714286
+Dead rate: 42.8571428571429
+Out of time rate: 28.5714285714286
+Average completion time: 361.533616666663
+Current time: 397.585800000005
+Best time: 156.793249999999
+
+Iteration: 7
+DEAD
+Done rate: 25
+Dead rate: 50
+Out of time rate: 25
+Average completion time: 361.533616666663
+Current time: 386.547533333335
+Best time: 156.793249999999
+
+Iteration: 8
+DEAD
+Done rate: 22.2222222222222
+Dead rate: 55.5555555555556
+Out of time rate: 22.2222222222222
+Average completion time: 361.533616666663
+Current time: 93.8666666666684
+Best time: 156.793249999999
+
+Iteration: 9
+DEAD
+Done rate: 20
+Dead rate: 60
+Out of time rate: 20
+Average completion time: 361.533616666663
+Current time: 30.6500000000023
+Best time: 156.793249999999
+
+Iteration: 10
+DONE
+Done rate: 27.2727272727273
+Dead rate: 54.5454545454545
+Out of time rate: 18.1818181818182
+Average completion time: 256.31567222222
+Current time: 45.8797833333341
+Best time: 45.8797833333341
+
+Iteration: 11
+DONE
+Done rate: 33.3333333333333
+Dead rate: 50
+Out of time rate: 16.6666666666667
+Average completion time: 208.701999999998
+Current time: 65.8609833333345
+Best time: 45.8797833333341
+
+Iteration: 12
+DONE
+Done rate: 38.4615384615385
+Dead rate: 46.1538461538462
+Out of time rate: 15.3846153846154
+Average completion time: 185.121819999999
+Current time: 90.8011000000005
+Best time: 45.8797833333341
+
+Iteration: 13
+DEAD
+Done rate: 35.7142857142857
+Dead rate: 50
+Out of time rate: 14.2857142857143
+Average completion time: 185.121819999999
+Current time: 194.924800000003
+Best time: 45.8797833333341
+
+Iteration: 14
+DONE
+Done rate: 40
+Dead rate: 46.6666666666667
+Out of time rate: 13.3333333333333
+Average completion time: 161.713374999999
+Current time: 44.6711499999999
+Best time: 44.6711499999999
+
+Iteration: 15
+DONE
+Done rate: 43.75
+Dead rate: 43.75
+Out of time rate: 12.5
+Average completion time: 147.089395238095
+Current time: 59.3455166666673
+Best time: 44.6711499999999
+
+Iteration: 16
+DONE
+Done rate: 47.0588235294118
+Dead rate: 41.1764705882353
+Out of time rate: 11.7647058823529
+Average completion time: 135.302845833333
+Current time: 52.7970000000016
+Best time: 44.6711499999999
+
+Iteration: 17
+DONE
+Done rate: 50
+Dead rate: 38.8888888888889
+Out of time rate: 11.1111111111111
+Average completion time: 127.527348148148
+Current time: 65.323366666669
+Best time: 44.6711499999999
+
+Iteration: 18
+DONE
+Done rate: 52.6315789473684
+Dead rate: 36.8421052631579
+Out of time rate: 10.5263157894737
+Average completion time: 124.722388333334
+Current time: 99.4777500000036
+Best time: 44.6711499999999
+
+Iteration: 19
+DONE
+Done rate: 55
+Dead rate: 35
+Out of time rate: 10
+Average completion time: 118.413751515152
+Current time: 55.3273833333326
+Best time: 44.6711499999999
+
+Iteration: 20
+DONE
+Done rate: 57.1428571428571
+Dead rate: 33.3333333333333
+Out of time rate: 9.52380952380952
+Average completion time: 110.312376388889
+Current time: 21.1972499999997
+Best time: 21.1972499999997
+
+Iteration: 21
+DONE
+Done rate: 59.0909090909091
+Dead rate: 31.8181818181818
+Out of time rate: 9.09090909090909
+Average completion time: 104.463461538462
+Current time: 34.2764833333329
+Best time: 21.1972499999997
+
+Iteration: 22
+DONE
+Done rate: 60.8695652173913
+Dead rate: 30.4347826086957
+Out of time rate: 8.69565217391304
+Average completion time: 99.6488845238097
+Current time: 37.0593833333343
+Best time: 21.1972499999997
+
+Iteration: 23
+DONE
+Done rate: 62.5
+Dead rate: 29.1666666666667
+Out of time rate: 8.33333333333333
+Average completion time: 96.8372733333337
+Current time: 57.4747166666699
+Best time: 21.1972499999997
+
+Iteration: 24
+DONE
+Done rate: 64
+Dead rate: 28
+Out of time rate: 8
+Average completion time: 105.284943750001
+Current time: 232.000000000009
+Best time: 21.1972499999997
+
+Iteration: 25
+DONE
+Done rate: 65.3846153846154
+Dead rate: 26.9230769230769
+Out of time rate: 7.69230769230769
+Average completion time: 110.36153137255
+Current time: 191.586933333336
+Best time: 21.1972499999997
+
+Iteration: 26
+DONE
+Done rate: 66.6666666666667
+Dead rate: 25.9259259259259
+Out of time rate: 7.40740740740741
+Average completion time: 106.037908333334
+Current time: 32.536316666666
+Best time: 21.1972499999997
+
+Iteration: 27
+DONE
+Done rate: 67.8571428571429
+Dead rate: 25
+Out of time rate: 7.14285714285714
+Average completion time: 106.120321052633
+Current time: 107.603750000002
+Best time: 21.1972499999997
+
+Iteration: 28
+DEAD
+Done rate: 65.5172413793103
+Dead rate: 27.5862068965517
+Out of time rate: 6.89655172413793
+Average completion time: 106.120321052633
+Current time: 20.5301333333337
+Best time: 21.1972499999997
+
+Iteration: 29
+DONE
+Done rate: 66.6666666666667
+Dead rate: 26.6666666666667
+Out of time rate: 6.66666666666667
+Average completion time: 105.487665000001
+Current time: 93.4672000000002
+Best time: 21.1972499999997
+
+Iteration: 30
+DONE
+Done rate: 67.741935483871
+Dead rate: 25.8064516129032
+Out of time rate: 6.45161290322581
+Average completion time: 108.75626904762
+Current time: 174.128350000004
+Best time: 21.1972499999997
+
+Iteration: 31
+DONE
+Done rate: 68.75
+Dead rate: 25
+Out of time rate: 6.25
+Average completion time: 114.261396969698
+Current time: 229.869083333339
+Best time: 21.1972499999997
+
+Iteration: 32
+DEAD
+Done rate: 66.6666666666667
+Dead rate: 27.2727272727273
+Out of time rate: 6.06060606060606
+Average completion time: 114.261396969698
+Current time: 108.932466666669
+Best time: 21.1972499999997
+
+Iteration: 33
+DEAD
+Done rate: 64.7058823529412
+Dead rate: 29.4117647058824
+Out of time rate: 5.88235294117647
+Average completion time: 114.261396969698
+Current time: 90.9291000000018
+Best time: 21.1972499999997
+
+Iteration: 34
+DONE
+Done rate: 65.7142857142857
+Dead rate: 28.5714285714286
+Out of time rate: 5.71428571428571
+Average completion time: 112.859333574881
+Current time: 82.0139388888916
+Best time: 21.1972499999997
+
+Iteration: 35
+DEAD
+Done rate: 63.8888888888889
+Dead rate: 30.5555555555556
+Out of time rate: 5.55555555555556
+Average completion time: 112.859333574881
+Current time: 58.25272777778
+Best time: 21.1972499999997
+
+Iteration: 36
+DEAD
+Done rate: 62.1621621621622
+Dead rate: 32.4324324324324
+Out of time rate: 5.40540540540541
+Average completion time: 112.859333574881
+Current time: 23.3370833333341
+Best time: 21.1972499999997
+
+Iteration: 37
+DEAD
+Done rate: 60.5263157894737
+Dead rate: 34.2105263157895
+Out of time rate: 5.26315789473684
+Average completion time: 112.859333574881
+Current time: 63.2006333333348
+Best time: 21.1972499999997
+
+Iteration: 38
+DEAD
+Done rate: 58.974358974359
+Dead rate: 35.8974358974359
+Out of time rate: 5.12820512820513
+Average completion time: 112.859333574881
+Current time: 38.0023166666674
+Best time: 21.1972499999997
+
+Iteration: 39
+DONE
+Done rate: 60
+Dead rate: 35
+Out of time rate: 5
+Average completion time: 109.573248842594
+Current time: 33.9933000000015
+Best time: 21.1972499999997
+
+Iteration: 40
+DONE
+Done rate: 60.9756097560976
+Dead rate: 34.1463414634146
+Out of time rate: 4.8780487804878
+Average completion time: 107.489411555557
+Current time: 57.4773166666671
+Best time: 21.1972499999997
+
+Iteration: 41
+DONE
+Done rate: 61.9047619047619
+Dead rate: 33.3333333333333
+Out of time rate: 4.76190476190476
+Average completion time: 106.590942521369
+Current time: 84.129216666667
+Best time: 21.1972499999997
+
+Iteration: 42
+DONE
+Done rate: 62.7906976744186
+Dead rate: 32.5581395348837
+Out of time rate: 4.65116279069767
+Average completion time: 103.581353292182
+Current time: 25.3320333333345
+Best time: 21.1972499999997
+
+Iteration: 43
+DONE
+Done rate: 63.6363636363636
+Dead rate: 31.8181818181818
+Out of time rate: 4.54545454545455
+Average completion time: 101.615287698414
+Current time: 48.5315166666685
+Best time: 21.1972499999997
+
+Iteration: 44
+DONE
+Done rate: 64.4444444444444
+Dead rate: 31.1111111111111
+Out of time rate: 4.44444444444444
+Average completion time: 101.279397892722
+Current time: 91.8744833333347
+Best time: 21.1972499999997
+
+Iteration: 45
+DONE
+Done rate: 65.2173913043478
+Dead rate: 30.4347826086957
+Out of time rate: 4.34782608695652
+Average completion time: 98.5208946296309
+Current time: 18.5242999999997
+Best time: 18.5242999999997
+
+Iteration: 46
+DONE
+Done rate: 65.9574468085106
+Dead rate: 29.7872340425532
+Out of time rate: 4.25531914893617
+Average completion time: 96.4181146953417
+Current time: 33.3347166666662
+Best time: 18.5242999999997
+
+Iteration: 47
+DONE
+Done rate: 66.6666666666667
+Dead rate: 29.1666666666667
+Out of time rate: 4.16666666666667
+Average completion time: 94.2760402777789
+Current time: 27.8717333333328
+Best time: 18.5242999999997
+
+Iteration: 48
+DONE
+Done rate: 67.3469387755102
+Dead rate: 28.5714285714286
+Out of time rate: 4.08163265306122
+Average completion time: 96.4051531986544
+Current time: 164.536766666669
+Best time: 18.5242999999997
+
+Iteration: 49
+DONE
+Done rate: 68
+Dead rate: 28
+Out of time rate: 4
+Average completion time: 94.4441844771253
+Current time: 29.7322166666662
+Best time: 18.5242999999997
+
+Iteration: 50
+run out of time
+Done rate: 66.6666666666667
+Dead rate: 27.4509803921569
+Out of time rate: 5.88235294117647
+Average completion time: 94.4441844771253
+Current time: 0.12551666667628
+Best time: 18.5242999999997
+
+Iteration: 51
+DONE
+Done rate: 67.3076923076923
+Dead rate: 26.9230769230769
+Out of time rate: 5.76923076923077
+Average completion time: 92.3895415873027
+Current time: 22.5316833333337
+Best time: 18.5242999999997
+
+Iteration: 52
+DEAD
+Done rate: 66.0377358490566
+Dead rate: 28.3018867924528
+Out of time rate: 5.66037735849057
+Average completion time: 92.3895415873027
+Current time: 46.5372999999994
+Best time: 18.5242999999997
+
+Iteration: 53
+DONE
+Done rate: 66.6666666666667
+Dead rate: 27.7777777777778
+Out of time rate: 5.55555555555556
+Average completion time: 90.9971848765443
+Current time: 42.264700000001
+Best time: 18.5242999999997
+
+Iteration: 54
+DONE
+Done rate: 67.2727272727273
+Dead rate: 27.2727272727273
+Out of time rate: 5.45454545454545
+Average completion time: 93.5290019519531
+Current time: 184.67441666667
+Best time: 18.5242999999997
+
+Iteration: 55
+DONE
+Done rate: 67.8571428571429
+Dead rate: 26.7857142857143
+Out of time rate: 5.35714285714286
+Average completion time: 92.2570238304105
+Current time: 45.1938333333342
+Best time: 18.5242999999997
+
+Iteration: 56
+DONE
+Done rate: 68.4210526315789
+Dead rate: 26.3157894736842
+Out of time rate: 5.26315789473684
+Average completion time: 97.0780155270668
+Current time: 280.275700000007
+Best time: 18.5242999999997
+
+Iteration: 57
+DONE
+Done rate: 68.9655172413793
+Dead rate: 25.8620689655172
+Out of time rate: 5.17241379310345
+Average completion time: 97.3840880555569
+Current time: 109.32091666667
+Best time: 18.5242999999997
+
+Iteration: 58
+DEAD
+Done rate: 67.7966101694915
+Dead rate: 27.1186440677966
+Out of time rate: 5.08474576271187
+Average completion time: 97.3840880555569
+Current time: 36.6801000000009
+Best time: 18.5242999999997
+
+Iteration: 59
+DONE
+Done rate: 68.3333333333333
+Dead rate: 26.6666666666667
+Out of time rate: 5
+Average completion time: 97.4967086720881
+Current time: 102.001533333335
+Best time: 18.5242999999997
+
+Iteration: 60
+DONE
+Done rate: 68.8524590163934
+Dead rate: 26.2295081967213
+Out of time rate: 4.91803278688525
+Average completion time: 99.7876779100543
+Current time: 193.717416666671
+Best time: 18.5242999999997
+
+Iteration: 61
+DONE
+Done rate: 69.3548387096774
+Dead rate: 25.8064516129032
+Out of time rate: 4.83870967741935
+Average completion time: 98.1865160206733
+Current time: 30.937716666667
+Best time: 18.5242999999997
+
+Iteration: 62
+DONE
+Done rate: 69.8412698412698
+Dead rate: 25.3968253968254
+Out of time rate: 4.76190476190476
+Average completion time: 98.8067209595973
+Current time: 125.475533333333
+Best time: 18.5242999999997
+
+Iteration: 63
+DONE
+Done rate: 70.3125
+Dead rate: 25
+Out of time rate: 4.6875
+Average completion time: 97.2597793827174
+Current time: 29.1943500000002
+Best time: 18.5242999999997
+
+Iteration: 64
+DONE
+Done rate: 70.7692307692308
+Dead rate: 24.6153846153846
+Out of time rate: 4.61538461538462
+Average completion time: 96.1020001207743
+Current time: 44.0019333333344
+Best time: 18.5242999999997
+
+Iteration: 65
+DONE
+Done rate: 71.2121212121212
+Dead rate: 24.2424242424242
+Out of time rate: 4.54545454545455
+Average completion time: 96.9989462174954
+Current time: 138.258466666667
+Best time: 18.5242999999997
+
+Iteration: 66
+DONE
+Done rate: 71.6417910447761
+Dead rate: 23.8805970149254
+Out of time rate: 4.47761194029851
+Average completion time: 95.6253202546309
+Current time: 31.064900000001
+Best time: 18.5242999999997
+
+Iteration: 67
+DONE
+Done rate: 72.0588235294118
+Dead rate: 23.5294117647059
+Out of time rate: 4.41176470588235
+Average completion time: 94.1118718820875
+Current time: 21.4663500000013
+Best time: 18.5242999999997
+
+Iteration: 68
+DONE
+Done rate: 72.463768115942
+Dead rate: 23.1884057971014
+Out of time rate: 4.34782608695652
+Average completion time: 93.9923011111124
+Current time: 88.1333333333354
+Best time: 18.5242999999997
+
+Iteration: 69
+DONE
+Done rate: 72.8571428571428
+Dead rate: 22.8571428571429
+Out of time rate: 4.28571428571429
+Average completion time: 92.6645997821363
+Current time: 26.2795333333332
+Best time: 18.5242999999997
+
+Iteration: 70
+DONE
+Done rate: 73.2394366197183
+Dead rate: 22.5352112676056
+Out of time rate: 4.22535211267606
+Average completion time: 91.6544561965825
+Current time: 40.1371333333348
+Best time: 18.5242999999997
+
+Iteration: 71
+DONE
+Done rate: 73.6111111111111
+Dead rate: 22.2222222222222
+Out of time rate: 4.16666666666667
+Average completion time: 93.6481334381564
+Current time: 197.31935
+Best time: 18.5242999999997
+
+Iteration: 72
+DONE
+Done rate: 73.972602739726
+Dead rate: 21.9178082191781
+Out of time rate: 4.10958904109589
+Average completion time: 92.5561430041165
+Current time: 34.6806500000005
+Best time: 18.5242999999997
+
+Iteration: 73
+DONE
+Done rate: 74.3243243243243
+Dead rate: 21.6216216216216
+Out of time rate: 4.05405405405405
+Average completion time: 91.8453891919204
+Current time: 53.4646833333325
+Best time: 18.5242999999997
+
+Iteration: 74
+DONE
+Done rate: 74.6666666666667
+Dead rate: 21.3333333333333
+Out of time rate: 4
+Average completion time: 92.7171396825409
+Current time: 140.663416666667
+Best time: 18.5242999999997
+
+Iteration: 75
+DONE
+Done rate: 75
+Dead rate: 21.0526315789474
+Out of time rate: 3.94736842105263
+Average completion time: 91.48573723197
+Current time: 22.5272000000007
+Best time: 18.5242999999997
+
+Iteration: 76
+DONE
+Done rate: 75.3246753246753
+Dead rate: 20.7792207792208
+Out of time rate: 3.8961038961039
+Average completion time: 90.7337860153269
+Current time: 47.8725666666675
+Best time: 18.5242999999997
+
+Iteration: 77
+DONE
+Done rate: 75.6410256410256
+Dead rate: 20.5128205128205
+Out of time rate: 3.84615384615385
+Average completion time: 89.6252402071575
+Current time: 25.3295833333337
+Best time: 18.5242999999997
+
+Iteration: 78
+DONE
+Done rate: 75.9493670886076
+Dead rate: 20.253164556962
+Out of time rate: 3.79746835443038
+Average completion time: 89.1003078703716
+Current time: 58.1293000000016
+Best time: 18.5242999999997
+
+Iteration: 79
+DONE
+Done rate: 76.25
+Dead rate: 20
+Out of time rate: 3.75
+Average completion time: 89.392869763207
+Current time: 106.946583333336
+Best time: 18.5242999999997
+
+Iteration: 80
+DONE
+Done rate: 76.5432098765432
+Dead rate: 19.7530864197531
+Out of time rate: 3.7037037037037
+Average completion time: 89.8714793906822
+Current time: 119.066666666668
+Best time: 18.5242999999997
+
+Iteration: 81
+DONE
+Done rate: 76.8292682926829
+Dead rate: 19.5121951219512
+Out of time rate: 3.65853658536585
+Average completion time: 90.2098209876555
+Current time: 111.187000000003
+Best time: 18.5242999999997
+
+Iteration: 82
+DONE
+Done rate: 77.1084337349398
+Dead rate: 19.2771084337349
+Out of time rate: 3.6144578313253
+Average completion time: 90.0523185763901
+Current time: 80.1296666666707
+Best time: 18.5242999999997
+
+Iteration: 83
+DONE
+Done rate: 77.3809523809524
+Dead rate: 19.047619047619
+Out of time rate: 3.57142857142857
+Average completion time: 89.2906523931637
+Current time: 40.5440166666681
+Best time: 18.5242999999997
+
+Iteration: 84
+DONE
+Done rate: 77.6470588235294
+Dead rate: 18.8235294117647
+Out of time rate: 3.52941176470588
+Average completion time: 88.3641170033682
+Current time: 28.1393166666666
+Best time: 18.5242999999997
+
+Iteration: 85
+DONE
+Done rate: 77.9069767441861
+Dead rate: 18.6046511627907
+Out of time rate: 3.48837209302326
+Average completion time: 87.9864951077956
+Current time: 63.0634500000019
+Best time: 18.5242999999997
+
+Iteration: 86
+DONE
+Done rate: 78.1609195402299
+Dead rate: 18.3908045977011
+Out of time rate: 3.44827586206897
+Average completion time: 87.5061218954261
+Current time: 55.3211166666658
+Best time: 18.5242999999997
+
+Iteration: 87
+DONE
+Done rate: 78.4090909090909
+Dead rate: 18.1818181818182
+Out of time rate: 3.40909090909091
+Average completion time: 86.7017913848644
+Current time: 32.007316666667
+Best time: 18.5242999999997
+
+Iteration: 88
+DONE
+Done rate: 78.6516853932584
+Dead rate: 17.9775280898876
+Out of time rate: 3.37078651685393
+Average completion time: 92.3240517460329
+Current time: 480.260016666664
+Best time: 18.5242999999997
+
+Iteration: 89
+DONE
+Done rate: 78.8888888888889
+Dead rate: 17.7777777777778
+Out of time rate: 3.33333333333333
+Average completion time: 91.5833796557132
+Current time: 39.7363333333328
+Best time: 18.5242999999997
+
+Iteration: 90
+DONE
+Done rate: 79.1208791208791
+Dead rate: 17.5824175824176
+Out of time rate: 3.2967032967033
+Average completion time: 90.9429047067913
+Current time: 45.469183333335
+Best time: 18.5242999999997
+
+Iteration: 91
+DONE
+Done rate: 79.3478260869565
+Dead rate: 17.3913043478261
+Out of time rate: 3.26086956521739
+Average completion time: 92.8260037290727
+Current time: 228.409133333333
+Best time: 18.5242999999997
+
+Iteration: 92
+DONE
+Done rate: 79.5698924731183
+Dead rate: 17.2043010752688
+Out of time rate: 3.2258064516129
+Average completion time: 92.2165198948961
+Current time: 47.7242000000034
+Best time: 18.5242999999997
+
+Iteration: 93
+DONE
+Done rate: 79.7872340425532
+Dead rate: 17.0212765957447
+Out of time rate: 3.19148936170213
+Average completion time: 91.6126451851864
+Current time: 46.9259166666704
+Best time: 18.5242999999997
+
+Iteration: 94
+DONE
+Done rate: 80
+Dead rate: 16.8421052631579
+Out of time rate: 3.15789473684211
+Average completion time: 91.2038312865509
+Current time: 60.5427888888886
+Best time: 18.5242999999997
+
+Iteration: 95
+DONE
+Done rate: 80.2083333333333
+Dead rate: 16.6666666666667
+Out of time rate: 3.125
+Average completion time: 92.4261695526707
+Current time: 185.323877777779
+Best time: 18.5242999999997
+
+Iteration: 96
+DONE
+Done rate: 80.4123711340206
+Dead rate: 16.4948453608247
+Out of time rate: 3.09278350515464
+Average completion time: 91.9319483618246
+Current time: 53.8769166666679
+Best time: 18.5242999999997
+
+Iteration: 97
+DONE
+Done rate: 80.6122448979592
+Dead rate: 16.3265306122449
+Out of time rate: 3.06122448979592
+Average completion time: 91.4095450070335
+Current time: 50.6620833333352
+Best time: 18.5242999999997
+
+Iteration: 98
+DONE
+Done rate: 80.8080808080808
+Dead rate: 16.1616161616162
+Out of time rate: 3.03030303030303
+Average completion time: 91.0769654861123
+Current time: 64.8031833333337
+Best time: 18.5242999999997
+
+Iteration: 99
+DONE
+Done rate: 81
+Dead rate: 16
+Out of time rate: 3
+Average completion time: 90.4101054183825
+Current time: 37.0613
+Best time: 18.5242999999997
+
+Iteration: 100
+DONE
+Done rate: 81.1881188118812
+Dead rate: 15.8415841584158
+Out of time rate: 2.97029702970297
+Average completion time: 90.4410106368575
+Current time: 92.9443333333339
+Best time: 18.5242999999997
+
+Iteration: 101
+DONE
+Done rate: 81.3725490196078
+Dead rate: 15.6862745098039
+Out of time rate: 2.94117647058824
+Average completion time: 90.2684544846063
+Current time: 76.1188500000006
+Best time: 18.5242999999997
+
+Iteration: 102
+DONE
+Done rate: 81.5533980582524
+Dead rate: 15.5339805825243
+Out of time rate: 2.9126213592233
+Average completion time: 89.6351524470911
+Current time: 37.071083333331
+Best time: 18.5242999999997
+
+Iteration: 103
+DONE
+Done rate: 81.7307692307692
+Dead rate: 15.3846153846154
+Out of time rate: 2.88461538461538
+Average completion time: 90.4175432026155
+Current time: 156.138366666671
+Best time: 18.5242999999997
+
+Iteration: 104
+DONE
+Done rate: 81.9047619047619
+Dead rate: 15.2380952380952
+Out of time rate: 2.85714285714286
+Average completion time: 89.8064905684766
+Current time: 37.8670166666684
+Best time: 18.5242999999997
+
+Iteration: 105
+DONE
+Done rate: 82.0754716981132
+Dead rate: 15.0943396226415
+Out of time rate: 2.83018867924528
+Average completion time: 88.9764891443179
+Current time: 17.596366666667
+Best time: 17.596366666667
+
+Iteration: 106
+DONE
+Done rate: 82.2429906542056
+Dead rate: 14.9532710280374
+Out of time rate: 2.80373831775701
+Average completion time: 88.3442381313143
+Current time: 33.338400000001
+Best time: 17.596366666667
+
+Iteration: 107
+DONE
+Done rate: 82.4074074074074
+Dead rate: 14.8148148148148
+Out of time rate: 2.77777777777778
+Average completion time: 87.9448079275916
+Current time: 52.794950000001
+Best time: 17.596366666667
+
+Iteration: 108
+DONE
+Done rate: 82.5688073394495
+Dead rate: 14.6788990825688
+Out of time rate: 2.75229357798165
+Average completion time: 88.5320191358036
+Current time: 140.793816666671
+Best time: 17.596366666667
+
+Iteration: 109
+DONE
+Done rate: 82.7272727272727
+Dead rate: 14.5454545454545
+Out of time rate: 2.72727272727273
+Average completion time: 87.8287874236886
+Current time: 24.5379333333327
+Best time: 17.596366666667
+
+Iteration: 110
+DONE
+Done rate: 82.8828828828829
+Dead rate: 14.4144144144144
+Out of time rate: 2.7027027027027
+Average completion time: 87.4277699879239
+Current time: 50.9351833333335
+Best time: 17.596366666667
+
+Iteration: 111
+run out of time
+Done rate: 82.1428571428571
+Dead rate: 14.2857142857143
+Out of time rate: 3.57142857142857
+Average completion time: 87.4277699879239
+Current time: 0.01021666667202
+Best time: 17.596366666667
+
+Iteration: 112
+DONE
+Done rate: 82.3008849557522
+Dead rate: 14.1592920353982
+Out of time rate: 3.53982300884956
+Average completion time: 86.9118903823189
+Current time: 39.4509666666655
+Best time: 17.596366666667
+
+Iteration: 113
+DONE
+Done rate: 82.4561403508772
+Dead rate: 14.0350877192982
+Out of time rate: 3.50877192982456
+Average completion time: 86.5532442080389
+Current time: 53.1991500000006
+Best time: 17.596366666667
+
+Iteration: 114
+DONE
+Done rate: 82.6086956521739
+Dead rate: 13.9130434782609
+Out of time rate: 3.47826086956522
+Average completion time: 85.8302554970771
+Current time: 17.8693166666678
+Best time: 17.596366666667
+
+Iteration: 115
+DONE
+Done rate: 82.7586206896552
+Dead rate: 13.7931034482759
+Out of time rate: 3.44827586206897
+Average completion time: 85.7403700231493
+Current time: 77.2012500000006
+Best time: 17.596366666667
+
+Iteration: 116
+DONE
+Done rate: 82.9059829059829
+Dead rate: 13.6752136752137
+Out of time rate: 3.41880341880342
+Average completion time: 85.0460979954192
+Current time: 18.3959833333341
+Best time: 17.596366666667
+
+Iteration: 117
+DONE
+Done rate: 83.0508474576271
+Dead rate: 13.5593220338983
+Out of time rate: 3.38983050847458
+Average completion time: 84.4641650226768
+Current time: 28.0166666666671
+Best time: 17.596366666667
+
+Iteration: 118
+DONE
+Done rate: 83.1932773109244
+Dead rate: 13.4453781512605
+Out of time rate: 3.36134453781513
+Average completion time: 84.0700825477003
+Current time: 45.4499999999998
+Best time: 17.596366666667
+
+Iteration: 119
+DONE
+Done rate: 83.3333333333333
+Dead rate: 13.3333333333333
+Out of time rate: 3.33333333333333
+Average completion time: 83.61612988889
+Current time: 38.6748166666653
+Best time: 17.596366666667
+
+Iteration: 120
+DONE
+Done rate: 83.4710743801653
+Dead rate: 13.2231404958678
+Out of time rate: 3.30578512396694
+Average completion time: 83.1090642464257
+Current time: 32.4024999999989
+Best time: 17.596366666667
+
+Iteration: 121
+DONE
+Done rate: 83.6065573770492
+Dead rate: 13.1147540983607
+Out of time rate: 3.27868852459016
+Average completion time: 82.5373096949901
+Current time: 24.7901000000011
+Best time: 17.596366666667
+
+Iteration: 122
+DONE
+Done rate: 83.739837398374
+Dead rate: 13.0081300813008
+Out of time rate: 3.2520325203252
+Average completion time: 82.2707367853301
+Current time: 55.0803000000036
+Best time: 17.596366666667
+
+Iteration: 123
+DONE
+Done rate: 83.8709677419355
+Dead rate: 12.9032258064516
+Out of time rate: 3.2258064516129
+Average completion time: 81.8501761752147
+Current time: 38.5324333333326
+Best time: 17.596366666667
+
+Iteration: 124
+DONE
+Done rate: 84
+Dead rate: 12.8
+Out of time rate: 3.2
+Average completion time: 82.2718217989429
+Current time: 126.122966666671
+Best time: 17.596366666667
+
+Iteration: 125
+DONE
+Done rate: 84.1269841269841
+Dead rate: 12.6984126984127
+Out of time rate: 3.17460317460317
+Average completion time: 82.3070157756824
+Current time: 86.0023833333322
+Best time: 17.596366666667
+
+Iteration: 126
+DONE
+Done rate: 84.251968503937
+Dead rate: 12.5984251968504
+Out of time rate: 3.1496062992126
+Average completion time: 82.5422464693676
+Current time: 107.476700000002
+Best time: 17.596366666667
+
+Iteration: 127
+DONE
+Done rate: 84.375
+Dead rate: 12.5
+Out of time rate: 3.125
+Average completion time: 82.2211156378611
+Current time: 47.8601166666677
+Best time: 17.596366666667
+
+Iteration: 128
+DONE
+Done rate: 84.4961240310078
+Dead rate: 12.4031007751938
+Out of time rate: 3.10077519379845
+Average completion time: 81.8594913353731
+Current time: 42.8040666666679
+Best time: 17.596366666667
+
+Iteration: 129
+DONE
+Done rate: 84.6153846153846
+Dead rate: 12.3076923076923
+Out of time rate: 3.07692307692308
+Average completion time: 81.443831868688
+Current time: 36.1369500000025
+Best time: 17.596366666667
+
+Iteration: 130
+DONE
+Done rate: 84.7328244274809
+Dead rate: 12.2137404580153
+Out of time rate: 3.05343511450382
+Average completion time: 80.9081517017028
+Current time: 21.983333333334
+Best time: 17.596366666667
+
+Iteration: 131
+DONE
+Done rate: 84.8484848484848
+Dead rate: 12.1212121212121
+Out of time rate: 3.03030303030303
+Average completion time: 80.8524501984137
+Current time: 74.6695833333329
+Best time: 17.596366666667
+
+Iteration: 132
+DONE
+Done rate: 84.9624060150376
+Dead rate: 12.0300751879699
+Out of time rate: 3.00751879699248
+Average completion time: 80.4779839724691
+Current time: 38.5377666666677
+Best time: 17.596366666667
+
+Iteration: 133
+DONE
+Done rate: 85.0746268656716
+Dead rate: 11.9402985074627
+Out of time rate: 2.98507462686567
+Average completion time: 80.1276532651083
+Current time: 40.5402833333335
+Best time: 17.596366666667
+
+Iteration: 134
+DONE
+Done rate: 85.1851851851852
+Dead rate: 11.8518518518519
+Out of time rate: 2.96296296296296
+Average completion time: 80.173955120774
+Current time: 85.4523666666684
+Best time: 17.596366666667
+
+Iteration: 135
+DONE
+Done rate: 85.2941176470588
+Dead rate: 11.7647058823529
+Out of time rate: 2.94117647058824
+Average completion time: 79.8208296455949
+Current time: 39.2114000000001
+Best time: 17.596366666667
+
+Iteration: 136
+DONE
+Done rate: 85.4014598540146
+Dead rate: 11.6788321167883
+Out of time rate: 2.91970802919708
+Average completion time: 79.2674162868007
+Current time: 15.0714666666667
+Best time: 15.0714666666667
+
+Iteration: 137
+DONE
+Done rate: 85.5072463768116
+Dead rate: 11.5942028985507
+Out of time rate: 2.89855072463768
+Average completion time: 78.8091945386074
+Current time: 25.1972500000005
+Best time: 15.0714666666667
+
+Iteration: 138
+DONE
+Done rate: 85.6115107913669
+Dead rate: 11.5107913669065
+Out of time rate: 2.87769784172662
+Average completion time: 78.6880252567704
+Current time: 64.390050000002
+Best time: 15.0714666666667
+
+Iteration: 139
+DONE
+Done rate: 85.7142857142857
+Dead rate: 11.4285714285714
+Out of time rate: 2.85714285714286
+Average completion time: 78.3311599074084
+Current time: 35.8641833333343
+Best time: 15.0714666666667
+
+Iteration: 140
+DONE
+Done rate: 85.8156028368794
+Dead rate: 11.3475177304965
+Out of time rate: 2.83687943262411
+Average completion time: 77.9935306244271
+Current time: 37.4780166666669
+Best time: 15.0714666666667
+
+Iteration: 141
+DONE
+Done rate: 85.9154929577465
+Dead rate: 11.2676056338028
+Out of time rate: 2.8169014084507
+Average completion time: 77.8777440346094
+Current time: 63.8675666666671
+Best time: 15.0714666666667
+
+Iteration: 142
+DONE
+Done rate: 86.013986013986
+Dead rate: 11.1888111888112
+Out of time rate: 2.7972027972028
+Average completion time: 78.147469828366
+Current time: 111.054016666669
+Best time: 15.0714666666667
+
+Iteration: 143
+DONE
+Done rate: 86.1111111111111
+Dead rate: 11.1111111111111
+Out of time rate: 2.77777777777778
+Average completion time: 78.1774801523308
+Current time: 81.8687500000026
+Best time: 15.0714666666667
+
+Iteration: 144
+DONE
+Done rate: 86.2068965517241
+Dead rate: 11.0344827586207
+Out of time rate: 2.75862068965517
+Average completion time: 77.8987064444455
+Current time: 43.3307666666683
+Best time: 15.0714666666667
+
+Iteration: 145
+DONE
+Done rate: 86.3013698630137
+Dead rate: 10.958904109589
+Out of time rate: 2.73972602739726
+Average completion time: 78.4063876102304
+Current time: 141.866533333337
+Best time: 15.0714666666667
+
+Iteration: 146
+DONE
+Done rate: 86.3945578231292
+Dead rate: 10.8843537414966
+Out of time rate: 2.72108843537415
+Average completion time: 78.509264216974
+Current time: 91.4717166666694
+Best time: 15.0714666666667
+
+Iteration: 147
+DONE
+Done rate: 86.4864864864865
+Dead rate: 10.8108108108108
+Out of time rate: 2.7027027027027
+Average completion time: 78.2865561631955
+Current time: 50.0026333333356
+Best time: 15.0714666666667
+
+Iteration: 148
+DONE
+Done rate: 86.5771812080537
+Dead rate: 10.738255033557
+Out of time rate: 2.68456375838926
+Average completion time: 78.370063350561
+Current time: 89.0589833333373
+Best time: 15.0714666666667
+
+Iteration: 149
+DONE
+Done rate: 86.6666666666667
+Dead rate: 10.6666666666667
+Out of time rate: 2.66666666666667
+Average completion time: 78.6493961965823
+Current time: 114.683333333335
+Best time: 15.0714666666667
+
+Iteration: 150
+DONE
+Done rate: 86.7549668874172
+Dead rate: 10.5960264900662
+Out of time rate: 2.64900662251656
+Average completion time: 78.2412636556415
+Current time: 25.1840333333314
+Best time: 15.0714666666667
+
+Iteration: 151
+DONE
+Done rate: 86.8421052631579
+Dead rate: 10.5263157894737
+Out of time rate: 2.63157894736842
+Average completion time: 77.9040905723917
+Current time: 33.7344166666682
+Best time: 15.0714666666667
+
+Iteration: 152
+DONE
+Done rate: 86.9281045751634
+Dead rate: 10.4575163398693
+Out of time rate: 2.61437908496732
+Average completion time: 77.6060514202183
+Current time: 38.2648833333365
+Best time: 15.0714666666667
+
+Iteration: 153
+DONE
+Done rate: 87.012987012987
+Dead rate: 10.3896103896104
+Out of time rate: 2.5974025974026
+Average completion time: 77.183173424545
+Current time: 20.9403999999986
+Best time: 15.0714666666667
+
+Iteration: 154
+DONE
+Done rate: 87.0967741935484
+Dead rate: 10.3225806451613
+Out of time rate: 2.58064516129032
+Average completion time: 76.8296785596719
+Current time: 29.4613666666661
+Best time: 15.0714666666667
+
