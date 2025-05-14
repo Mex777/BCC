@@ -52,6 +52,7 @@ offset_right = 672.0
 offset_bottom = 180.0
 
 [node name="ResolutionBtn" type="OptionButton" parent="Control"]
+layout_mode = 0
 offset_left = 178.0
 offset_right = 454.0
 offset_bottom = 31.0
@@ -81,6 +82,7 @@ offset_right = 672.0
 offset_bottom = 180.0
 
 [node name="FullscreenBtn" type="OptionButton" parent="Control2"]
+layout_mode = 0
 offset_left = 178.0
 offset_top = 62.0
 offset_right = 454.0
@@ -109,6 +111,7 @@ offset_right = 672.0
 offset_bottom = 180.0
 
 [node name="BorderlessBtn" type="OptionButton" parent="Control3"]
+layout_mode = 0
 offset_left = 178.0
 offset_top = 117.0
 offset_right = 454.0
@@ -137,6 +140,7 @@ offset_right = 672.0
 offset_bottom = 180.0
 
 [node name="VsyncBtn" type="OptionButton" parent="Control4"]
+layout_mode = 0
 offset_left = 178.0
 offset_top = 178.0
 offset_right = 454.0
