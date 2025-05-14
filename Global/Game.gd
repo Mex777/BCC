@@ -43,6 +43,8 @@ func advance_to_level(level_name: String) -> void:
 	TransitionScene.transition(chapter_names[level_name])
 	await TransitionScene.on_transition_finished
 	
+	SaveManager.save_game()
+	
 	# Changes the scene to the new level
 	var location: String = "res://Scenes/Levels/" + level_name + ".tscn"
 	get_tree().change_scene_to_file(location)

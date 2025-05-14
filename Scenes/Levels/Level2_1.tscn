@@ -268,7 +268,7 @@ script/source = "extends Area2D
 
 func _on_body_entered(body):
 	if body.name == \"Aurora\":
-		Game.advance_to_level(\"Level2_3\")
+		Game.advance_to_level(\"Level2_2\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3ru2"]
