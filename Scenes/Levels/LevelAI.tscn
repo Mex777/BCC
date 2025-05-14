@@ -463,11 +463,13 @@ visible = false
 
 [node name="AIController2D" type="Node2D" parent="."]
 script = ExtResource("12_80cgl")
+onnx_model_path = "model.onnx"
 
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("13_lrj23")
 action_repeat = 40
 speed_up = 10.0
+onnx_model_path = "model.onnx"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 600.0

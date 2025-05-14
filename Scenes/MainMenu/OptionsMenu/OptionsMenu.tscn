@@ -99,7 +99,29 @@ text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VideoBtn" type="TextureButton" parent="."]
+offset_left = 53.0
+offset_top = 461.0
+offset_right = 620.0
+offset_bottom = 910.0
+texture_normal = ExtResource("2_jjv2n")
+texture_pressed = ExtResource("3_wyddp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VideoBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_n7jm8")
+theme_override_font_sizes/font_size = 40
+text = "VIDEO SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="KeymapBtn" to="." method="_on_keymap_btn_pressed"]
 [connection signal="pressed" from="VolumeBtn" to="." method="_on_volume_btn_pressed"]
 [connection signal="pressed" from="SkinsBtn" to="." method="_on_skins_btn_pressed"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="VideoBtn" to="." method="_on_video_btn_pressed"]

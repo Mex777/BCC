@@ -306,4 +306,10 @@ func get_reward() -> float:
 	var rew = (previous_distance - current_distance) / 100
 	previous_distance = current_distance
 	return rew
+
+func _on_timer_timeout2():
+	ai_controller.reward -= 1.0
+	out_of_time += 1
+	print("run out of time")
+	reset()
 	

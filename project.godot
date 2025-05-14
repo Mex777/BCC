@@ -71,8 +71,14 @@ text/autoadvance_fixed_delay=0.8
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="Bcc"
 
 [editor_plugins]
 

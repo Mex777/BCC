@@ -99,7 +99,29 @@ text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AIBtn" type="TextureButton" parent="."]
+offset_left = -13.0
+offset_top = 459.0
+offset_right = 554.0
+offset_bottom = 908.0
+texture_normal = ExtResource("3_53pg5")
+texture_pressed = ExtResource("4_by02f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AIBtn"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 29.0
+offset_right = 480.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("5_wip0h")
+theme_override_font_sizes/font_size = 40
+text = "AI SIMULATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="MultiplayerBtn" to="." method="_on_multiplayer_btn_pressed"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="AIBtn" to="." method="_on_ai_btn_pressed"]

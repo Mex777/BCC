@@ -3,6 +3,7 @@ extends Node2D
 @onready var keymap_menu = preload("res://Scenes/MainMenu/KeymapMenu/KeymapMenu.tscn").instantiate()
 @onready var volume_menu = preload("res://Scenes/MainMenu/VolumeMenu/VolumeMenu.tscn").instantiate()
 @onready var skins_menu = preload("res://Scenes/MainMenu/SkinMenu/SkinMenu.tscn").instantiate()
+@onready var video_settings_menu = preload("res://Scenes/MainMenu/VideoSettingsMenu/VideoSettings.tscn").instantiate()
 
 func _ready() -> void:
 	MusicPlayer.play_music()  # Continuă muzica în opțiuni
@@ -11,10 +12,12 @@ func _ready() -> void:
 	add_child(keymap_menu)
 	add_child(volume_menu)
 	add_child(skins_menu)
+	add_child(video_settings_menu)
 
 	keymap_menu.hide()
 	volume_menu.hide()
 	skins_menu.hide()
+	video_settings_menu.hide()
 
 # 📌 Navigare spre meniul de Keymap
 func _on_keymap_btn_pressed() -> void:
@@ -34,3 +37,8 @@ func _on_back_btn_pressed() -> void:
 	var main_menu = get_tree().get_first_node_in_group("main_menu")
 	if main_menu:
 		main_menu.show()
+
+
+func _on_video_btn_pressed() -> void:
+	video_settings_menu.show()
+	

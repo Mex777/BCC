@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccpavnjj3p3qs"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/VideoSettingsMenu/video_settings.gd" id="1_wqpsx"]
+[ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="2_wwbhn"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="3_begts"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="4_1cadm"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="5_m2i0r"]
+
+[node name="VideoSettings" type="Node2D"]
+script = ExtResource("1_wqpsx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_wwbhn")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 592.0
+offset_top = 108.0
+offset_right = 1109.0
+offset_bottom = 416.0
+color = Color(0.669645, 0.243693, 0.494431, 0.415686)
+
+[node name="BackBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 458.0
+offset_right = 1120.0
+offset_bottom = 907.0
+texture_normal = ExtResource("3_begts")
+texture_pressed = ExtResource("4_1cadm")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BackBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_m2i0r")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 632.0
+offset_top = 140.0
+offset_right = 672.0
+offset_bottom = 180.0
+
+[node name="ResolutionBtn" type="OptionButton" parent="Control"]
+offset_left = 178.0
+offset_right = 454.0
+offset_bottom = 31.0
+selected = 0
+item_count = 3
+popup/item_0/text = "1280x720"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -7.0
+offset_right = 170.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 30
+text = "RESOLUTION:"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 632.0
+offset_top = 140.0
+offset_right = 672.0
+offset_bottom = 180.0
+
+[node name="FullscreenBtn" type="OptionButton" parent="Control2"]
+offset_left = 178.0
+offset_top = 62.0
+offset_right = 454.0
+offset_bottom = 93.0
+selected = 0
+item_count = 2
+popup/item_0/text = "OFF"
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 53.0
+offset_right = 167.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 30
+text = "FULLSCREEN:"
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 632.0
+offset_top = 140.0
+offset_right = 672.0
+offset_bottom = 180.0
+
+[node name="BorderlessBtn" type="OptionButton" parent="Control3"]
+offset_left = 178.0
+offset_top = 117.0
+offset_right = 454.0
+offset_bottom = 148.0
+selected = 0
+item_count = 2
+popup/item_0/text = "OFF"
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Control3"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 110.0
+offset_right = 172.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 30
+text = "BORDERLESS:"
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 632.0
+offset_top = 140.0
+offset_right = 672.0
+offset_bottom = 180.0
+
+[node name="VsyncBtn" type="OptionButton" parent="Control4"]
+offset_left = 178.0
+offset_top = 178.0
+offset_right = 454.0
+offset_bottom = 209.0
+selected = 0
+item_count = 3
+popup/item_0/text = "OFF"
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+popup/item_2/text = "ADAPTIVE"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Control4"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 170.0
+offset_right = 173.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 30
+text = "VSYNC:"
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="item_selected" from="Control/ResolutionBtn" to="." method="_on_resolution_btn_item_selected"]
+[connection signal="item_selected" from="Control2/FullscreenBtn" to="." method="_on_fullscreen_btn_item_selected"]
+[connection signal="item_selected" from="Control3/BorderlessBtn" to="." method="_on_borderless_btn_item_selected"]
+[connection signal="item_selected" from="Control4/VsyncBtn" to="." method="_on_vsync_btn_item_selected"]

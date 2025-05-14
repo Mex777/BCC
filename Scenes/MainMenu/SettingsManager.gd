@@ -3,8 +3,11 @@ extends Node
 const SETTINGS_FILE := "res://settings.cfg"  # Folosim un singur fișier global
 var settings := {}
 
+
 func _ready() -> void:
 	load_settings()
+	load_video_settings()
+
 
 # Salvează setările în settings.cfg
 func save_settings() -> void:
@@ -24,7 +27,7 @@ func load_settings() -> void:
 	
 	if config.load_encrypted_pass(SETTINGS_FILE, Game.key) == OK:
 		# Inițializăm dicționarul settings din fișierul salvat
-		for category in ["keybinds", "volume", "aurora"]:
+		for category in ["keybinds", "volume", "aurora", "video_settings"]:
 			if not settings.has(category):
 				settings[category] = {}
 
@@ -52,6 +55,62 @@ func _set_default_settings() -> void:
 		},
 		"aurora": {
 			"skin": "Prisoner"
+		},
+		"video_settings": {
+			"fullscreen": false,
+			"resolution": Vector2i(1280, 720),
+			"vsync": 0,
+			"borderless": false
 		}
 	}
 	save_settings()
+
+
+func load_video_settings():
+	var index = SettingsManager.settings["video_settings"]["resolution"]
+	if index == Vector2i(1280, 720):
+		DisplayServer.window_set_size(Vector2i(1280, 720))
+		SettingsManager.settings["video_settings"]["resolution"] = Vector2i(1280, 720)
+		SettingsManager.save_settings()
+	elif index == Vector2i(1600, 900):
+		DisplayServer.window_set_size(Vector2i(1600, 900))
+		SettingsManager.settings["video_settings"]["resolution"] = Vector2i(1600, 900)
+		SettingsManager.save_settings()
+	else:
+		DisplayServer.window_set_size(Vector2i(1920, 1080))
+		SettingsManager.settings["video_settings"]["resolution"] = Vector2i(1920, 1080)
+		SettingsManager.save_settings()
+
+	index = SettingsManager.settings["video_settings"]["fullscreen"]
+	if index == false:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		SettingsManager.settings["video_settings"]["fullscreen"] = false
+		SettingsManager.save_settings()
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		SettingsManager.settings["video_settings"]["fullscreen"] = true
+		SettingsManager.save_settings()
+
+	index = SettingsManager.settings["video_settings"]["borderless"]
+	if index == false:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		SettingsManager.settings["video_settings"]["borderless"] = false
+		SettingsManager.save_settings()
+	else:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		SettingsManager.settings["video_settings"]["borderless"] = true
+		SettingsManager.save_settings()
+
+	index = SettingsManager.settings["video_settings"]["vsync"]
+	if index == 0:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+		SettingsManager.settings["video_settings"]["vsync"] = 0
+		SettingsManager.save_settings()
+	elif index == 1:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+		SettingsManager.settings["video_settings"]["vsync"] = 1
+		SettingsManager.save_settings()
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ADAPTIVE)
+		SettingsManager.settings["video_settings"]["vsync"] = 2
+		SettingsManager.save_settings()

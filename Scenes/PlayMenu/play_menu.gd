@@ -29,3 +29,7 @@ func _on_multiplayer_btn_pressed():
 
 func _on_back_btn_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu/MainMenu.tscn")
+
+
+func _on_ai_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/LevelAI.tscn")

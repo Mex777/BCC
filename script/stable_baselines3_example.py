@@ -8,7 +8,6 @@ from stable_baselines3.common.callbacks import CheckpointCallback
 from stable_baselines3.common.vec_env.vec_monitor import VecMonitor
 
 from godot_rl.core.utils import can_import
-from godot_rl.wrappers.onnx.stable_baselines_export import export_model_as_onnx
 from godot_rl.wrappers.stable_baselines_wrapper import StableBaselinesGodotEnv
 
 # To download the env source and binary:
@@ -115,7 +114,6 @@ def handle_onnx_export():
     if args.onnx_export_path is not None:
         path_onnx = pathlib.Path(args.onnx_export_path).with_suffix(".onnx")
         print("Exporting onnx to: " + os.path.abspath(path_onnx))
-        export_model_as_onnx(model, str(path_onnx))
 
 
 def handle_model_save():
@@ -131,12 +129,6 @@ def close_env():
         env.close()
     except Exception as e:
         print("Exception while closing env: ", e)
-
-
-def cleanup():
-    handle_onnx_export()
-    handle_model_save()
-    close_env()
 
 
 path_checkpoint = os.path.join(args.experiment_dir, args.experiment_name + "_checkpoints")
@@ -219,10 +211,12 @@ else:
         learn_arguments["callback"] = checkpoint_callback
     try:
         model.learn(**learn_arguments)
-    except (KeyboardInterrupt, ConnectionError, ConnectionResetError):
+    except KeyboardInterrupt:
         print(
-            """Training interrupted by user or a ConnectionError. Will save if --save_model_path was
+            """Training interrupted by user. Will save if --save_model_path was
             used and/or export if --onnx_export_path was used."""
         )
-    finally:
-        cleanup()
+
+close_env()
+handle_onnx_export()
+handle_model_save()
