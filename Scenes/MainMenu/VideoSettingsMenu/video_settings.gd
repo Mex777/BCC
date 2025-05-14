@@ -80,7 +80,9 @@ func load_video_settings():
 	index = SettingsManager.settings["video_settings"]["fullscreen"]
 	if index == false:
 		$Control2/FullscreenBtn.selected = 0
+		$Control/ResolutionBtn.disabled = false
 	else:
+		$Control/ResolutionBtn.disabled = true
 		$Control2/FullscreenBtn.selected = 1
 
 	index = SettingsManager.settings["video_settings"]["borderless"]

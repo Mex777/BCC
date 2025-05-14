@@ -41,7 +41,7 @@ offset_right = 506.0
 offset_bottom = 165.0
 theme_override_fonts/font = ExtResource("4_npt7x")
 theme_override_font_sizes/font_size = 40
-text = "Resume"
+text = "RESUME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -62,7 +62,7 @@ offset_right = 492.0
 offset_bottom = 166.0
 theme_override_fonts/font = ExtResource("4_npt7x")
 theme_override_font_sizes/font_size = 40
-text = "Options"
+text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -83,7 +83,7 @@ offset_right = 499.0
 offset_bottom = 164.0
 theme_override_fonts/font = ExtResource("4_npt7x")
 theme_override_font_sizes/font_size = 40
-text = "Return to main menu"
+text = "MAIN MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
