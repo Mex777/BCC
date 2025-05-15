@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctt8v7qkcd1ks"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/KeymapMenu/keymap_menu.gd" id="1_76ja8"]
+[ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="2_a4uhn"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="3_vpig2"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="4_htxjo"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="5_28vnd"]
+[ext_resource type="Texture2D" uid="uid://ydoeldbddrr2" path="res://Assets/UI/Buttons/backround_options.png" id="6_iwr3h"]
+
+[node name="KeymapMenu" type="Node2D"]
+script = ExtResource("1_76ja8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_a4uhn")
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 585.0
+offset_top = 2.0
+offset_right = 1085.0
+offset_bottom = 382.0
+texture = ExtResource("6_iwr3h")
+expand_mode = 1
+
+[node name="BackBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 313.0
+offset_right = 1120.0
+offset_bottom = 762.0
+texture_normal = ExtResource("3_vpig2")
+texture_pressed = ExtResource("4_htxjo")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BackBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_28vnd")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionsContainer" type="VBoxContainer" parent="."]
+offset_left = 625.0
+offset_top = 94.0
+offset_right = 1053.0
+offset_bottom = 289.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MoveLeft" type="HBoxContainer" parent="ActionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ActionsContainer/MoveLeft"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Move Left"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ActionsContainer/MoveLeft"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "A"
+
+[node name="MoveRight" type="HBoxContainer" parent="ActionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ActionsContainer/MoveRight"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Move Right"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ActionsContainer/MoveRight"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "D"
+
+[node name="Jump" type="HBoxContainer" parent="ActionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ActionsContainer/Jump"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Jump"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ActionsContainer/Jump"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Space"
+
+[node name="Stun" type="HBoxContainer" parent="ActionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ActionsContainer/Stun"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Stun"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ActionsContainer/Stun"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "R"
+
+[node name="BaseAttack" type="HBoxContainer" parent="ActionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ActionsContainer/BaseAttack"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Base Attack"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ActionsContainer/BaseAttack"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Mouse 1"
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

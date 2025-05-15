@@ -7,6 +7,7 @@ var combat_counter: int = 0
 var level_name: String = "Level1"
 var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var boss_killed: bool = false
+var key: String = ""
 
 var chapter_names = {
 	"Level1": "Chapter one",
@@ -41,6 +42,8 @@ func advance_to_level(level_name: String) -> void:
 	self.level_name = level_name
 	TransitionScene.transition(chapter_names[level_name])
 	await TransitionScene.on_transition_finished
+	
+	SaveManager.save_game()
 	
 	# Changes the scene to the new level
 	var location: String = "res://Scenes/Levels/" + level_name + ".tscn"

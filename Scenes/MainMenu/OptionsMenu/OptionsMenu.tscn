@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://chvebyq8eckbv"]
+
+[ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="1_01h6g"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/OptionsMenu/options_menu.gd" id="1_qgaj0"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="2_jjv2n"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="3_wyddp"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="4_n7jm8"]
+
+[node name="OptionsMenu" type="Node2D"]
+script = ExtResource("1_qgaj0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("1_01h6g")
+flip_h = true
+
+[node name="KeymapBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 475.0
+texture_normal = ExtResource("2_jjv2n")
+texture_pressed = ExtResource("3_wyddp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="KeymapBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_n7jm8")
+theme_override_font_sizes/font_size = 40
+text = "KEYMAP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 169.0
+offset_right = 1120.0
+offset_bottom = 618.0
+texture_normal = ExtResource("2_jjv2n")
+texture_pressed = ExtResource("3_wyddp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VolumeBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_n7jm8")
+theme_override_font_sizes/font_size = 40
+text = "VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkinsBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 313.0
+offset_right = 1120.0
+offset_bottom = 762.0
+texture_normal = ExtResource("2_jjv2n")
+texture_pressed = ExtResource("3_wyddp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SkinsBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_n7jm8")
+theme_override_font_sizes/font_size = 40
+text = "SKINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 458.0
+offset_right = 1120.0
+offset_bottom = 907.0
+texture_normal = ExtResource("2_jjv2n")
+texture_pressed = ExtResource("3_wyddp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BackBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_n7jm8")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VideoBtn" type="TextureButton" parent="."]
+offset_left = 53.0
+offset_top = 461.0
+offset_right = 620.0
+offset_bottom = 910.0
+texture_normal = ExtResource("2_jjv2n")
+texture_pressed = ExtResource("3_wyddp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VideoBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_n7jm8")
+theme_override_font_sizes/font_size = 40
+text = "VIDEO SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="KeymapBtn" to="." method="_on_keymap_btn_pressed"]
+[connection signal="pressed" from="VolumeBtn" to="." method="_on_volume_btn_pressed"]
+[connection signal="pressed" from="SkinsBtn" to="." method="_on_skins_btn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="VideoBtn" to="." method="_on_video_btn_pressed"]

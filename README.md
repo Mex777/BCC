@@ -3,13 +3,58 @@
 ## Introduction
 Welcome to $BCC$, a thrilling 2D platformer created in Godot. In this story-driven adventure, you’ll follow the journey of Aurora, a lost princess imprisoned by dark forces. Her path to freedom is fraught with enemies, both ordinary and formidable. Get ready to leap and fight in a wonderful journey.
 
-## Requirements
-- [User stories and backlog creation](https://github.com/Mex777/BCC/wiki/User-stories) :white_check_mark: 
-- [UML diagrams](https://github.com/Mex777/BCC/wiki/UML-diagrams) :white_check_mark: 
-- [Source control with GIT](https://github.com/Mex777/BCC/wiki/Source-Control) :white_check_mark:
-- [Unit tests](https://github.com/Mex777/BCC/wiki/Unit-tests) :white_check_mark:
-- [Bug reports](https://github.com/Mex777/BCC/wiki/Bug-reports) :white_check_mark:
-- [Refactoring and code standards](https://github.com/Mex777/BCC/wiki/Refactoring-and-Code-Standards) :white_check_mark:
-- [Code comments](https://github.com/Mex777/BCC/wiki/Code-comments) :white_check_mark:
-- [Design patterns](https://github.com/Mex777/BCC/wiki/Design-Patterns) :white_check_mark:
-- [AI tool in development](https://github.com/Mex777/BCC/wiki/AI-usage) :white_check_mark:
+## Wiki
+- [MDS Wiki](https://github.com/Mex777/BCC/wiki)
+
+## Analysis
+### Product vision
+**FOR** players who love engaging storytelling, exploration, and immersive fantasy experiences.
+
+**WHO** want to uncover deep lore, forge connections with characters, and actively shape the story.
+
+**BCC** is an action-adventure fantasy story-driven platformer game.
+
+**THAT** combines fast-paced combat, strategic decision-making, and captivating storytelling, allowing players to experience a princess's journey from exile to heroism.
+
+**UNLIKE** other fantasy games that often focus on preset story paths or disconnected gameplay,
+
+**OUR GAME** seamlessly integrates character-driven storytelling, dynamic world-building, and player choice, offering an immersive and richly interactive world.
+
+### Product features
+The product features can be seen inside of the user stories, some visual examples can be seen below.
+
+#### Multiple Choice Feature Diagram
+![Multiple Choice Feature Diagram](/Resources/MultipleChoiceFeature.png)
+
+#### Options Feature Diagram
+![Options Feature Diagram](/Resources/OptionsFeature.png)
+
+## Planning
+For planning we used 2 different tools, [Github Project](https://github.com/orgs/unibuc-cs/projects/60) and [Github Issues](https://github.com/unibuc-cs/software-engineering-product-bcc/issues).
+
+### User stories
+The user stories can be seen inside the issues tab, but also on the project board.
+
+The stories have a specific format: BCC - {user story number} - {user story title}
+
+In this project, user stories are big tasks broken into smaller tasks, the smaller tasks follow the format: BCC - {user story number}.{task number} - {task title}
+
+User Stories use the "user story" tag on Github Issues, whereas tasks use the "task" tag.
+
+User stories are ordered by priority, the lower the number, the higher the priority.
+
+## Design
+Created multiple diagrams to showcase our project, both UML and C4.
+These are destined for a software architect.
+
+### System Context Diagram
+![System Context Diagram](/Resources/SystemContextDiagram.png)
+
+### Container Diagram
+![Container Diagram](/Resources/ContainerDiagram.png)
+
+### Component Diagram
+![Component Diagram](/Resources/ComponentDiagram.png)
+
+### Level Flow UML Diagram
+![Level Flow Diagram](/Resources/LevelFlowDiagram.png)

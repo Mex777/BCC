@@ -1,0 +1,361 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgd50muvosrnu"]
+
+[ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="1_48ioo"]
+[ext_resource type="Script" path="res://Scenes/MultiplayerMenu/MultiplayerScene.gd" id="1_yy02h"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="2_srtso"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="3_ra5xf"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="4_mlisu"]
+[ext_resource type="Texture2D" uid="uid://pgnd26p7d1u7" path="res://Assets/Aurora/FighterOutfit/Idle/0.png" id="5_4cy6y"]
+[ext_resource type="Texture2D" uid="uid://c3x0212ajqiag" path="res://Assets/Aurora/PrincessOutfit/Idle/0.png" id="7_w2yld"]
+[ext_resource type="Texture2D" uid="uid://cxbef6exnkat0" path="res://Assets/Aurora/PrisonerOutfit/Idle/0.png" id="8_3p0vc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7sl4b"]
+font_size = 62
+
+[node name="MultiplayerScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yy02h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("1_48ioo")
+flip_h = true
+
+[node name="CreateBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 44.0
+offset_right = 1106.0
+offset_bottom = 493.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CreateBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 22.0
+offset_right = 490.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "CREATE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JoinBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 188.0
+offset_right = 1106.0
+offset_bottom = 637.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="JoinBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 22.0
+offset_right = 490.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "JOIN GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 330.0
+offset_right = 1106.0
+offset_bottom = 779.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BackBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 22.0
+offset_right = 490.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JoinLayout" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 105.0
+offset_top = 64.0
+offset_right = 1064.0
+offset_bottom = 501.0
+color = Color(0.156863, 0.156863, 0.156863, 0.894118)
+
+[node name="Name" type="TextEdit" parent="JoinLayout"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 56.0
+offset_right = 890.0
+offset_bottom = 95.0
+placeholder_text = "NICKNAME"
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="IP" type="TextEdit" parent="JoinLayout"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 112.0
+offset_right = 890.0
+offset_bottom = 151.0
+text = "127.0.0.1"
+placeholder_text = "0.0.0.0"
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="JoinLobbyBtn" type="TextureButton" parent="JoinLayout"]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 334.0
+offset_right = 945.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="JoinLayout/JoinLobbyBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.065
+anchor_right = 0.062
+anchor_bottom = 0.065
+offset_left = -0.120001
+offset_top = 0.0999985
+offset_right = 224.88
+offset_bottom = 60.1
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "JOIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelBtn" type="TextureButton" parent="JoinLayout"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 334.0
+offset_right = 275.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="JoinLayout/CancelBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.065
+anchor_right = 0.062
+anchor_bottom = 0.065
+offset_left = -0.120001
+offset_top = 0.0999985
+offset_right = 224.88
+offset_bottom = 60.1
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreateLayout" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 105.0
+offset_top = 64.0
+offset_right = 1064.0
+offset_bottom = 501.0
+color = Color(0.156863, 0.156863, 0.156863, 0.894118)
+
+[node name="Name" type="TextEdit" parent="CreateLayout"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 56.0
+offset_right = 890.0
+offset_bottom = 95.0
+placeholder_text = "NICKNAME"
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="CreateLobbyBtn" type="TextureButton" parent="CreateLayout"]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 334.0
+offset_right = 945.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CreateLayout/CreateLobbyBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.065
+anchor_right = 0.062
+anchor_bottom = 0.065
+offset_left = -0.120001
+offset_top = 0.0999985
+offset_right = 224.88
+offset_bottom = 60.1
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelBtn" type="TextureButton" parent="CreateLayout"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 334.0
+offset_right = 291.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CreateLayout/CancelBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.065
+anchor_right = 0.062
+anchor_bottom = 0.065
+offset_left = -0.120001
+offset_top = 0.0999985
+offset_right = 224.88
+offset_bottom = 60.1
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skins" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CycleBtn" type="Button" parent="Skins"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 256.0
+offset_right = 645.0
+offset_bottom = 440.0
+
+[node name="Sprites" type="Control" parent="Skins"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fighter" type="Sprite2D" parent="Skins/Sprites"]
+position = Vector2(585, 328.625)
+scale = Vector2(4.22656, 4.22656)
+texture = ExtResource("5_4cy6y")
+
+[node name="Princess" type="Sprite2D" parent="Skins/Sprites"]
+visible = false
+position = Vector2(583, 329.625)
+scale = Vector2(4.1875, 4.1875)
+texture = ExtResource("7_w2yld")
+
+[node name="Prisoner" type="Sprite2D" parent="Skins/Sprites"]
+visible = false
+position = Vector2(581, 327.625)
+scale = Vector2(4.0625, 4.0625)
+texture = ExtResource("8_3p0vc")
+
+[node name="SkinName" type="Label" parent="Skins"]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 408.0
+offset_right = 645.0
+offset_bottom = 431.0
+text = "SKIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lobby" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+
+[node name="ColorRect" type="ColorRect" parent="Lobby"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.796078, 0.482353, 0.592157, 1)
+
+[node name="Label" type="Label" parent="Lobby"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1150.0
+offset_bottom = 87.0
+text = "LOBBY"
+label_settings = SubResource("LabelSettings_7sl4b")
+horizontal_alignment = 1
+
+[node name="PlayerCnt" type="Label" parent="Lobby"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 233.0
+offset_right = 1150.0
+offset_bottom = 320.0
+text = "0/0"
+label_settings = SubResource("LabelSettings_7sl4b")
+horizontal_alignment = 1
+
+[node name="StartGameBtn" type="TextureButton" parent="Lobby"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 462.0
+offset_right = 868.0
+offset_bottom = 911.0
+texture_normal = ExtResource("2_srtso")
+texture_pressed = ExtResource("3_ra5xf")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lobby/StartGameBtn"]
+layout_mode = 0
+offset_left = -296.0
+offset_top = 22.0
+offset_right = 845.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("4_mlisu")
+theme_override_font_sizes/font_size = 40
+text = "START GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CreateBtn" to="." method="_on_create_btn_pressed"]
+[connection signal="pressed" from="JoinBtn" to="." method="_on_join_btn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="JoinLayout/JoinLobbyBtn" to="." method="_on_join_lobby_btn_pressed"]
+[connection signal="pressed" from="JoinLayout/CancelBtn" to="." method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="CreateLayout/CreateLobbyBtn" to="." method="_on_create_lobby_btn_pressed"]
+[connection signal="pressed" from="CreateLayout/CancelBtn" to="." method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="Skins/CycleBtn" to="." method="_on_cycle_btn_pressed"]
+[connection signal="pressed" from="Lobby/StartGameBtn" to="." method="_on_start_game_btn_pressed"]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd008jmwn1jdj"]
+
+[ext_resource type="Script" path="res://Scenes/PlayMenu/play_menu.gd" id="1_sgmer"]
+[ext_resource type="Texture2D" uid="uid://u2n7cgkl7vfw" path="res://Assets/UI/Background/0.png" id="2_nmu0q"]
+[ext_resource type="Texture2D" uid="uid://du2f6f6dq4wid" path="res://Assets/UI/Buttons/0.png" id="3_53pg5"]
+[ext_resource type="Texture2D" uid="uid://wafvhyvmat5w" path="res://Assets/UI/Buttons/1.png" id="4_by02f"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="5_wip0h"]
+
+[node name="Play menu" type="Node2D"]
+script = ExtResource("1_sgmer")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_nmu0q")
+flip_h = true
+
+[node name="ContinueBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 475.0
+texture_normal = ExtResource("3_53pg5")
+texture_pressed = ExtResource("4_by02f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ContinueBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_wip0h")
+theme_override_font_sizes/font_size = 40
+text = "CONTINUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 170.0
+offset_right = 1120.0
+offset_bottom = 619.0
+texture_normal = ExtResource("3_53pg5")
+texture_pressed = ExtResource("4_by02f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PlayBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 22.0
+offset_right = 490.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("5_wip0h")
+theme_override_font_sizes/font_size = 40
+text = "NEW GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MultiplayerBtn" type="TextureButton" parent="."]
+offset_left = 551.0
+offset_top = 314.0
+offset_right = 1118.0
+offset_bottom = 763.0
+texture_normal = ExtResource("3_53pg5")
+texture_pressed = ExtResource("4_by02f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerBtn"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 491.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_wip0h")
+theme_override_font_sizes/font_size = 40
+text = "MULTIPLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="."]
+offset_left = 553.0
+offset_top = 459.0
+offset_right = 1120.0
+offset_bottom = 908.0
+texture_normal = ExtResource("3_53pg5")
+texture_pressed = ExtResource("4_by02f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="BackBtn"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 29.0
+offset_right = 480.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("5_wip0h")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AIBtn" type="TextureButton" parent="."]
+offset_left = -13.0
+offset_top = 459.0
+offset_right = 554.0
+offset_bottom = 908.0
+texture_normal = ExtResource("3_53pg5")
+texture_pressed = ExtResource("4_by02f")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AIBtn"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 29.0
+offset_right = 480.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("5_wip0h")
+theme_override_font_sizes/font_size = 40
+text = "AI SIMULATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="MultiplayerBtn" to="." method="_on_multiplayer_btn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="AIBtn" to="." method="_on_ai_btn_pressed"]

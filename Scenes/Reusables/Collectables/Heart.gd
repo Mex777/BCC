@@ -8,6 +8,7 @@ var in_cooldown: bool = false
 func _on_enter_box_body_entered(body) -> void:
 	if body.name == "Aurora" and not in_cooldown:
 		in_cooldown = true
+		amount = int(Player.get_max_hp() / 2)
 		Player.add_hp(amount)
 		$AnimatedSprite2D.hide()
 		await get_tree().create_timer(cooldown_duration).timeout
