@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp: int = 10
+var max_hp: int = 100
 var hp: int = max_hp;
 var skin: String = "Prisoner"
 
