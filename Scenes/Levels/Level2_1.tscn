@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqqcoh20dgjby"]
+[gd_scene load_steps=31 format=3 uid="uid://bqqcoh20dgjby"]
 
 [ext_resource type="Texture2D" uid="uid://bjus35kgq7g74" path="res://Assets/World/BaseTiles/NormalTiles.png" id="1_4esqx"]
 [ext_resource type="Texture2D" uid="uid://bb5lujfwqlrmd" path="res://Assets/UI/HealthBar/0.png" id="2_8vlig"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b81brgql6wu3h" path="res://Scenes/GameOver/GameOver.tscn" id="19_wdqs2"]
 [ext_resource type="PackedScene" uid="uid://dt4msg14rtu1v" path="res://Scenes/Reusables/Collectables/Heart.tscn" id="20_73jdw"]
 [ext_resource type="PackedScene" uid="uid://de4laod4ajq7a" path="res://Scenes/Reusables/Collectables/Gem.tscn" id="21_yfgpg"]
+[ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="22_vobhy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8wly"]
 texture = ExtResource("1_4esqx")
@@ -440,7 +441,7 @@ position = Vector2(1211, 80)
 position = Vector2(1738, -36)
 
 [node name="Skeleton2" parent="." instance=ExtResource("18_5tr5d")]
-position = Vector2(2209, -69)
+position = Vector2(2118, -97)
 
 [node name="Skeleton3" parent="." instance=ExtResource("18_5tr5d")]
 position = Vector2(1603, 417)
@@ -462,5 +463,9 @@ position = Vector2(1498, -76)
 
 [node name="Gem2" parent="." instance=ExtResource("21_yfgpg")]
 position = Vector2(2467, -45)
+
+[node name="PauseMenu" parent="." instance=ExtResource("22_vobhy")]
+process_priority = 1
+visible = false
 
 [connection signal="body_entered" from="NextLevelPortal" to="NextLevelPortal" method="_on_body_entered"]

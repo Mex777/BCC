@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfusmmgc27o2q"]
+[gd_scene load_steps=12 format=3 uid="uid://bfusmmgc27o2q"]
 
 [ext_resource type="PackedScene" uid="uid://bm6imajj4mk0o" path="res://Scenes/Reusables/AbstractLevel/AbstractLevel.tscn" id="1_7r8ur"]
 [ext_resource type="Texture2D" uid="uid://35x4kjs54y8d" path="res://Assets/World/BaseTiles/FireSetGrid.png" id="2_gut8g"]
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="3_er5jj"]
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="5_dbdpa"]
-[ext_resource type="PackedScene" uid="uid://bdnb1b3qtscd8" path="res://Scenes/Enemies/Skeleton/Skeleton.tscn" id="6_qs8fj"]
 [ext_resource type="PackedScene" uid="uid://dtpvgbiuh6clx" path="res://Scenes/Enemies/Devil/Devil.tscn" id="7_ybqi4"]
 [ext_resource type="PackedScene" uid="uid://3j4hlvkgyuvg" path="res://Scenes/Mobs/Cat/Cat.tscn" id="8_6tymo"]
 [ext_resource type="PackedScene" uid="uid://dt4msg14rtu1v" path="res://Scenes/Reusables/Collectables/Heart.tscn" id="9_fuy41"]
@@ -89,62 +88,56 @@ position = Vector2(-708, -101)
 [node name="Guardian2" parent="." index="6" instance=ExtResource("5_dbdpa")]
 position = Vector2(-971, 697)
 
-[node name="Skeleton" parent="." index="7" instance=ExtResource("6_qs8fj")]
-position = Vector2(344, 743)
-
-[node name="Devil" parent="." index="8" instance=ExtResource("7_ybqi4")]
+[node name="Devil" parent="." index="7" instance=ExtResource("7_ybqi4")]
 position = Vector2(-302, 399)
 
-[node name="Devil2" parent="." index="9" instance=ExtResource("7_ybqi4")]
+[node name="Devil2" parent="." index="8" instance=ExtResource("7_ybqi4")]
 position = Vector2(-549, 591)
 
-[node name="Guardian3" parent="." index="10" instance=ExtResource("5_dbdpa")]
+[node name="Guardian3" parent="." index="9" instance=ExtResource("5_dbdpa")]
 position = Vector2(482, 341)
 
-[node name="Skeleton2" parent="." index="11" instance=ExtResource("6_qs8fj")]
-position = Vector2(100, 864)
-
-[node name="Guardian4" parent="." index="12" instance=ExtResource("5_dbdpa")]
+[node name="Guardian4" parent="." index="10" instance=ExtResource("5_dbdpa")]
 position = Vector2(-677, 702)
 
-[node name="Guardian5" parent="." index="13" instance=ExtResource("5_dbdpa")]
+[node name="Guardian5" parent="." index="11" instance=ExtResource("5_dbdpa")]
 position = Vector2(-782, 59)
 
-[node name="Guardian6" parent="." index="14" instance=ExtResource("5_dbdpa")]
+[node name="Guardian6" parent="." index="12" instance=ExtResource("5_dbdpa")]
 position = Vector2(-65, 233)
 
-[node name="Devil3" parent="." index="15" instance=ExtResource("7_ybqi4")]
+[node name="Devil3" parent="." index="13" instance=ExtResource("7_ybqi4")]
 position = Vector2(7, 529)
 
-[node name="Devil4" parent="." index="16" instance=ExtResource("7_ybqi4")]
+[node name="Devil4" parent="." index="14" instance=ExtResource("7_ybqi4")]
 position = Vector2(-100, -179)
 
-[node name="Devil5" parent="." index="17" instance=ExtResource("7_ybqi4")]
+[node name="Devil5" parent="." index="15" instance=ExtResource("7_ybqi4")]
 position = Vector2(-329, 14)
 
-[node name="Guardian7" parent="." index="18" instance=ExtResource("5_dbdpa")]
+[node name="Guardian7" parent="." index="16" instance=ExtResource("5_dbdpa")]
 position = Vector2(-156, 676)
 
-[node name="Cat2" parent="." index="19" instance=ExtResource("8_6tymo")]
+[node name="Cat2" parent="." index="17" instance=ExtResource("8_6tymo")]
 position = Vector2(886, 512)
 dialogue_name = "1"
 
-[node name="Heart" parent="." index="21" instance=ExtResource("9_fuy41")]
+[node name="Heart" parent="." index="19" instance=ExtResource("9_fuy41")]
 position = Vector2(-706, 884)
 
-[node name="Gem" parent="." index="22" instance=ExtResource("10_hb125")]
+[node name="Gem" parent="." index="20" instance=ExtResource("10_hb125")]
 position = Vector2(-1037, 403)
 
-[node name="Heart2" parent="." index="23" instance=ExtResource("9_fuy41")]
+[node name="Heart2" parent="." index="21" instance=ExtResource("9_fuy41")]
 position = Vector2(-26, 867)
 
-[node name="Gem2" parent="." index="24" instance=ExtResource("10_hb125")]
+[node name="Gem2" parent="." index="22" instance=ExtResource("10_hb125")]
 position = Vector2(-863, -204)
 
-[node name="Gem3" parent="." index="25" instance=ExtResource("10_hb125")]
+[node name="Gem3" parent="." index="23" instance=ExtResource("10_hb125")]
 position = Vector2(-33, -125)
 
-[node name="NextLevelPortal" type="Area2D" parent="." index="26"]
+[node name="NextLevelPortal" type="Area2D" parent="." index="24"]
 script = SubResource("GDScript_mcyl1")
 
 [connection signal="body_entered" from="NextLevelPortal" to="NextLevelPortal" method="_on_body_entered"]

@@ -1,4 +1,5 @@
 do Game.toggle_cutscene()
+do Player.set_skin("Prisoner")
 [style name="VisualStyle"]
 [wait time="3.0"]
 join MagicCat (Black) 3

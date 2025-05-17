@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bvsi60hssqve5"]
+[gd_scene load_steps=31 format=3 uid="uid://bvsi60hssqve5"]
 
 [ext_resource type="Texture2D" uid="uid://bjus35kgq7g74" path="res://Assets/World/BaseTiles/NormalTiles.png" id="1_mpjg5"]
 [ext_resource type="PackedScene" uid="uid://cx4yu3e5q0bfa" path="res://Scenes/Aurora/Aurora.tscn" id="2_qsor8"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cyn41tc01h1qv" path="res://Scenes/Enemies/Guardian/Guardian.tscn" id="19_ahggi"]
 [ext_resource type="PackedScene" uid="uid://de4laod4ajq7a" path="res://Scenes/Reusables/Collectables/Gem.tscn" id="20_lg3i1"]
 [ext_resource type="PackedScene" uid="uid://dt4msg14rtu1v" path="res://Scenes/Reusables/Collectables/Heart.tscn" id="21_gngxk"]
+[ext_resource type="PackedScene" uid="uid://kbgjirn72nlu" path="res://Scenes/PauseMenu/PauseMenu.tscn" id="22_jtb4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlpec"]
 texture = ExtResource("1_mpjg5")
@@ -415,22 +416,22 @@ camera_top_limit = -216
 camera_bottom_limit = 652
 
 [node name="Devil" parent="." instance=ExtResource("17_sfpra")]
-position = Vector2(-295, -332)
+position = Vector2(-362, -334)
 
 [node name="Devil2" parent="." instance=ExtResource("17_sfpra")]
 position = Vector2(-49, -524)
 
 [node name="Skeleton" parent="." instance=ExtResource("18_4iirf")]
-position = Vector2(-63, 5)
+position = Vector2(-394, -112)
 
 [node name="Skeleton2" parent="." instance=ExtResource("18_4iirf")]
-position = Vector2(282, -609)
+position = Vector2(590, -717)
 
 [node name="Skeleton3" parent="." instance=ExtResource("18_4iirf")]
-position = Vector2(927, -18)
+position = Vector2(1450, -117)
 
 [node name="Skeleton4" parent="." instance=ExtResource("18_4iirf")]
-position = Vector2(1594, -191)
+position = Vector2(1641, -457)
 
 [node name="Guardian" parent="." instance=ExtResource("19_ahggi")]
 position = Vector2(1982, -214)
@@ -470,5 +471,9 @@ script = SubResource("GDScript_qvwlv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelPortal"]
 position = Vector2(-73, -191.2)
 shape = SubResource("RectangleShape2D_hdtsy")
+
+[node name="PauseMenu" parent="." instance=ExtResource("22_jtb4h")]
+process_priority = 1
+visible = false
 
 [connection signal="body_entered" from="NextLevelPortal" to="NextLevelPortal" method="_on_body_entered"]
